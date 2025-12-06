@@ -1,0 +1,33 @@
+plugins {
+	id 'java-library'
+}
+
+setGroup('io.github.thatgarlicdude')
+setVersion ('1.0.0-alpha')
+
+repositories {
+	mavenCentral()
+	maven {url = 'https://www.jitpack.io'}
+}
+
+dependencies {
+	testImplementation 'org.junit.jupiter:junit-jupiter:6.0.1'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher:6.0.1'
+}
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+jar {
+	archiveBaseName = project.name
+	archiveVersion = project.version
+}
+
+test {
+	useJUnitPlatform()
+}

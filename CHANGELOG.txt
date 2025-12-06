@@ -1,0 +1,12 @@
+2025-12-05 GarlicDude <https://www.github.com/thatgarlicdude>
+
+	PacIO Version 1.0.0-alpha
+	* Added the base files.
+	* Added PacFile, the base class for PacRom and PacRomSet.
+		* Has the path and name variables, as well as their getter methods.
+	* Added PacRom, a class that represents a ROM file within a ROM set directory.
+		* PacRoms contain byte data from their repsective ROM file.
+		* They can read and write data in the byte array.
+	* Added PacRomSet, a class that represents a ROM set directory.
+		* PacRomSets have an ArrayList containing PacRom objects.
+		* PacRomSets can find a specific PacRom when using find().
