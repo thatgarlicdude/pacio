@@ -3,7 +3,10 @@
 	PacIO Version 1.0.1-alpha
 	* Updated all the Java files.
 		* Every Java file now have tabbed gaps in between each member of a class.
+	* Updated PacFile.java.
+		* Added another main constructor, which sets a custom name to the object.
 	* Updated PacRom.java.
+		* Added a main constructor, which sets the path and custom name to the object.
 		* The path constructor now calls open() after the super constructor.
 		* Because of this, all the other constructors throw the IOException.
 		* The other constructors now use this() instead of super().

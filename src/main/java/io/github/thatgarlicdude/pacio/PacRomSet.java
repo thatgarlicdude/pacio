@@ -57,7 +57,14 @@ public final class PacRomSet extends PacFile implements Openable {
 		return null;
 	}
 	
-	// TODO:
+	// TODO: Maybe have only one constructor, which is the main one.
+	
+	/**The main constructor of the PacRomSet.*/
+	public PacRomSet(final Path path, final String name, final ArrayList<PacRom> roms) {
+		// This doesn't automatically open the PacRomSet.
+		super(path, name);
+		this.roms = roms;
+	}
 	
 	/**A constructor using a Path for the file path.*/
 	public PacRomSet(final Path path) throws IOException {

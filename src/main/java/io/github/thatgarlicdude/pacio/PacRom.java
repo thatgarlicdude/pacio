@@ -88,7 +88,14 @@ public final class PacRom extends PacFile implements Openable {
 		}
 	}
 	
-	// TODO: Maybe have only one constructor, which is the path one.
+	// TODO: Maybe have only one constructor, which is the main one.
+	
+	/**The main constructor of the PacRom.*/
+	public PacRom(final Path path, final String name, final byte[] data) {
+		// This doesn't automatically open the PacRom.
+		super(path, name);
+		this.data = data;
+	}
 	
 	/**A constructor using a Path for the file path.*/
 	public PacRom(final Path path) throws IOException {

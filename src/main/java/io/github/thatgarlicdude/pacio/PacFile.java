@@ -39,6 +39,7 @@ abstract class PacFile {
 		return this.name;
 	}
 	
+	/**The main constructor of the PacFile.*/
 	protected PacFile(final Path path, final String name) {
 		this.path = path;
 		this.name = name;
