@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 
 /**A class that represents a ROM within a ROM set.*/
 public final class PacRom extends PacFile implements Openable {
@@ -87,18 +88,21 @@ public final class PacRom extends PacFile implements Openable {
 		}
 	}
 
+	// TODO: Maybe have only one constructor, which is the path one.
+
 	/**A constructor using a Path for the file path.*/
-	public PacRom(final Path path) {
+	public PacRom(final Path path) throws IOException {
 		super(path);
+		this.open();
 	}
 
 	/**A constructor using a URI for the file.*/
-	public PacRom(final URI pathURI) {
-		super(pathURI);
+	public PacRom(final URI pathURI) throws IOException {
+		this(Paths.get(pathURI));
 	}
 
 	/**A constructor using a String for the file path.*/
-	public PacRom(final String pathString) {
-		super(pathString);
+	public PacRom(final String pathString) throws IOException {
+		this(Paths.get(pathString));
 	}
 }

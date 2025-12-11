@@ -1,3 +1,17 @@
+2025-12-11 GarlicDude <https://www.github.com/thatgarlicdude>
+
+	PacIO Version 1.0.1-alpha
+	* Updated PacRom.java.
+		* The path constructor now calls open() after the super constructor.
+		* Because of this, all the other constructors throw the IOException.
+		* The other constructors now use this() instead of super().
+	* Updated PacRomSet.java.
+		* Same thing as PacRom.java.
+	* Updated TestPacRom.java.
+		* Because PacRomSets can be automatically opened, there's no need to call open() from the testRomSet.
+	* Updated TestPacRomSet.java.
+		* Same thing as TestPacRom.java.
+
 2025-12-05 GarlicDude <https://www.github.com/thatgarlicdude>
 
 	PacIO Version 1.0.0-alpha

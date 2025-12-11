@@ -21,6 +21,7 @@ import java.net.URI;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 /**A class that represents a ROM set directory.*/
@@ -56,18 +57,21 @@ public final class PacRomSet extends PacFile implements Openable {
 		return null;
 	}
 
+	// TODO:
+
 	/**A constructor using a Path for the file path.*/
-	public PacRomSet(final Path path) {
+	public PacRomSet(final Path path) throws IOException {
 		super(path);
+		this.open();
 	}
 
-	/**A constructor using a URI for the file .*/
-	public PacRomSet(final URI pathURI) {
-		super(pathURI);
+	/**A constructor using a URI for the file.*/
+	public PacRomSet(final URI pathURI) throws IOException {
+		this(Paths.get(pathURI));
 	}
 
 	/**A constructor using a String for the file path.*/
-	public PacRomSet(final String pathString) {
-		super(pathString);
+	public PacRomSet(final String pathString) throws IOException {
+		this(Paths.get(pathString));
 	}
 }

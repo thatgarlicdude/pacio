@@ -29,11 +29,8 @@ final class TestPacRom {
 	void testOpen() throws URISyntaxException, IOException {
 		URI uri = ResourceGetter.getTestRomSet();
 		PacRomSet romSet = new PacRomSet(uri);
-		// TODO: There needs to be an auto-open feature for when the PacRomSet is created.
-		romSet.open();
 		PacRom rom = romSet.find(ResourceGetter.rom1);
 		assertNotNull(rom);
-		rom.open();
 		for (byte b : rom.getData()) {
 			System.out.println((char) b);
 		}

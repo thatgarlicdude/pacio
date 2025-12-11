@@ -30,8 +30,6 @@ final class TestPacRomSet {
 	void testOpen() throws URISyntaxException, IOException {
 		URI uri = ResourceGetter.getTestRomSet();
 		PacRomSet romSet = new PacRomSet(uri);
-		// TODO: There needs to be an auto-open feature for when the PacRomSet is created.
-		romSet.open();
 		for (PacRom rom : romSet.roms) {
 			System.out.println(rom.name);
 			assertNotNull(rom.name);
@@ -40,7 +38,7 @@ final class TestPacRomSet {
 	}
 	
 	@Test
-	void testGetPath() throws URISyntaxException {
+	void testGetPath() throws URISyntaxException, IOException {
 		URI uri = ResourceGetter.getTestRomSet();
 		PacRomSet romSet = new PacRomSet(uri);
 		Path path = romSet.getPath();
