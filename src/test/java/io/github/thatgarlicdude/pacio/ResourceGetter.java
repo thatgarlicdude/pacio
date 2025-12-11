@@ -21,13 +21,13 @@ import java.net.URISyntaxException;
 
 /**A class used for getting the testRomSet directory for the test function.*/
 public final class ResourceGetter {
-
+	
 	/**The name of the test ROM set.*/
 	public static final String testRomSet = "testRomSet";
 	
 	/**The first ROM in the testRomSet.*/
 	public static final String rom1 = "testRom.8a";
-
+	
 	/**Returns the URI of the testRomSet directory.*/
 	public static final URI getTestRomSet() throws URISyntaxException {
 		// TODO: There needs to be another method for getting the testRomSet.

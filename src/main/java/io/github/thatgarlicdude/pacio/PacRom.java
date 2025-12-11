@@ -24,18 +24,18 @@ import java.nio.file.Paths;
 
 /**A class that represents a ROM within a ROM set.*/
 public final class PacRom extends PacFile implements Openable {
-
+	
 	/**The default byte array for a ROM file.*/
 	private static final byte[] DEFAULT_DATA = new byte[0];
-
+	
 	/**The byte data inside the ROM file.*/
 	private byte[] data = DEFAULT_DATA;
-
+	
 	/**Returns the byte data inside the ROM file.*/
 	public final byte[] getData() {
 		return this.data;
 	}
-
+	
 	/**Returns the default byte array for a ROM file.*/
 	public static final byte[] getDefaultData() {
 		return DEFAULT_DATA;
@@ -46,18 +46,18 @@ public final class PacRom extends PacFile implements Openable {
 	public final void open() throws IOException {
 		this.data = Files.readAllBytes(this.path);
 	}
-
+	
 	/**Closes the ROM file.*/
 	@Override
 	public final void close() {
 		this.data = DEFAULT_DATA;
 	}
-
+	
 	/**Reads a single byte in the data array.*/
 	public final byte read(final int offset) {
 		return this.data[offset];
 	}
-
+	
 	/**Reads multiple bytes in the data array.*/
 	public final byte[] readN(final int offset, final int size) {
 		byte[] data = new byte[size];
@@ -66,7 +66,7 @@ public final class PacRom extends PacFile implements Openable {
 		}
 		return data;
 	}
-
+	
 	/**Reads all the bytes in the data array.*/
 	public final byte[] readAll() {
 		int size = this.data.length;
@@ -74,12 +74,12 @@ public final class PacRom extends PacFile implements Openable {
 		this.readN(0, size);
 		return data;
 	}
-
+	
 	/**Writes a single byte in the data array.*/
 	public final void write(final int offset, final byte data) {
 		this.data[offset] = data;
 	}
-
+	
 	/**Writes multiple bytes in the data array.*/
 	public final void writeN(final int offset, final byte[] data) {
 		int size = data.length;
@@ -87,20 +87,20 @@ public final class PacRom extends PacFile implements Openable {
 			this.data[index + offset] = data[index];
 		}
 	}
-
+	
 	// TODO: Maybe have only one constructor, which is the path one.
-
+	
 	/**A constructor using a Path for the file path.*/
 	public PacRom(final Path path) throws IOException {
 		super(path);
 		this.open();
 	}
-
+	
 	/**A constructor using a URI for the file.*/
 	public PacRom(final URI pathURI) throws IOException {
 		this(Paths.get(pathURI));
 	}
-
+	
 	/**A constructor using a String for the file path.*/
 	public PacRom(final String pathString) throws IOException {
 		this(Paths.get(pathString));

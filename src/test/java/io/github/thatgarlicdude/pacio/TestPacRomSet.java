@@ -25,7 +25,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 final class TestPacRomSet {
-
+	
 	@Test
 	void testOpen() throws URISyntaxException, IOException {
 		URI uri = ResourceGetter.getTestRomSet();

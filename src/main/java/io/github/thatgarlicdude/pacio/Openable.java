@@ -20,10 +20,10 @@ import java.io.IOException;
 
 /**An interface where classes can either open or close a file.*/
 public interface Openable {
-
+	
 	/**Opens a file in the file system.*/
 	public abstract void open() throws IOException;
-
+	
 	/**Closes a file in the file system.*/
 	public abstract void close();
 }

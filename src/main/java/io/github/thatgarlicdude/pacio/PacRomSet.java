@@ -26,10 +26,10 @@ import java.util.ArrayList;
 
 /**A class that represents a ROM set directory.*/
 public final class PacRomSet extends PacFile implements Openable {
-
+	
 	/**The ROMs within the ROM set directory.*/
 	public ArrayList<PacRom> roms = new ArrayList<PacRom>();
-
+	
 	/**Opens the ROM set directory.*/
 	@Override
 	public final void open() throws IOException {
@@ -42,13 +42,13 @@ public final class PacRomSet extends PacFile implements Openable {
 		}
 		paths.close();
 	}
-
+	
 	/**Closes the ROM set directory.*/
 	@Override
 	public final void close() {
 		roms.clear();
 	}
-
+	
 	/**Finds a specific ROM within the ROM set.*/
 	public final PacRom find(final String romName) {
 		for (PacRom rom : roms) {
@@ -56,20 +56,20 @@ public final class PacRomSet extends PacFile implements Openable {
 		}
 		return null;
 	}
-
+	
 	// TODO:
-
+	
 	/**A constructor using a Path for the file path.*/
 	public PacRomSet(final Path path) throws IOException {
 		super(path);
 		this.open();
 	}
-
+	
 	/**A constructor using a URI for the file.*/
 	public PacRomSet(final URI pathURI) throws IOException {
 		this(Paths.get(pathURI));
 	}
-
+	
 	/**A constructor using a String for the file path.*/
 	public PacRomSet(final String pathString) throws IOException {
 		this(Paths.get(pathString));

@@ -1,6 +1,8 @@
 2025-12-11 GarlicDude <https://www.github.com/thatgarlicdude>
 
 	PacIO Version 1.0.1-alpha
+	* Updated all the Java files.
+		* Every Java file now have tabbed gaps in between each member of a class.
 	* Updated PacRom.java.
 		* The path constructor now calls open() after the super constructor.
 		* Because of this, all the other constructors throw the IOException.
