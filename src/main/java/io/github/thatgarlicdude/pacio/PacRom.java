@@ -16,14 +16,10 @@
 
 package io.github.thatgarlicdude.pacio;
 
-import java.io.IOException;
-import java.net.URI;
-import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 
 /**A class that represents a ROM within a ROM set.*/
-public final class PacRom extends PacFile implements Openable {
+public final class PacRom extends PacFile {
 	
 	/**The default byte array for a ROM file.*/
 	private static final byte[] DEFAULT_DATA = new byte[0];
@@ -41,14 +37,7 @@ public final class PacRom extends PacFile implements Openable {
 		return DEFAULT_DATA;
 	}
 	
-	/**Opens the ROM file.*/
-	@Override
-	public final void open() throws IOException {
-		this.data = Files.readAllBytes(this.path);
-	}
-	
 	/**Closes the ROM file.*/
-	@Override
 	public final void close() {
 		this.data = DEFAULT_DATA;
 	}
@@ -88,28 +77,9 @@ public final class PacRom extends PacFile implements Openable {
 		}
 	}
 	
-	// TODO: Maybe have only one constructor, which is the main one.
-	
 	/**The main constructor of the PacRom.*/
-	public PacRom(final Path path, final String name, final byte[] data) {
-		// This doesn't automatically open the PacRom.
+	PacRom(final Path path, final String name, final byte[] data) {
 		super(path, name);
 		this.data = data;
-	}
-	
-	/**A constructor using a Path for the file path.*/
-	public PacRom(final Path path) throws IOException {
-		super(path);
-		this.open();
-	}
-	
-	/**A constructor using a URI for the file.*/
-	public PacRom(final URI pathURI) throws IOException {
-		this(Paths.get(pathURI));
-	}
-	
-	/**A constructor using a String for the file path.*/
-	public PacRom(final String pathString) throws IOException {
-		this(Paths.get(pathString));
 	}
 }

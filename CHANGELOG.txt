@@ -4,6 +4,14 @@
 	* Added RomOpener.java.
 		* This class contains helper methods for opening PacRoms and PacRomSets.
 		* It can also help create an ArrayList of PacRoms for the PacRomSet.
+	* Updated PacFile.java.
+		* Removed the other constructors, only leaving with one.
+	* Updated PacRom.java.
+		* The main constructor is now set to default instead of public to make up for the RomOpener.
+		* Like PacFile.java, the other constructors were removed.
+		* PacRom no longer implements Openable.
+	* Updated PacRomSet.java.
+		* Changes from PacRom.java were applied as well.
 
 2025-12-11 GarlicDude <https://www.github.com/thatgarlicdude>
 

@@ -16,35 +16,16 @@
 
 package io.github.thatgarlicdude.pacio;
 
-import java.io.IOException;
-import java.net.URI;
-import java.nio.file.DirectoryStream;
-import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 
 /**A class that represents a ROM set directory.*/
-public final class PacRomSet extends PacFile implements Openable {
+public final class PacRomSet extends PacFile {
 	
 	/**The ROMs within the ROM set directory.*/
 	public ArrayList<PacRom> roms = new ArrayList<PacRom>();
 	
-	/**Opens the ROM set directory.*/
-	@Override
-	public final void open() throws IOException {
-		DirectoryStream<Path> paths = Files.newDirectoryStream(this.path);
-		for (Path path : paths) {
-			// TODO: Create a better ROM-checking system than this.
-			if (!Files.isRegularFile(path)) continue;
-			PacRom rom = new PacRom(path);
-			roms.add(rom);
-		}
-		paths.close();
-	}
-	
 	/**Closes the ROM set directory.*/
-	@Override
 	public final void close() {
 		roms.clear();
 	}
@@ -57,28 +38,9 @@ public final class PacRomSet extends PacFile implements Openable {
 		return null;
 	}
 	
-	// TODO: Maybe have only one constructor, which is the main one.
-	
 	/**The main constructor of the PacRomSet.*/
-	public PacRomSet(final Path path, final String name, final ArrayList<PacRom> roms) {
-		// This doesn't automatically open the PacRomSet.
+	PacRomSet(final Path path, final String name, final ArrayList<PacRom> roms) {
 		super(path, name);
 		this.roms = roms;
-	}
-	
-	/**A constructor using a Path for the file path.*/
-	public PacRomSet(final Path path) throws IOException {
-		super(path);
-		this.open();
-	}
-	
-	/**A constructor using a URI for the file.*/
-	public PacRomSet(final URI pathURI) throws IOException {
-		this(Paths.get(pathURI));
-	}
-	
-	/**A constructor using a String for the file path.*/
-	public PacRomSet(final String pathString) throws IOException {
-		this(Paths.get(pathString));
 	}
 }
