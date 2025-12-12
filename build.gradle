@@ -3,7 +3,7 @@ plugins {
 }
 
 setGroup('io.github.thatgarlicdude')
-setVersion ('1.0.1-alpha')
+setVersion ('1.1.0-alpha')
 
 repositories {
 	mavenCentral()

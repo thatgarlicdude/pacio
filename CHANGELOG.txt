@@ -1,3 +1,10 @@
+2025-12-12 GarlicDude <https://www.github.com/thatgarlicdude>
+
+	PacIO Version 1.1.0-alpha
+	* Added RomOpener.java.
+		* This class contains helper methods for opening PacRoms and PacRomSets.
+		* It can also help create an ArrayList of PacRoms for the PacRomSet.
+
 2025-12-11 GarlicDude <https://www.github.com/thatgarlicdude>
 
 	PacIO Version 1.0.1-alpha
