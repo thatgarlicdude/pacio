@@ -27,7 +27,7 @@ public final class ResourceGetter {
 	public static final String testRomSet = "testRomSet";
 	
 	/**The first ROM in the testRomSet.*/
-	public static final String rom1 = "testRom.8a";
+	public static final String rom1 = "testRomSet/testRom.8a";
 	
 	/**Returns the URI of the testRomSet directory.*/
 	public static final URI getTestRomSetURI() throws URISyntaxException {
@@ -40,5 +40,18 @@ public final class ResourceGetter {
 		URI testRomSetURI = getTestRomSetURI();
 		PacRomSet testRomSet = PacRomSetOpener.open(testRomSetURI);
 		return testRomSet;
+	}
+	
+	/**Returns the URI of the testRomSet directory.*/
+	public static final URI getTestRom1URI() throws URISyntaxException {
+		URI testRomURI = ResourceGetter.class.getClassLoader().getResource(rom1).toURI();
+		return testRomURI;
+	}
+	
+	/**Returns the first ROM in the test ROM set.*/
+	public static final PacRom getTestRom1() throws URISyntaxException, IOException {
+		URI testRomURI = getTestRom1URI();
+		PacRom rom = PacRomOpener.open(testRomURI);
+		return rom;
 	}
 }

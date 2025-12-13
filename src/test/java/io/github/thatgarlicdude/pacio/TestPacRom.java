@@ -26,8 +26,7 @@ final class TestPacRom {
 	
 	@Test
 	void testOpen() throws URISyntaxException, IOException {
-		PacRomSet romSet = ResourceGetter.getTestRomSet();
-		PacRom rom = romSet.find(ResourceGetter.rom1);
+		PacRom rom = ResourceGetter.getTestRom1();
 		assertNotNull(rom);
 		for (byte b : rom.getData()) {
 			System.out.println((char) b);

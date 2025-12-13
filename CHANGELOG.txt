@@ -7,6 +7,13 @@
 		* Removed methods that relate to the PacRomSet class.
 	* Added PacRomSetOpener.java.
 		* Code from PacRomOpener.java were transferred there.
+	* Updated ResourceGetter.java.
+		* Changed rom1 to be a path to the first ROM file of the test ROM set.
+		* Because of this, getTestRom1() and getTestRom1URI() were added.
+	* Added TestPacRomOpener.java.
+		* This test class is used for testing the three open methods.
+	* Added TestPacRomSetOpener.java.
+		* The same thing as TestPacRomOpener.java, but for TestRomSet objects.
 
 2025-12-12 GarlicDude <https://www.github.com/thatgarlicdude>
 
