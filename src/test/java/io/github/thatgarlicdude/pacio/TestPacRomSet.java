@@ -17,7 +17,6 @@
 package io.github.thatgarlicdude.pacio;
 
 import java.io.IOException;
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.file.Path;
 
@@ -28,9 +27,8 @@ final class TestPacRomSet {
 	
 	@Test
 	void testOpen() throws URISyntaxException, IOException {
-		URI uri = ResourceGetter.getTestRomSet();
-		PacRomSet romSet = new PacRomSet(uri);
-		for (PacRom rom : romSet.roms) {
+		PacRomSet romSet = ResourceGetter.getTestRomSet();
+		for (PacRom rom : romSet.getRoms()) {
 			System.out.println(rom.name);
 			assertNotNull(rom.name);
 		}
@@ -39,9 +37,9 @@ final class TestPacRomSet {
 	
 	@Test
 	void testGetPath() throws URISyntaxException, IOException {
-		URI uri = ResourceGetter.getTestRomSet();
-		PacRomSet romSet = new PacRomSet(uri);
+		PacRomSet romSet = ResourceGetter.getTestRomSet();
 		Path path = romSet.getPath();
+		System.out.println(path.toString());
 		assertEquals(path, romSet.path);
 	}
 }

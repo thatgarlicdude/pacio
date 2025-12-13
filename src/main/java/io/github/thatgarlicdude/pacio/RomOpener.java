@@ -17,9 +17,11 @@
 package io.github.thatgarlicdude.pacio;
 
 import java.io.IOException;
+import java.net.URI;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 /**A class that handles opening the Pac-Man ROM set.*/
@@ -33,11 +35,39 @@ public final class RomOpener {
 		return rom;
 	}
 	
+	/**Creates a new PacRom using a URI and opens it automatically.*/
+	public static final PacRom openRom(final URI pathURI) throws IOException {
+		Path path = Paths.get(pathURI);
+		PacRom rom = openRom(path);
+		return rom;
+	}
+	
+	/**Creates a new PacRom using a string and opens it automatically.*/
+	public static final PacRom openRom(final String pathString) throws IOException {
+		Path path = Paths.get(pathString);
+		PacRom rom = openRom(path);
+		return rom;
+	}
+	
 	/**Creates a new PacRomSet in memory and opens it automatically.*/
 	public static final PacRomSet openRomSet(final Path path) throws IOException {
 		String name = path.getFileName().toString();
 		ArrayList<PacRom> roms = openRoms(path);
 		PacRomSet romSet = new PacRomSet(path, name, roms);
+		return romSet;
+	}
+	
+	/**Creates a new PacRomSet using a URI and opens it automatically.*/
+	public static final PacRomSet openRomSet(final URI pathURI) throws IOException {
+		Path path = Paths.get(pathURI);
+		PacRomSet romSet = openRomSet(path);
+		return romSet;
+	}
+	
+	/**Creates a new PacRomSet using a string and opens it automatically.*/
+	public static final PacRomSet openRomSet(final String pathString) throws IOException {
+		Path path = Paths.get(pathString);
+		PacRomSet romSet = openRomSet(path);
 		return romSet;
 	}
 	

@@ -3,6 +3,7 @@
 	PacIO Version 1.1.0-alpha
 	* Added RomOpener.java.
 		* This class contains helper methods for opening PacRoms and PacRomSets.
+		* Those helper methods can use Path, URI, or String objects as the arguments.
 		* It can also help create an ArrayList of PacRoms for the PacRomSet.
 	* Removed Openable.java.
 	* Added Closable.java as a replacement for Openable.java.
@@ -18,6 +19,15 @@
 	* Updated PacRomSet.java.
 		* Changes from PacRom.java were applied as well.
 		* For the close method, it now closes the PacRoms in the PacRomSet.
+		* The roms variable is now private.
+		* To make up for that, getRoms() was added.
+	* Updated ResourceGetter.java.
+		* ResourceGetter now has two methods: One for getting the URI of the test ROM set, and the other being the PacRom of it.
+	* Updated TestPacRom.java.
+		* The test methods are now shortened due to the new helper methods.
+	* Updated TestPacRomSet.java.
+		* Changes from TestPacRom.java were also applied as well.
+		* testGetPath() now prints the path.
 
 2025-12-11 GarlicDude <https://www.github.com/thatgarlicdude>
 

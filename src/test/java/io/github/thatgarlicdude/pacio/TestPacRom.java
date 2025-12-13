@@ -17,7 +17,6 @@
 package io.github.thatgarlicdude.pacio;
 
 import java.io.IOException;
-import java.net.URI;
 import java.net.URISyntaxException;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -27,8 +26,7 @@ final class TestPacRom {
 	
 	@Test
 	void testOpen() throws URISyntaxException, IOException {
-		URI uri = ResourceGetter.getTestRomSet();
-		PacRomSet romSet = new PacRomSet(uri);
+		PacRomSet romSet = ResourceGetter.getTestRomSet();
 		PacRom rom = romSet.find(ResourceGetter.rom1);
 		assertNotNull(rom);
 		for (byte b : rom.getData()) {

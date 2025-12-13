@@ -16,6 +16,7 @@
 
 package io.github.thatgarlicdude.pacio;
 
+import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -29,8 +30,15 @@ public final class ResourceGetter {
 	public static final String rom1 = "testRom.8a";
 	
 	/**Returns the URI of the testRomSet directory.*/
-	public static final URI getTestRomSet() throws URISyntaxException {
-		// TODO: There needs to be another method for getting the testRomSet.
-		return ResourceGetter.class.getClassLoader().getResource(testRomSet).toURI();
+	public static final URI getTestRomSetURI() throws URISyntaxException {
+		URI testRomSetURI = ResourceGetter.class.getClassLoader().getResource(testRomSet).toURI();
+		return testRomSetURI;
+	}
+	
+	/**Returns the testRomSet directory as a PacRomSet.*/
+	public static final PacRomSet getTestRomSet() throws URISyntaxException, IOException {
+		URI testRomSetURI = getTestRomSetURI();
+		PacRomSet testRomSet = RomOpener.openRomSet(testRomSetURI);
+		return testRomSet;
 	}
 }
