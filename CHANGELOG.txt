@@ -4,14 +4,20 @@
 	* Added RomOpener.java.
 		* This class contains helper methods for opening PacRoms and PacRomSets.
 		* It can also help create an ArrayList of PacRoms for the PacRomSet.
+	* Removed Openable.java.
+	* Added Closable.java as a replacement for Openable.java.
+		* It only contains an abstract close method.
 	* Updated PacFile.java.
 		* Removed the other constructors, only leaving with one.
 	* Updated PacRom.java.
 		* The main constructor is now set to default instead of public to make up for the RomOpener.
 		* Like PacFile.java, the other constructors were removed.
 		* PacRom no longer implements Openable.
+		* Instead, PacRom implements the newly added Closable interface.
+		* The close method now clears its data array with zeroes.
 	* Updated PacRomSet.java.
 		* Changes from PacRom.java were applied as well.
+		* For the close method, it now closes the PacRoms in the PacRomSet.
 
 2025-12-11 GarlicDude <https://www.github.com/thatgarlicdude>
 

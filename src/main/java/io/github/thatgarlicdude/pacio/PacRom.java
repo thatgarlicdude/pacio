@@ -19,7 +19,7 @@ package io.github.thatgarlicdude.pacio;
 import java.nio.file.Path;
 
 /**A class that represents a ROM within a ROM set.*/
-public final class PacRom extends PacFile {
+public final class PacRom extends PacFile implements Closable {
 	
 	/**The default byte array for a ROM file.*/
 	private static final byte[] DEFAULT_DATA = new byte[0];
@@ -38,7 +38,12 @@ public final class PacRom extends PacFile {
 	}
 	
 	/**Closes the ROM file.*/
+	@Override
 	public final void close() {
+		// Clear the data array.
+		for (int index = 0; index < this.data.length; index++) {
+			this.data[index] = 0;
+		}
 		this.data = DEFAULT_DATA;
 	}
 	

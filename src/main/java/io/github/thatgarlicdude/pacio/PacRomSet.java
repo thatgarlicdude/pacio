@@ -20,13 +20,18 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 
 /**A class that represents a ROM set directory.*/
-public final class PacRomSet extends PacFile {
+public final class PacRomSet extends PacFile implements Closable {
 	
 	/**The ROMs within the ROM set directory.*/
-	public ArrayList<PacRom> roms = new ArrayList<PacRom>();
+	private ArrayList<PacRom> roms;
 	
 	/**Closes the ROM set directory.*/
+	@Override
 	public final void close() {
+		// Close each ROM from memory.
+		for (PacRom rom : this.roms) {
+			rom.close();
+		}
 		roms.clear();
 	}
 	
