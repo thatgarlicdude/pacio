@@ -24,33 +24,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-/**A class that handles opening the Pac-Man ROM set.*/
-public final class RomOpener {
-	
-	/**Creates a new PacRom in memory and opens it automatically.*/
-	public static final PacRom openRom(final Path path) throws IOException {
-		String name = path.getFileName().toString();
-		byte[] data = Files.readAllBytes(path);
-		PacRom rom = new PacRom(path, name, data);
-		return rom;
-	}
-	
-	/**Creates a new PacRom using a URI and opens it automatically.*/
-	public static final PacRom openRom(final URI pathURI) throws IOException {
-		Path path = Paths.get(pathURI);
-		PacRom rom = openRom(path);
-		return rom;
-	}
-	
-	/**Creates a new PacRom using a string and opens it automatically.*/
-	public static final PacRom openRom(final String pathString) throws IOException {
-		Path path = Paths.get(pathString);
-		PacRom rom = openRom(path);
-		return rom;
-	}
+public interface PacRomSetOpener {
 	
 	/**Creates a new PacRomSet in memory and opens it automatically.*/
-	public static final PacRomSet openRomSet(final Path path) throws IOException {
+	public static PacRomSet open(final Path path) throws IOException {
 		String name = path.getFileName().toString();
 		ArrayList<PacRom> roms = openRoms(path);
 		PacRomSet romSet = new PacRomSet(path, name, roms);
@@ -58,27 +35,27 @@ public final class RomOpener {
 	}
 	
 	/**Creates a new PacRomSet using a URI and opens it automatically.*/
-	public static final PacRomSet openRomSet(final URI pathURI) throws IOException {
+	public static PacRomSet open(final URI pathURI) throws IOException {
 		Path path = Paths.get(pathURI);
-		PacRomSet romSet = openRomSet(path);
+		PacRomSet romSet = open(path);
 		return romSet;
 	}
 	
 	/**Creates a new PacRomSet using a string and opens it automatically.*/
-	public static final PacRomSet openRomSet(final String pathString) throws IOException {
+	public static PacRomSet open(final String pathString) throws IOException {
 		Path path = Paths.get(pathString);
-		PacRomSet romSet = openRomSet(path);
+		PacRomSet romSet = open(path);
 		return romSet;
 	}
 	
 	/**Creates a list of PacRoms in the PacRomSet.*/
-	private static final ArrayList<PacRom> openRoms(final Path path) throws IOException {
+	private static ArrayList<PacRom> openRoms(final Path path) throws IOException {
 		ArrayList<PacRom> roms = new ArrayList<PacRom>();
 		DirectoryStream<Path> directoryStream = Files.newDirectoryStream(path);
 		for (Path romPath : directoryStream) {
 			// TODO: Create a better ROM-checking system than this.
 			if (!Files.isRegularFile(romPath)) continue;
-			PacRom rom = openRom(romPath);
+			PacRom rom = PacRomOpener.open(romPath);
 			roms.add(rom);
 		}
 		directoryStream.close();

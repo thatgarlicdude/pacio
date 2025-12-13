@@ -20,7 +20,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 
 /**A class that represents a ROM set directory.*/
-public final class PacRomSet extends PacFile implements Closable {
+public final class PacRomSet extends PacFile implements Closable{
 	
 	/**The ROMs within the ROM set directory.*/
 	private ArrayList<PacRom> roms;

@@ -1,3 +1,13 @@
+2025-12-13 GarlicDude <https://www.github.com/thatgarlicdude>
+
+	PacIO Version 1.2.0-alpha
+	* Updated RomOpener.java.
+		* RomOpener.java has been renamed to PacRomOpener.java.
+		* This object is now an interface instead of a class.
+		* Removed methods that relate to the PacRomSet class.
+	* Added PacRomSetOpener.java.
+		* Code from PacRomOpener.java were transferred there.
+
 2025-12-12 GarlicDude <https://www.github.com/thatgarlicdude>
 
 	PacIO Version 1.1.0-alpha

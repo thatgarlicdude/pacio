@@ -38,7 +38,7 @@ public final class ResourceGetter {
 	/**Returns the testRomSet directory as a PacRomSet.*/
 	public static final PacRomSet getTestRomSet() throws URISyntaxException, IOException {
 		URI testRomSetURI = getTestRomSetURI();
-		PacRomSet testRomSet = RomOpener.openRomSet(testRomSetURI);
+		PacRomSet testRomSet = PacRomSetOpener.open(testRomSetURI);
 		return testRomSet;
 	}
 }
