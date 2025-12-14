@@ -20,6 +20,11 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import io.github.thatgarlicdude.pacio.rom.PacRom;
+import io.github.thatgarlicdude.pacio.rom.PacRomOpener;
+import io.github.thatgarlicdude.pacio.rom.PacRomSet;
+import io.github.thatgarlicdude.pacio.rom.PacRomSetOpener;
+
 /**A class used for getting the testRomSet directory for the test function.*/
 public final class ResourceGetter {
 	

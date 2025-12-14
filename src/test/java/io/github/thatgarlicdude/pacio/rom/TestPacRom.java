@@ -14,32 +14,25 @@
  * limitations under the License.
  */
 
-package io.github.thatgarlicdude.pacio;
+package io.github.thatgarlicdude.pacio.rom;
+
+import io.github.thatgarlicdude.pacio.ResourceGetter;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.nio.file.Path;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-final class TestPacRomSet {
+final class TestPacRom {
 	
 	@Test
 	void testOpen() throws URISyntaxException, IOException {
-		PacRomSet romSet = ResourceGetter.getTestRomSet();
-		for (PacRom rom : romSet.getRoms()) {
-			System.out.println(rom.name);
-			assertNotNull(rom.name);
+		PacRom rom = ResourceGetter.getTestRom1();
+		assertNotNull(rom);
+		for (byte b : rom.getData()) {
+			System.out.println((char) b);
 		}
-		romSet.close();
-	}
-	
-	@Test
-	void testGetPath() throws URISyntaxException, IOException {
-		PacRomSet romSet = ResourceGetter.getTestRomSet();
-		Path path = romSet.getPath();
-		System.out.println(path.toString());
-		assertEquals(path, romSet.path);
+		rom.close();
 	}
 }

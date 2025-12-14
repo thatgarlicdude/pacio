@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.github.thatgarlicdude.pacio;
+package io.github.thatgarlicdude.pacio.rom;
 
 import java.nio.file.Path;
 
