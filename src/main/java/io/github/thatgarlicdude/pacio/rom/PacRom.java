@@ -16,10 +16,15 @@
 
 package io.github.thatgarlicdude.pacio.rom;
 
+import java.io.IOException;
+import java.net.URI;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 
 /**A class that represents a ROM within a ROM set.*/
-public final class PacRom extends PacFile implements Closable {
+public final class PacRom extends PacFile implements Closable, Savable {
 	
 	/**The default byte array for a ROM file.*/
 	private static final byte[] DEFAULT_DATA = new byte[0];
@@ -37,6 +42,28 @@ public final class PacRom extends PacFile implements Closable {
 		return DEFAULT_DATA;
 	}
 	
+	/**Creates a new PacRom in memory and opens it automatically.*/
+	public static PacRom open(final Path path) throws IOException {
+		String name = path.getFileName().toString();
+		byte[] data = Files.readAllBytes(path);
+		PacRom rom = new PacRom(path, name, data);
+		return rom;
+	}
+	
+	/**Creates a new PacRom using a URI and opens it automatically.*/
+	public static PacRom open(final URI pathURI) throws IOException {
+		Path path = Paths.get(pathURI);
+		PacRom rom = open(path);
+		return rom;
+	}
+	
+	/**Creates a new PacRom using a string and opens it automatically.*/
+	public static PacRom open(final String pathString) throws IOException {
+		Path path = Paths.get(pathString);
+		PacRom rom = open(path);
+		return rom;
+	}
+	
 	/**Closes the ROM file.*/
 	@Override
 	public final void close() {
@@ -45,6 +72,12 @@ public final class PacRom extends PacFile implements Closable {
 			this.data[index] = 0;
 		}
 		this.data = DEFAULT_DATA;
+	}
+	
+	/**Saves the ROM file.*/
+	@Override
+	public final void save() throws IOException {
+		Files.write(this.path, this.data, StandardOpenOption.TRUNCATE_EXISTING);
 	}
 	
 	/**Reads a single byte in the data array.*/

@@ -16,9 +16,11 @@
 
 package io.github.thatgarlicdude.pacio.rom;
 
-/**An interface where something can be closed from memory.*/
-public interface Closable {
+import java.io.IOException;
+
+/**An interface where something can be saved from memory.*/
+public interface Savable {
 	
-	/**Closes something from memory.*/
-	public abstract void close();
+	/**Saves something from memory.*/
+	public abstract void save() throws IOException;
 }

@@ -1,3 +1,22 @@
+2025-12-18 GarlicDude <https://www.github.com/thatgarlicdude>
+
+	PacIO Version 1.4.0-alpha
+	* Removed PacRomOpener.java.
+		* The static open methods were transferred to PacRom.java instead.
+	* Removed PacRomSetOpener.java.
+		* Like PacRomOpener, the static open methods were moved to PacRomSet.java.
+	* Added Savable.java.
+		* It's an interface used for saving a file in memory.
+	* Updated Closable.java.
+		* The class is now public.
+		* The class also now has a description.
+		* The file now has a copyright message.
+	* Updated PacRom.java.
+		* The class now implements the newly added Savable interface.
+	* Updated PacRomSet.java.
+		* Like PacRom.java, it implements the Savable interface.
+		* save() saves the ROM files inside the directory.
+
 2025-12-14 GarlicDude <https://www.github.com/thatgarlicdude>
 
 	PacIO Version 1.3.0-alpha
