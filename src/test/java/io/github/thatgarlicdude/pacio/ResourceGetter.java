@@ -41,7 +41,7 @@ public final class ResourceGetter {
 	/**Returns the testRomSet directory as a PacRomSet.*/
 	public static final PacRomSet getTestRomSet() throws URISyntaxException, IOException {
 		URI testRomSetURI = getTestRomSetURI();
-		PacRomSet testRomSet = PacRomSet.open(testRomSetURI);
+		PacRomSet testRomSet = PacRomSet.from(testRomSetURI);
 		return testRomSet;
 	}
 	
@@ -54,7 +54,7 @@ public final class ResourceGetter {
 	/**Returns the first ROM in the test ROM set.*/
 	public static final PacRom getTestRom1() throws URISyntaxException, IOException {
 		URI testRomURI = getTestRom1URI();
-		PacRom rom = PacRom.open(testRomURI);
+		PacRom rom = PacRom.from(testRomURI);
 		return rom;
 	}
 }

@@ -1,3 +1,7 @@
+2025-12-22 GarlicDude <https://www.github.com/thatgarlicdude>
+
+	PacIO Version 1.5.0-alpha
+
 2025-12-18 GarlicDude <https://www.github.com/thatgarlicdude>
 
 	PacIO Version 1.4.0-alpha

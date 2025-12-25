@@ -14,25 +14,12 @@
  * limitations under the License.
  */
 
-package io.github.thatgarlicdude.pacio.rom;
-
-import io.github.thatgarlicdude.pacio.ResourceGetter;
+package io.github.thatgarlicdude.pacio.file;
 
 import java.io.IOException;
-import java.net.URISyntaxException;
 
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.Test;
+public interface Openable {
 
-final class TestPacRom {
-	
-	@Test
-	void testOpen() throws URISyntaxException, IOException {
-		PacRom rom = ResourceGetter.getTestRom1();
-		assertNotNull(rom);
-		for (byte b : rom.getData()) {
-			System.out.println((char) b);
-		}
-		rom.close();
-	}
+	/**Opens something from memory.*/
+	public abstract void open() throws IOException;
 }

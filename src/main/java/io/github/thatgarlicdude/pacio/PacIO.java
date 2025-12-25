@@ -16,8 +16,8 @@
 
 package io.github.thatgarlicdude.pacio;
 
-import io.github.thatgarlicdude.pacio.rom.PacRom;
-import io.github.thatgarlicdude.pacio.rom.PacRomSet;
+import io.github.thatgarlicdude.pacio.file.PacDirectory;
+import io.github.thatgarlicdude.pacio.file.PacFile;
 
 import java.io.IOException;
 import java.net.URI;
@@ -26,33 +26,33 @@ import java.nio.file.Path;
 /**The main class of the PacIO library.*/
 public final class PacIO {
 	
-	/**Creates a new PacRom through a Path interface, and automatically opens it.*/
-	public static final PacRom newPacRom(final Path path) throws IOException {
-		return PacRom.open(path);
+	/**Creates a new PacFile through a Path interface, and automatically opens it.*/
+	public static final PacFile newPacRom(final Path path) throws IOException {
+		return PacFile.from(path);
 	}
 	
-	/**Creates a new PacRom through a URI object, and automatically opens it.*/
-	public static final PacRom newPacRom(final URI pathURI) throws IOException {
-		return PacRom.open(pathURI);
+	/**Creates a new PacFile through a URI object, and automatically opens it.*/
+	public static final PacFile newPacRom(final URI pathURI) throws IOException {
+		return PacFile.from(pathURI);
 	}
 	
-	/**Creates a new PacRom through a string, and automatically opens it.*/
-	public static final PacRom newPacRom(final String pathString) throws IOException {
-		return PacRom.open(pathString);
+	/**Creates a new PacFile through a string, and automatically opens it.*/
+	public static final PacFile newPacRom(final String pathString) throws IOException {
+		return PacFile.from(pathString);
 	}
 	
-	/**Creates a new PacRomSet through a Path interface, and automatically opens it.*/
-	public static final PacRomSet newPacRomSet(final Path path) throws IOException {
-		return PacRomSet.open(path);
+	/**Creates a new PacDirectory through a Path interface, and automatically opens it.*/
+	public static final PacDirectory newPacRomSet(final Path path) throws IOException {
+		return PacDirectory.from(path);
 	}
 	
-	/**Creates a new PacRomSet through a URI object, and automatically opens it.*/
-	public static final PacRomSet newPacRomSet(final URI pathURI) throws IOException {
-		return PacRomSet.open(pathURI);
+	/**Creates a new PacDirectory through a URI object, and automatically opens it.*/
+	public static final PacDirectory newPacRomSet(final URI pathURI) throws IOException {
+		return PacDirectory.from(pathURI);
 	}
 	
-	/**Creates a new PacRomSet through a string, and automatically opens it.*/
-	public static final PacRomSet newPacRomSet(final String pathString) throws IOException {
-		return PacRomSet.open(pathString);
+	/**Creates a new PacDirectory through a string, and automatically opens it.*/
+	public static final PacDirectory newPacRomSet(final String pathString) throws IOException {
+		return PacDirectory.from(pathString);
 	}
 }

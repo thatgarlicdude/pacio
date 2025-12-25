@@ -16,108 +16,55 @@
 
 package io.github.thatgarlicdude.pacio.rom;
 
+import io.github.thatgarlicdude.pacio.file.PacFile;
 import java.io.IOException;
 import java.net.URI;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 
 /**A class that represents a ROM within a ROM set.*/
-public final class PacRom extends PacFile implements Closable, Savable {
+public final class PacRom extends PacFile {
 	
-	/**The default byte array for a ROM file.*/
-	private static final byte[] DEFAULT_DATA = new byte[0];
+	/**The type of the ROM.*/
+	private final RomType romType;
 	
-	/**The byte data inside the ROM file.*/
-	private byte[] data = DEFAULT_DATA;
-	
-	/**Returns the byte data inside the ROM file.*/
-	public final byte[] getData() {
-		return this.data;
+	/**Opens the ROM.*/
+	@Override
+	public void open() throws IOException {
+		super.open();
 	}
 	
-	/**Returns the default byte array for a ROM file.*/
-	public static final byte[] getDefaultData() {
-		return DEFAULT_DATA;
+	/**Returns the ROM type.*/
+	public RomType getRomType() {
+		return romType;
 	}
 	
-	/**Creates a new PacRom in memory and opens it automatically.*/
-	public static PacRom open(final Path path) throws IOException {
-		String name = path.getFileName().toString();
-		byte[] data = Files.readAllBytes(path);
-		PacRom rom = new PacRom(path, name, data);
+	/**Creates a new PacRom with a Path.*/
+	public static PacRom from(final Path path) {
+		PacRom rom = new PacRom(path, RomType.UNKNOWN);
 		return rom;
 	}
 	
-	/**Creates a new PacRom using a URI and opens it automatically.*/
-	public static PacRom open(final URI pathURI) throws IOException {
+	/**Creates a new PacRom with a URI.*/
+	public static PacRom from(final URI pathURI) {
 		Path path = Paths.get(pathURI);
-		PacRom rom = open(path);
-		return rom;
+		return from(path);
 	}
 	
-	/**Creates a new PacRom using a string and opens it automatically.*/
-	public static PacRom open(final String pathString) throws IOException {
+	/**Creates a new PacRom with a string.*/
+	public static PacRom from(final String pathString) {
 		Path path = Paths.get(pathString);
-		PacRom rom = open(path);
-		return rom;
+		return from(path);
 	}
 	
-	/**Closes the ROM file.*/
-	@Override
-	public final void close() {
-		// Clear the data array.
-		for (int index = 0; index < this.data.length; index++) {
-			this.data[index] = 0;
-		}
-		this.data = DEFAULT_DATA;
+	/**Constructs an instance of the class.*/
+	public PacRom(final Path path, final RomType romType) {
+		super(path);
+		this.romType = romType;
 	}
 	
-	/**Saves the ROM file.*/
-	@Override
-	public final void save() throws IOException {
-		Files.write(this.path, this.data, StandardOpenOption.TRUNCATE_EXISTING);
-	}
-	
-	/**Reads a single byte in the data array.*/
-	public final byte read(final int offset) {
-		return this.data[offset];
-	}
-	
-	/**Reads multiple bytes in the data array.*/
-	public final byte[] readN(final int offset, final int size) {
-		byte[] data = new byte[size];
-		for (int index = 0; index < size; index++) {
-			data[index] = this.data[size + offset];
-		}
-		return data;
-	}
-	
-	/**Reads all the bytes in the data array.*/
-	public final byte[] readAll() {
-		int size = this.data.length;
-		byte[] data = new byte[size];
-		this.readN(0, size);
-		return data;
-	}
-	
-	/**Writes a single byte in the data array.*/
-	public final void write(final int offset, final byte data) {
-		this.data[offset] = data;
-	}
-	
-	/**Writes multiple bytes in the data array.*/
-	public final void writeN(final int offset, final byte[] data) {
-		int size = data.length;
-		for (int index = 0; index < size; index++) {
-			this.data[index + offset] = data[index];
-		}
-	}
-	
-	/**The main constructor of the PacRom.*/
-	PacRom(final Path path, final String name, final byte[] data) {
-		super(path, name);
-		this.data = data;
+	/**Constructs an instance of the class.*/
+	public PacRom(final Path path) {
+		this(path, RomType.UNKNOWN);
 	}
 }

@@ -16,30 +16,27 @@
 
 package io.github.thatgarlicdude.pacio.rom;
 
-import java.nio.file.Path;
-
-/**A class that represents a file within a file system.*/
-abstract class PacFile {
+/**An enum that represents a type for a ROM.*/
+public enum RomType {
+	UNKNOWN("Unknown ROM"),
+	PROGRAM("Program ROM"),
+	COLOR("Color ROM"),
+	PALETTE("Palette ROM"),
+	SPRITE("Sprite ROM"),
+	TILE("Tile ROM"),
+	MUSIC("Music ROM"),
+	SOUND("Sound ROM");
 	
-	/**The file path of the PacFile.*/
-	protected final Path path;
+	/**The type of the ROM.*/
+	private final String type;
 	
-	/**The filename of the PacFile.*/
-	protected final String name;
-	
-	/**Returns the file path of the PacFile.*/
-	public final Path getPath() {
-		return this.path;
+	/**Constructs an instance of this class.*/
+	RomType(final String type) {
+		this.type = type;
 	}
 	
-	/**Returns the filename of the PacFile.*/
-	public final String getName() {
-		return this.name;
-	}
-	
-	/**The main constructor of the PacFile.*/
-	protected PacFile(final Path path, final String name) {
-		this.path = path;
-		this.name = name;
+	/**Returns the type of the ROM.*/
+	public final String getType() {
+		return type;
 	}
 }

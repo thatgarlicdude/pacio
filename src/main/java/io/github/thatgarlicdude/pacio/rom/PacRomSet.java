@@ -16,91 +16,44 @@
 
 package io.github.thatgarlicdude.pacio.rom;
 
-import java.io.IOException;
+import io.github.thatgarlicdude.pacio.file.PacDirectory;
+
 import java.net.URI;
-import java.nio.file.DirectoryStream;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 
 /**A class that represents a ROM set directory.*/
-public final class PacRomSet extends PacFile implements Closable, Savable {
+public final class PacRomSet extends PacDirectory {
 	
-	/**The ROMs within the ROM set directory.*/
-	private ArrayList<PacRom> roms;
+	/**The version of the ROM set.*/
+	private final RomSetVersion romSetVersion;
 	
-	/**Returns the ROMs ArrayList in the PacROMSet.*/
-	public ArrayList<PacRom> getRoms() {
-		return this.roms;
+	/**Returns the version of the ROM set.*/
+	public RomSetVersion getRomSetVersion() {
+		return romSetVersion;
 	}
 	
-	/**Creates a new PacRomSet in memory and opens it automatically.*/
-	public static PacRomSet open(final Path path) throws IOException {
-		String name = path.getFileName().toString();
-		ArrayList<PacRom> roms = openRoms(path);
-		PacRomSet romSet = new PacRomSet(path, name, roms);
+	/**Creates a new PacRomSet with a Path.*/
+	public static PacRomSet from(final Path path) {
+		PacRomSet romSet = new PacRomSet(path, RomSetVersion.UNKNOWN);
 		return romSet;
 	}
 	
-	/**Creates a new PacRomSet using a URI and opens it automatically.*/
-	public static PacRomSet open(final URI pathURI) throws IOException {
+	/**Creates a new PacRomSet with a URI.*/
+	public static PacRomSet from(final URI pathURI) {
 		Path path = Paths.get(pathURI);
-		PacRomSet romSet = open(path);
-		return romSet;
+		return from(path);
 	}
 	
-	/**Creates a new PacRomSet using a string and opens it automatically.*/
-	public static PacRomSet open(final String pathString) throws IOException {
+	/**Creates a new PacRomSet with a string.*/
+	public static PacRomSet from(final String pathString) {
 		Path path = Paths.get(pathString);
-		PacRomSet romSet = open(path);
-		return romSet;
+		return from(path);
 	}
 	
-	/**Creates a list of PacRoms in the PacRomSet.*/
-	private static ArrayList<PacRom> openRoms(final Path path) throws IOException {
-		ArrayList<PacRom> roms = new ArrayList<PacRom>();
-		DirectoryStream<Path> directoryStream = Files.newDirectoryStream(path);
-		for (Path romPath : directoryStream) {
-			// TODO: Create a better ROM-checking system than this.
-			if (!Files.isRegularFile(romPath)) continue;
-			PacRom rom = PacRom.open(romPath);
-			roms.add(rom);
-		}
-		directoryStream.close();
-		return roms;
-	}
-	
-	/**Closes the ROM set directory.*/
-	@Override
-	public final void close() {
-		// Close each ROM from memory.
-		for (PacRom rom : this.roms) {
-			rom.close();
-		}
-		roms.clear();
-	}
-	
-	/**Saves the ROM set directory.*/
-	@Override
-	public final void save() throws IOException {
-		// Save each ROM from memory.
-		for (PacRom rom : this.roms) {
-			rom.save();
-		}
-	}
-	
-	/**Finds a specific ROM within the ROM set.*/
-	public final PacRom find(final String romName) {
-		for (PacRom rom : roms) {
-			if (rom.name.matches(romName)) return rom;
-		}
-		return null;
-	}
-	
-	/**The main constructor of the PacRomSet.*/
-	PacRomSet(final Path path, final String name, final ArrayList<PacRom> roms) {
-		super(path, name);
-		this.roms = roms;
+	/**Constructs an instance of this class.*/
+	public PacRomSet(final Path path, final RomSetVersion romSetVersion) {
+		super(path);
+		this.romSetVersion = romSetVersion;
 	}
 }
