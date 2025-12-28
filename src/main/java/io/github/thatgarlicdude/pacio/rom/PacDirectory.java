@@ -1,0 +1,91 @@
+/*
+ * Copyright 2025 GarlicDude
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ * 	http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package io.github.thatgarlicdude.pacio.rom;
+
+import java.io.IOException;
+import java.net.URI;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+/**A class that represents a directory.*/
+public final class PacDirectory implements Closable, Savable {
+	
+	/**The files within the directory.*/
+	private final List<PacRom> files = new ArrayList<PacRom>();
+	
+	/**Returns an unmodifiable list of files in the PacDirectory.*/
+	public List<PacRom> getFiles() {
+		return Collections.unmodifiableList(files);
+	}
+	
+	/**Creates a new PacDirectory using a path.*/
+	public static PacDirectory from(final Path path) throws IOException {
+		String name = path.getFileName().toString();
+		PacDirectory romSet = new PacDirectory(path, name);
+		return romSet;
+	}
+	
+	/**Creates a new PacDirectory using a URI.*/
+	public static PacDirectory from(final URI pathURI) throws IOException {
+		Path path = Paths.get(pathURI);
+		PacDirectory romSet = from(path);
+		return romSet;
+	}
+	
+	/**Creates a new PacDirectory using a string.*/
+	public static PacDirectory from(final String pathString) throws IOException {
+		Path path = Paths.get(pathString);
+		PacDirectory romSet = from(path);
+		return romSet;
+	}
+	
+	/**Closes the directory and the files within it.*/
+	@Override
+	public final void close() {
+		// Close each file from memory.
+		for (PacRom file : files) {
+			file.close();
+			file = null;
+		}
+		files.clear();
+	}
+	
+	/**Saves the files within the directory.*/
+	@Override
+	public final void save() throws IOException {
+		// Save each file from memory.
+		for (PacRom file : files) {
+			file.save();
+		}
+	}
+	
+	/**Finds a specific file within the directory.*/
+	public final PacRom find(final String romName) {
+		for (PacRom file : files) {
+			if (file.name.matches(romName)) return file;
+		}
+		return null;
+	}
+	
+	/**The main constructor of the PacRomSet.*/
+	PacDirectory(final Path path, final String name) {
+		
+	}
+}

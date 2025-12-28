@@ -21,7 +21,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 import io.github.thatgarlicdude.pacio.rom.PacRom;
-import io.github.thatgarlicdude.pacio.rom.PacRomSet;
+import io.github.thatgarlicdude.pacio.rom.PacDirectory;
 
 /**A class used for getting the testRomSet directory for the test function.*/
 public final class ResourceGetter {
@@ -39,9 +39,9 @@ public final class ResourceGetter {
 	}
 	
 	/**Returns the testRomSet directory as a PacRomSet.*/
-	public static final PacRomSet getTestRomSet() throws URISyntaxException, IOException {
+	public static final PacDirectory getTestRomSet() throws URISyntaxException, IOException {
 		URI testRomSetURI = getTestRomSetURI();
-		PacRomSet testRomSet = PacRomSet.open(testRomSetURI);
+		PacDirectory testRomSet = PacDirectory.from(testRomSetURI);
 		return testRomSet;
 	}
 	

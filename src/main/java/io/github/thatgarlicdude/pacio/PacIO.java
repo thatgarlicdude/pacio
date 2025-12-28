@@ -17,7 +17,7 @@
 package io.github.thatgarlicdude.pacio;
 
 import io.github.thatgarlicdude.pacio.rom.PacRom;
-import io.github.thatgarlicdude.pacio.rom.PacRomSet;
+import io.github.thatgarlicdude.pacio.rom.PacDirectory;
 
 import java.io.IOException;
 import java.net.URI;
@@ -41,18 +41,18 @@ public final class PacIO {
 		return PacRom.open(pathString);
 	}
 	
-	/**Creates a new PacRomSet through a Path interface, and automatically opens it.*/
-	public static final PacRomSet newPacRomSet(final Path path) throws IOException {
-		return PacRomSet.open(path);
+	/**Creates a new PacDirectory through a Path interface, and automatically opens it.*/
+	public static final PacDirectory newPacDirectory(final Path path) throws IOException {
+		return PacDirectory.from(path);
 	}
 	
-	/**Creates a new PacRomSet through a URI object, and automatically opens it.*/
-	public static final PacRomSet newPacRomSet(final URI pathURI) throws IOException {
-		return PacRomSet.open(pathURI);
+	/**Creates a new PacDirectory through a URI object, and automatically opens it.*/
+	public static final PacDirectory newPacDirectory(final URI pathURI) throws IOException {
+		return PacDirectory.from(pathURI);
 	}
 	
-	/**Creates a new PacRomSet through a string, and automatically opens it.*/
-	public static final PacRomSet newPacRomSet(final String pathString) throws IOException {
-		return PacRomSet.open(pathString);
+	/**Creates a new PacDirectory through a string, and automatically opens it.*/
+	public static final PacDirectory newPacDirectory(final String pathString) throws IOException {
+		return PacDirectory.from(pathString);
 	}
 }
