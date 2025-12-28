@@ -8,6 +8,9 @@
 		* Renamed the open methods to from.
 		* Removed the openRoms method.
 		* Lots of cleanup.
+	* Added PacObject.java.
+	* Added Loadable.java.
+		* Loadable features two abstract methods: load and unload.
 	* Removed the io.github.thatgarlicdude.pacio.roms package in the test src.
 	* Added TestPacIO.java.
 
