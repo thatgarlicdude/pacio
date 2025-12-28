@@ -9,6 +9,7 @@
 		* Removed the openRoms method.
 		* Lots of cleanup.
 	* Added PacObject.java.
+		* This serves as a replacement for PacFile.java.
 	* Added Loadable.java.
 		* Loadable features two abstract methods: load and unload.
 	* Removed the io.github.thatgarlicdude.pacio.roms package in the test src.

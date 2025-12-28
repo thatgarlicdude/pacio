@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import io.github.thatgarlicdude.pacio.rom.PacRom;
+import io.github.thatgarlicdude.pacio.rom.PacFile;
 import io.github.thatgarlicdude.pacio.rom.PacDirectory;
 
 /**A class used for getting the testRomSet directory for the test function.*/
@@ -52,9 +52,9 @@ public final class ResourceGetter {
 	}
 	
 	/**Returns the first ROM in the test ROM set.*/
-	public static final PacRom getTestRom1() throws URISyntaxException, IOException {
+	public static final PacFile getTestRom1() throws URISyntaxException, IOException {
 		URI testRomURI = getTestRom1URI();
-		PacRom rom = PacRom.open(testRomURI);
+		PacFile rom = PacFile.open(testRomURI);
 		return rom;
 	}
 }

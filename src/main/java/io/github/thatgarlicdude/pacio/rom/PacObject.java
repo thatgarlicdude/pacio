@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 
 /**A class that represents a file object within the file system.*/
-public abstract class PacObject implements Closable, Savable {
+public abstract class PacObject implements Loadable, Savable {
 	
 	/**The file path of the file object.*/
 	protected final Path path;
@@ -29,6 +29,7 @@ public abstract class PacObject implements Closable, Savable {
 	protected final String name;
 	
 	/**Loads the file object from memory.*/
+	@Override
 	public abstract void load() throws IOException;
 	
 	/**Unloads the file object from memory.*/

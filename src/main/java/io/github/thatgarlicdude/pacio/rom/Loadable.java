@@ -16,11 +16,13 @@
 
 package io.github.thatgarlicdude.pacio.rom;
 
+import java.io.IOException;
+
 /**An interface used for loading and unloading something from memory.*/
 public interface Loadable {
 	
 	/**Loads something from memory.*/
-	public abstract void load();
+	public abstract void load() throws IOException;
 	
 	/**Unloads something from memory.*/
 	public abstract void unload();

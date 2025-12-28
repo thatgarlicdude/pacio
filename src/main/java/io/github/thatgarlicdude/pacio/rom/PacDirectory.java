@@ -18,6 +18,8 @@ package io.github.thatgarlicdude.pacio.rom;
 
 import java.io.IOException;
 import java.net.URI;
+import java.nio.file.DirectoryStream;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -25,14 +27,49 @@ import java.util.Collections;
 import java.util.List;
 
 /**A class that represents a directory.*/
-public final class PacDirectory implements Closable, Savable {
+public final class PacDirectory extends PacObject implements Loadable {
 	
 	/**The files within the directory.*/
-	private final List<PacRom> files = new ArrayList<PacRom>();
+	private final List<PacFile> files = new ArrayList<PacFile>();
+	
+	/***/
+	@Override
+	public void load() throws IOException {
+		DirectoryStream<Path> directoryStream = Files.newDirectoryStream(path);
+		for (Path path : directoryStream) {
+			PacFile rom = PacFile.from(path);
+			files.add(rom);
+		}
+	}
+	
+	/**Unloads the directory and its files.*/
+	@Override
+	public void unload() {
+		for (PacFile file : files) {
+			file.unload();
+			file = null;
+		}
+		files.clear();
+	}
+	
+	/**Saves the files within the directory.*/
+	public final void save() throws IOException {
+		for (PacFile file : files) {
+			file.save();
+		}
+	}
 	
 	/**Returns an unmodifiable list of files in the PacDirectory.*/
-	public List<PacRom> getFiles() {
+	public List<PacFile> getFiles() {
 		return Collections.unmodifiableList(files);
+	}
+	
+	/**Finds a specific file within the directory.*/
+	public final PacFile find(final String romName) {
+		for (PacFile file : files) {
+			if (file.name.matches(romName)) return file;
+		}
+		return null;
 	}
 	
 	/**Creates a new PacDirectory using a path.*/
@@ -56,36 +93,8 @@ public final class PacDirectory implements Closable, Savable {
 		return romSet;
 	}
 	
-	/**Closes the directory and the files within it.*/
-	@Override
-	public final void close() {
-		// Close each file from memory.
-		for (PacRom file : files) {
-			file.close();
-			file = null;
-		}
-		files.clear();
-	}
-	
-	/**Saves the files within the directory.*/
-	@Override
-	public final void save() throws IOException {
-		// Save each file from memory.
-		for (PacRom file : files) {
-			file.save();
-		}
-	}
-	
-	/**Finds a specific file within the directory.*/
-	public final PacRom find(final String romName) {
-		for (PacRom file : files) {
-			if (file.name.matches(romName)) return file;
-		}
-		return null;
-	}
-	
 	/**The main constructor of the PacRomSet.*/
-	PacDirectory(final Path path, final String name) {
-		
+	protected PacDirectory(final Path path, final String name) {
+		super(path, name);
 	}
 }
