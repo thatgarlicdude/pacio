@@ -1,4 +1,4 @@
-2025-12-28 GarlicDude <https://www.github.com/thatgarlicdude>
+2025-12-29 GarlicDude <https://www.github.com/thatgarlicdude>
 
 	PacIO Version 1.5.0-alpha
 	* Updated PacRomSet.java.
@@ -12,6 +12,13 @@
 		* This serves as a replacement for PacFile.java.
 	* Added Loadable.java.
 		* Loadable features two abstract methods: load and unload.
+	* Updated PacRom.java.
+		* Renamed it to PacFile.java, not to be confused with the one that's deleted.
+		* Removed the DEFAULT_DATA variable.
+		* Renamed the open methods to from.
+		* The readN method has been renamed to read.
+		* The writeN method has been renamed to write.
+		* Lots of cleanup.
 	* Removed the io.github.thatgarlicdude.pacio.roms package in the test src.
 	* Added TestPacIO.java.
 

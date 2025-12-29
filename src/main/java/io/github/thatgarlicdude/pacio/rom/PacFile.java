@@ -23,111 +23,97 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
-/**A class that represents a ROM within a ROM set.*/
+/**A class that represents a file in a file system.*/
 public final class PacFile extends PacObject implements Loadable, Savable {
 	
-	/**The default byte array for a ROM file.*/
-	private static final byte[] DEFAULT_DATA = new byte[0];
-	
-	/**The byte data inside the ROM file.*/
+	/**The byte data inside the file.*/
 	private byte[] data = null;
 	
-	/**Returns the byte data inside the ROM file.*/
-	public final byte[] getData() {
-		return this.data;
-	}
-	
-	/**Returns the default byte array for a ROM file.*/
-	public static final byte[] getDefaultData() {
-		return DEFAULT_DATA;
-	}
-	
-	/**Creates a new PacRom in memory and opens it automatically.*/
-	public static PacFile open(final Path path) throws IOException {
+	/**Creates a new PacFile using a Path.*/
+	public static PacFile from(final Path path) throws IOException {
 		String name = path.getFileName().toString();
-		byte[] data = Files.readAllBytes(path);
-		PacFile rom = new PacFile(path, name, data);
+		PacFile rom = new PacFile(path, name);
 		return rom;
 	}
 	
-	/**Creates a new PacRom using a URI and opens it automatically.*/
-	public static PacFile open(final URI pathURI) throws IOException {
+	/**Creates a new PacFile using a URI.*/
+	public static PacFile from(final URI pathURI) throws IOException {
 		Path path = Paths.get(pathURI);
-		PacFile rom = open(path);
+		PacFile rom = from(path);
 		return rom;
 	}
 	
-	/**Creates a new PacRom using a string and opens it automatically.*/
-	public static PacFile open(final String pathString) throws IOException {
+	/**Creates a new PacFile using a string.*/
+	public static PacFile from(final String pathString) throws IOException {
 		Path path = Paths.get(pathString);
-		PacFile rom = open(path);
+		PacFile rom = from(path);
 		return rom;
 	}
 	
-	/**Closes the ROM file.*/
+	/**Loads the file.*/
 	@Override
-	public final void close() {
-		// Clear the data array.
-		for (int index = 0; index < this.data.length; index++) {
-			this.data[index] = 0;
-		}
-		this.data = DEFAULT_DATA;
+	public final void load() throws IOException {
+		// Stop if the data array is already opened.
+		if (data != null) return;
+		data = Files.readAllBytes(path);
 	}
 	
-	/**Saves the ROM file.*/
+	/**Unloads the file.*/
+	@Override
+	public final void unload() {
+		// Stop if the data array is already closed.
+		if (data == null) return;
+		for (int index = 0; index < data.length; index++) {
+			data[index] = 0;
+		}
+		data = null;
+	}
+	
+	/**Saves the file.*/
 	@Override
 	public final void save() throws IOException {
-		Files.write(this.path, this.data, StandardOpenOption.TRUNCATE_EXISTING);
+		// Stop if the data array is closed.
+		if (data == null) return;
+		Files.write(path, data, StandardOpenOption.TRUNCATE_EXISTING);
 	}
 	
 	/**Reads a single byte in the data array.*/
 	public final byte read(final int offset) {
-		return this.data[offset];
+		return data[offset];
 	}
 	
 	/**Reads multiple bytes in the data array.*/
-	public final byte[] readN(final int offset, final int size) {
+	public final byte[] read(final int offset, final int size) {
 		byte[] data = new byte[size];
 		for (int index = 0; index < size; index++) {
-			data[index] = this.data[size + offset];
+			data[index] = read(index + offset);
 		}
 		return data;
 	}
 	
 	/**Reads all the bytes in the data array.*/
 	public final byte[] readAll() {
-		int size = this.data.length;
+		int size = data.length;
 		byte[] data = new byte[size];
-		this.readN(0, size);
+		data = read(0, size);
 		return data;
 	}
 	
 	/**Writes a single byte in the data array.*/
-	public final void write(final int offset, final byte data) {
-		this.data[offset] = data;
+	public final void write(final int offset, final byte b) {
+		data[offset] = b;
 	}
 	
 	/**Writes multiple bytes in the data array.*/
-	public final void writeN(final int offset, final byte[] data) {
-		int size = data.length;
+	public final void write(final int offset, final byte[] bytes) {
+		int size = bytes.length;
 		for (int index = 0; index < size; index++) {
-			this.data[index + offset] = data[index];
+			write(index + offset, bytes[index]);
 		}
 	}
 	
-	/**The main constructor of the PacRom.*/
-	PacFile(final Path path, final String name, final byte[] data) {
+	/**Constructs an instance of this class.*/
+	protected PacFile(final Path path, final String name) {
 		super(path, name);
-		this.data = data;
-	}
-
-	@Override
-	public void load() throws IOException {
-		
-	}
-
-	@Override
-	public void unload() {
-		
 	}
 }

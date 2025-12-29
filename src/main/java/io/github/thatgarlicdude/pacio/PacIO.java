@@ -26,32 +26,32 @@ import java.nio.file.Path;
 /**The main class of the PacIO library.*/
 public final class PacIO {
 	
-	/**Creates a new PacRom through a Path interface, and automatically opens it.*/
-	public static final PacFile newPacRom(final Path path) throws IOException {
-		return PacFile.open(path);
+	/**Creates a new PacFile through a Path interface.*/
+	public static final PacFile newPacFile(final Path path) throws IOException {
+		return PacFile.from(path);
 	}
 	
-	/**Creates a new PacRom through a URI object, and automatically opens it.*/
-	public static final PacFile newPacRom(final URI pathURI) throws IOException {
-		return PacFile.open(pathURI);
+	/**Creates a new PacFile through a URI object.*/
+	public static final PacFile newPacFile(final URI pathURI) throws IOException {
+		return PacFile.from(pathURI);
 	}
 	
-	/**Creates a new PacRom through a string, and automatically opens it.*/
-	public static final PacFile newPacRom(final String pathString) throws IOException {
-		return PacFile.open(pathString);
+	/**Creates a new PacFile through a string.*/
+	public static final PacFile newPacFile(final String pathString) throws IOException {
+		return PacFile.from(pathString);
 	}
 	
-	/**Creates a new PacDirectory through a Path interface, and automatically opens it.*/
+	/**Creates a new PacDirectory through a Path interface.*/
 	public static final PacDirectory newPacDirectory(final Path path) throws IOException {
 		return PacDirectory.from(path);
 	}
 	
-	/**Creates a new PacDirectory through a URI object, and automatically opens it.*/
+	/**Creates a new PacDirectory through a URI object.*/
 	public static final PacDirectory newPacDirectory(final URI pathURI) throws IOException {
 		return PacDirectory.from(pathURI);
 	}
 	
-	/**Creates a new PacDirectory through a string, and automatically opens it.*/
+	/**Creates a new PacDirectory through a string.*/
 	public static final PacDirectory newPacDirectory(final String pathString) throws IOException {
 		return PacDirectory.from(pathString);
 	}

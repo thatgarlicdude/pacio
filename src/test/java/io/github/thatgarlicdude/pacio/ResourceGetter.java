@@ -54,7 +54,7 @@ public final class ResourceGetter {
 	/**Returns the first ROM in the test ROM set.*/
 	public static final PacFile getTestRom1() throws URISyntaxException, IOException {
 		URI testRomURI = getTestRom1URI();
-		PacFile rom = PacFile.open(testRomURI);
+		PacFile rom = PacFile.from(testRomURI);
 		return rom;
 	}
 }
