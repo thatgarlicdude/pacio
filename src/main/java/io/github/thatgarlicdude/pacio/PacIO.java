@@ -16,12 +16,12 @@
 
 package io.github.thatgarlicdude.pacio;
 
-import io.github.thatgarlicdude.pacio.rom.PacFile;
-import io.github.thatgarlicdude.pacio.rom.PacDirectory;
-
 import java.io.IOException;
 import java.net.URI;
 import java.nio.file.Path;
+
+import io.github.thatgarlicdude.pacio.file.PacDirectory;
+import io.github.thatgarlicdude.pacio.file.PacFile;
 
 /**The main class of the PacIO library.*/
 public final class PacIO {

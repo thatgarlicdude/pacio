@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.github.thatgarlicdude.pacio.rom;
+package io.github.thatgarlicdude.pacio.file;
 
 import java.io.IOException;
 import java.net.URI;

@@ -14,16 +14,13 @@
  * limitations under the License.
  */
 
-package io.github.thatgarlicdude.pacio.rom;
+package io.github.thatgarlicdude.pacio.file;
 
 import java.io.IOException;
 
-/**An interface used for loading and unloading something from memory.*/
-public interface Loadable {
+/**An interface where something can be saved from memory.*/
+public interface Savable {
 	
-	/**Loads something from memory.*/
-	public abstract void load() throws IOException;
-	
-	/**Unloads something from memory.*/
-	public abstract void unload();
+	/**Saves something from memory.*/
+	public abstract void save() throws IOException;
 }

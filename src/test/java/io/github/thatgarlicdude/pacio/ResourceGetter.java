@@ -20,8 +20,8 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import io.github.thatgarlicdude.pacio.rom.PacFile;
-import io.github.thatgarlicdude.pacio.rom.PacDirectory;
+import io.github.thatgarlicdude.pacio.file.PacDirectory;
+import io.github.thatgarlicdude.pacio.file.PacFile;
 
 /**A class used for getting the testRomSet directory for the test function.*/
 public final class ResourceGetter {

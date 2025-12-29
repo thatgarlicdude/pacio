@@ -14,13 +14,5 @@
  * limitations under the License.
  */
 
-package io.github.thatgarlicdude.pacio.rom;
-
-import java.io.IOException;
-
-/**An interface where something can be saved from memory.*/
-public interface Savable {
-	
-	/**Saves something from memory.*/
-	public abstract void save() throws IOException;
-}
+/**The ROM package from the PacIO library.*/
+package io.github.thatgarlicdude.pacio.file;
