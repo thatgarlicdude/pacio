@@ -21,6 +21,7 @@
 		* Lots of cleanup.
 	* Removed the io.github.thatgarlicdude.pacio.roms package in the test src.
 	* Added TestPacIO.java.
+		* This is a test class used for testing out the methods in the PacIO class.
 
 2025-12-18 GarlicDude <https://www.github.com/thatgarlicdude>
 

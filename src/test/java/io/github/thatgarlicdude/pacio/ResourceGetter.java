@@ -16,12 +16,8 @@
 
 package io.github.thatgarlicdude.pacio;
 
-import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-
-import io.github.thatgarlicdude.pacio.file.PacDirectory;
-import io.github.thatgarlicdude.pacio.file.PacFile;
 
 /**A class used for getting the testRomSet directory for the test function.*/
 public final class ResourceGetter {
@@ -38,23 +34,9 @@ public final class ResourceGetter {
 		return testRomSetURI;
 	}
 	
-	/**Returns the testRomSet directory as a PacRomSet.*/
-	public static final PacDirectory getTestRomSet() throws URISyntaxException, IOException {
-		URI testRomSetURI = getTestRomSetURI();
-		PacDirectory testRomSet = PacDirectory.from(testRomSetURI);
-		return testRomSet;
-	}
-	
 	/**Returns the URI of the testRomSet directory.*/
 	public static final URI getTestRom1URI() throws URISyntaxException {
 		URI testRomURI = ResourceGetter.class.getClassLoader().getResource(rom1).toURI();
 		return testRomURI;
-	}
-	
-	/**Returns the first ROM in the test ROM set.*/
-	public static final PacFile getTestRom1() throws URISyntaxException, IOException {
-		URI testRomURI = getTestRom1URI();
-		PacFile rom = PacFile.from(testRomURI);
-		return rom;
 	}
 }
