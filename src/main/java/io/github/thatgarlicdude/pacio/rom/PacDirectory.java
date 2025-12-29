@@ -26,19 +26,20 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**A class that represents a directory.*/
-public final class PacDirectory extends PacObject implements Loadable {
+/**A class that represents a directory in a file system.*/
+public final class PacDirectory extends PacObject implements Loadable, Savable {
 	
 	/**The files within the directory.*/
 	private final List<PacFile> files = new ArrayList<PacFile>();
 	
-	/***/
+	/**Loads the directory.*/
 	@Override
 	public void load() throws IOException {
-		DirectoryStream<Path> directoryStream = Files.newDirectoryStream(path);
-		for (Path path : directoryStream) {
-			PacFile rom = PacFile.from(path);
-			files.add(rom);
+		try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(path)) {
+			for (Path path : directoryStream) {
+				PacFile rom = PacFile.from(path);
+				files.add(rom);
+			}
 		}
 	}
 	
@@ -53,6 +54,7 @@ public final class PacDirectory extends PacObject implements Loadable {
 	}
 	
 	/**Saves the files within the directory.*/
+	@Override
 	public final void save() throws IOException {
 		for (PacFile file : files) {
 			file.save();
@@ -65,9 +67,9 @@ public final class PacDirectory extends PacObject implements Loadable {
 	}
 	
 	/**Finds a specific file within the directory.*/
-	public final PacFile find(final String romName) {
+	public final PacFile find(final String name) {
 		for (PacFile file : files) {
-			if (file.name.matches(romName)) return file;
+			if (file.name.matches(name)) return file;
 		}
 		return null;
 	}

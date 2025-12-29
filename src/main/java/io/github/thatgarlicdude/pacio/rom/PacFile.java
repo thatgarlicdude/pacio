@@ -29,27 +29,6 @@ public final class PacFile extends PacObject implements Loadable, Savable {
 	/**The byte data inside the file.*/
 	private byte[] data = null;
 	
-	/**Creates a new PacFile using a Path.*/
-	public static PacFile from(final Path path) throws IOException {
-		String name = path.getFileName().toString();
-		PacFile rom = new PacFile(path, name);
-		return rom;
-	}
-	
-	/**Creates a new PacFile using a URI.*/
-	public static PacFile from(final URI pathURI) throws IOException {
-		Path path = Paths.get(pathURI);
-		PacFile rom = from(path);
-		return rom;
-	}
-	
-	/**Creates a new PacFile using a string.*/
-	public static PacFile from(final String pathString) throws IOException {
-		Path path = Paths.get(pathString);
-		PacFile rom = from(path);
-		return rom;
-	}
-	
 	/**Loads the file.*/
 	@Override
 	public final void load() throws IOException {
@@ -110,6 +89,27 @@ public final class PacFile extends PacObject implements Loadable, Savable {
 		for (int index = 0; index < size; index++) {
 			write(index + offset, bytes[index]);
 		}
+	}
+	
+	/**Creates a new PacFile using a Path.*/
+	public static PacFile from(final Path path) throws IOException {
+		String name = path.getFileName().toString();
+		PacFile rom = new PacFile(path, name);
+		return rom;
+	}
+	
+	/**Creates a new PacFile using a URI.*/
+	public static PacFile from(final URI pathURI) throws IOException {
+		Path path = Paths.get(pathURI);
+		PacFile rom = from(path);
+		return rom;
+	}
+	
+	/**Creates a new PacFile using a string.*/
+	public static PacFile from(final String pathString) throws IOException {
+		Path path = Paths.get(pathString);
+		PacFile rom = from(path);
+		return rom;
 	}
 	
 	/**Constructs an instance of this class.*/
