@@ -1,3 +1,10 @@
+2026-01-01 GarlicDude <https://www.github.com/thatgarlicdude>
+
+	PacIO Version 1.5.1-alpha
+	* Renewed the copyright year for each Java file to 2026.
+	* Updated the package-info.java for io.github.thatgarlicdude.pacio.file.
+		* Changed the comment describing the package to represent it better.
+
 2025-12-29 GarlicDude <https://www.github.com/thatgarlicdude>
 
 	PacIO Version 1.5.0-alpha

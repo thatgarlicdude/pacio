@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 GarlicDude
+ * Copyright 2026 GarlicDude
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,5 +14,5 @@
  * limitations under the License.
  */
 
-/**The ROM package from the PacIO library.*/
+/**The file package from the PacIO library.*/
 package io.github.thatgarlicdude.pacio.file;
