@@ -3,7 +3,7 @@ plugins {
 }
 
 setGroup('io.github.thatgarlicdude')
-setVersion ('1.5.1-alpha')
+setVersion ('1.6.0-alpha')
 
 repositories {
 	mavenCentral()
@@ -26,6 +26,10 @@ java {
 jar {
 	archiveBaseName = project.name
 	archiveVersion = project.version
+}
+
+javadoc {
+	destinationDir = file("$rootDir/docs")
 }
 
 test {
