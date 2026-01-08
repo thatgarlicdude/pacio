@@ -5,6 +5,8 @@
 	* Updated build.gradle.
 		* Added the javadoc extension.
 		* The javadoc task will output the contents in the newly added docs directory.
+	* Updated package-info.java from the pacio package.
+		* Redescribed the Javadoc comment for the package, now calling it the main package of the library.
 
 2026-01-01 GarlicDude <https://www.github.com/thatgarlicdude>
 
