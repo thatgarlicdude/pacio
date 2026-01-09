@@ -18,12 +18,19 @@ package io.github.thatgarlicdude.pacio.file;
 
 import java.io.IOException;
 
-/**An interface used for loading and unloading something from memory.*/
+/**
+ * <p>An interface used for loading and unloading something from
+ * memory.</p>
+ */
 public interface Loadable {
 	
-	/**Loads something from memory.*/
+	/**
+	 * <p>Loads something from memory.</p>
+	 */
 	public abstract void load() throws IOException;
 	
-	/**Unloads something from memory.*/
+	/**
+	 * <p>Unloads something from memory.</p>
+	 */
 	public abstract void unload();
 }

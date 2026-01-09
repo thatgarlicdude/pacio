@@ -18,9 +18,13 @@ package io.github.thatgarlicdude.pacio.file;
 
 import java.io.IOException;
 
-/**An interface where something can be saved from memory.*/
+/**
+ * <p>An interface where something can be saved from memory.</p>
+ */
 public interface Savable {
 	
-	/**Saves something from memory.*/
+	/**
+	 * <p>Saves something from memory.</p>
+	 */
 	public abstract void save() throws IOException;
 }
