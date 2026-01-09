@@ -34,20 +34,20 @@ public final class PacFile extends PacObject implements Loadable, Savable {
 	private byte[] data = null;
 	
 	/**
-	 * <p>Loads the file.</p>
+	 * <p>Opens the file.</p>
 	 */
 	@Override
-	public final void load() throws IOException {
+	public final void open() throws IOException {
 		// Stop if the data array is already opened.
 		if (data != null) return;
 		data = Files.readAllBytes(path);
 	}
 	
 	/**
-	 * <p>Unloads the file.</p>
+	 * <p>Closes the file.</p>
 	 */
 	@Override
-	public final void unload() {
+	public final void close() {
 		// Stop if the data array is already closed.
 		if (data == null) return;
 		for (int index = 0; index < data.length; index++) {

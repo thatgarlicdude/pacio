@@ -25,12 +25,12 @@ import java.io.IOException;
 public interface Loadable {
 	
 	/**
-	 * <p>Loads something from memory.</p>
+	 * <p>Opens something from memory.</p>
 	 */
-	public abstract void load() throws IOException;
+	public abstract void open() throws IOException;
 	
 	/**
-	 * <p>Unloads something from memory.</p>
+	 * <p>Closes something from memory.</p>
 	 */
-	public abstract void unload();
+	public abstract void close();
 }

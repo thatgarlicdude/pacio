@@ -40,7 +40,7 @@ public final class PacDirectory extends PacObject implements Loadable, Savable {
 	 * <p>Loads the directory.</p>
 	 */
 	@Override
-	public void load() throws IOException {
+	public void open() throws IOException {
 		try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(path)) {
 			for (Path path : directoryStream) {
 				PacFile rom = PacFile.from(path);
@@ -53,9 +53,9 @@ public final class PacDirectory extends PacObject implements Loadable, Savable {
 	 * <p>Unloads the directory and its files.</p>
 	 */
 	@Override
-	public void unload() {
+	public void close() {
 		for (PacFile file : files) {
-			file.unload();
+			file.close();
 			file = null;
 		}
 		files.clear();

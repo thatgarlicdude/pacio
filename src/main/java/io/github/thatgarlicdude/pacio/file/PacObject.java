@@ -30,16 +30,16 @@ public abstract class PacObject implements Loadable, Savable {
 	protected final Path path;
 	
 	/**
-	 * <p>Loads the file object from memory.</p>
+	 * <p>Opens the file object from memory.</p>
 	 */
 	@Override
-	public abstract void load() throws IOException;
+	public abstract void open() throws IOException;
 	
 	/**
-	 * <p>Unloads the file object from memory.</p>
+	 * <p>Closes the file object from memory.</p>
 	 */
 	@Override
-	public abstract void unload();
+	public abstract void close();
 	
 	/**
 	 * <p>Saves the file object from memory.</p>

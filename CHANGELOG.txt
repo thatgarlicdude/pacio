@@ -4,8 +4,8 @@
 	* Added the docs directory.
 	* Updated build.gradle.
 		* Added the javadoc extension.
-		* The javadoc task will output the contents in the newly added docs
-		directory.
+		* The javadoc task will output the contents in the newly added
+		docs directory.
 	* Updated package-info.java from the pacio package.
 		* The Javadoc now uses paragraphs.
 		* Redescribed the Javadoc comment for the package, now calling it
@@ -28,6 +28,8 @@
 		* The Javadoc now uses paragraphs.
 	* Updated Loadable.java.
 		* The Javadoc now uses paragraphs.
+		* Changed load() to open().
+		* Changed unload() to close().
 	* Updated Savable.java.
 		* The Javadoc now uses paragraphs.
 	* Added the catalog package for PacIO.
