@@ -19,10 +19,12 @@
  * <i>Pac-Man</i> ROM set, as well as the ROM files within it.</p>
  * 
  * <p>This is the main package of the library, solely featuring the main
- * class, {@link PacIO}. This class can create core objects, such as
- * {@link PacFile} and {@link PacDirectory}, which are used to modify
- * the ROM files from disk. This was made to ease the accessibility for
- * the library.</p>
+ * class, {@link io.github.thatgarlicdude.pacio.PacIO}. This class can
+ * create core objects, such as
+ * {@link io.github.thatgarlicdude.pacio.file.PacFile} and
+ * {@link io.github.thatgarlicdude.pacio.file.PacDirectory}, which are used
+ * to modify the ROM files from disk. This was made to ease the
+ * accessibility for the library.</p>
  * 
  * <p>In addition to this package, it also features the file package
  * called {@link io.github.thatgarlicdude.pacio.file}. That package

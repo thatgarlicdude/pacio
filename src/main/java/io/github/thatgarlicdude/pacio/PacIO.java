@@ -23,36 +23,94 @@ import java.nio.file.Path;
 import io.github.thatgarlicdude.pacio.file.PacDirectory;
 import io.github.thatgarlicdude.pacio.file.PacFile;
 
-/**The main class of the PacIO library.*/
+/**
+ * <p>The main class of the PacIO library.</p>
+ * 
+ * <p>This class features factory methods for {@link PacFile} and
+ * {@link PacDirectory}.</p>
+ * 
+ * @author GarlicDude
+ */
 public final class PacIO {
 	
-	/**Creates a new PacFile through a Path interface.*/
-	public static final PacFile newPacFile(final Path path) throws IOException {
+	/**
+	 * <p>Creates a new PacFile through a Path interface.</p>
+	 * 
+	 * @param path the file path to the file in the system's disk.
+	 * @return a {@link PacFile} that's automatically opened.
+	 * @throws IOException if reading from disk fails.
+	 */
+	public static final PacFile newPacFile(final Path path)
+			throws IOException {
 		return PacFile.from(path);
 	}
 	
-	/**Creates a new PacFile through a URI object.*/
-	public static final PacFile newPacFile(final URI pathURI) throws IOException {
+	/**
+	 * <p>Creates a new PacFile through a URI object.</p>
+	 * 
+	 * @param pathURI the URI reference of the file path to the file in
+	 * the system's disk.
+	 * @return a {@link PacFile} that's automatically opened.
+	 * @throws IOException if reading from disk fails.
+	 */
+	public static final PacFile newPacFile(
+			final URI pathURI
+	) throws IOException {
 		return PacFile.from(pathURI);
 	}
 	
-	/**Creates a new PacFile through a string.*/
-	public static final PacFile newPacFile(final String pathString) throws IOException {
+	/**
+	 * <p>Creates a new PacFile through a string.</p>
+	 * 
+	 * @param pathString the string of the file path to the file in the
+	 * system's disk.
+	 * @return a {@link PacFile} that's automatically opened.
+	 * @throws IOException if reading from disk fails.
+	 */
+	public static final PacFile newPacFile(
+			final String pathString
+	) throws IOException {
 		return PacFile.from(pathString);
 	}
 	
-	/**Creates a new PacDirectory through a Path interface.*/
-	public static final PacDirectory newPacDirectory(final Path path) throws IOException {
+	/**
+	 * <p>Creates a new PacDirectory through a Path interface.</p>
+	 * 
+	 * @param path the file path to the directory in the system's disk.
+	 * @return a {@link PacDirectory} that's automatically opened.
+	 * @throws IOException if reading from disk fails.
+	 */
+	public static final PacDirectory newPacDirectory(
+			final Path path
+	) throws IOException {
 		return PacDirectory.from(path);
 	}
 	
-	/**Creates a new PacDirectory through a URI object.*/
-	public static final PacDirectory newPacDirectory(final URI pathURI) throws IOException {
+	/**
+	 * <p>Creates a new PacDirectory through a URI object.</p>
+	 * 
+	 * @param pathURI the URI reference of the file path to the directory
+	 * in the system's disk.
+	 * @return a {@link PacDirectory} that's automatically opened.
+	 * @throws IOException if reading from disk fails.
+	 */
+	public static final PacDirectory newPacDirectory(
+			final URI pathURI
+	) throws IOException {
 		return PacDirectory.from(pathURI);
 	}
 	
-	/**Creates a new PacDirectory through a string.*/
-	public static final PacDirectory newPacDirectory(final String pathString) throws IOException {
+	/**
+	 * <p>Creates a new PacDirectory through a string.</p>
+	 * 
+	 * @param pathString the string of the file path to the directory in
+	 * the system's disk.
+	 * @return a {@link PacDirectory} that's automatically opened.
+	 * @throws IOException if reading from disk fails.
+	 */
+	public static final PacDirectory newPacDirectory(
+			final String pathString
+	) throws IOException {
 		return PacDirectory.from(pathString);
 	}
 }
