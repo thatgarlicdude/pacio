@@ -19,40 +19,52 @@ package io.github.thatgarlicdude.pacio.file;
 import java.io.IOException;
 import java.nio.file.Path;
 
-/**A class that represents a file object within the file system.*/
+/**
+ * <p>A class that represents a file object within the file system.</p>
+ */
 public abstract class PacObject implements Loadable, Savable {
 	
-	/**The file path of the file object.*/
+	/**
+	 * <p>The file path of the file object.</p>
+	 */
 	protected final Path path;
 	
-	/**The filename of the file object.*/
-	protected final String name;
-	
-	/**Loads the file object from memory.*/
+	/**
+	 * <p>Loads the file object from memory.</p>
+	 */
 	@Override
 	public abstract void load() throws IOException;
 	
-	/**Unloads the file object from memory.*/
+	/**
+	 * <p>Unloads the file object from memory.</p>
+	 */
 	@Override
 	public abstract void unload();
 	
-	/**Saves the file object from memory.*/
+	/**
+	 * <p>Saves the file object from memory.</p>
+	 */
 	@Override
 	public abstract void save() throws IOException;
 	
-	/**Returns the file path of the file object.*/
+	/**
+	 * <p>Returns the file path of the file object.</p>
+	 */
 	public final Path getPath() {
 		return path;
 	}
 	
-	/**Returns the filename of the file object.*/
+	/**
+	 * <p>Returns the filename of the file object.</p>
+	 */
 	public final String getName() {
-		return name;
+		return path.getFileName().toString();
 	}
 	
-	/**Constructs an instance of this class.*/
-	protected PacObject(final Path path, final String name) {
+	/**
+	 * <p>Constructs an instance of this class.</p>
+	 */
+	protected PacObject(final Path path) {
 		this.path = path;
-		this.name = name;
 	}
 }

@@ -69,15 +69,14 @@ public final class PacDirectory extends PacObject implements Loadable, Savable {
 	/**Finds a specific file within the directory.*/
 	public final PacFile find(final String name) {
 		for (PacFile file : files) {
-			if (file.name.matches(name)) return file;
+			if (file.getName().matches(name)) return file;
 		}
 		return null;
 	}
 	
 	/**Creates a new PacDirectory using a path.*/
 	public static PacDirectory from(final Path path) throws IOException {
-		String name = path.getFileName().toString();
-		PacDirectory romSet = new PacDirectory(path, name);
+		PacDirectory romSet = new PacDirectory(path);
 		return romSet;
 	}
 	
@@ -96,7 +95,7 @@ public final class PacDirectory extends PacObject implements Loadable, Savable {
 	}
 	
 	/**The main constructor of the PacRomSet.*/
-	protected PacDirectory(final Path path, final String name) {
-		super(path, name);
+	protected PacDirectory(final Path path) {
+		super(path);
 	}
 }

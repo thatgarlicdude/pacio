@@ -93,8 +93,7 @@ public final class PacFile extends PacObject implements Loadable, Savable {
 	
 	/**Creates a new PacFile using a Path.*/
 	public static PacFile from(final Path path) throws IOException {
-		String name = path.getFileName().toString();
-		PacFile rom = new PacFile(path, name);
+		PacFile rom = new PacFile(path);
 		return rom;
 	}
 	
@@ -113,7 +112,7 @@ public final class PacFile extends PacObject implements Loadable, Savable {
 	}
 	
 	/**Constructs an instance of this class.*/
-	protected PacFile(final Path path, final String name) {
-		super(path, name);
+	protected PacFile(final Path path) {
+		super(path);
 	}
 }

@@ -13,6 +13,11 @@
 	* Updated PacIO.java.
 		* The Javadoc now uses paragraphs.
 		* Compacted the code.
+	* Updated PacObject.java.
+		* Removed the name variable, as it is already stored in the path
+		variable.
+		* The method getName() now functions differently, now returning
+		with path.getFileName.toString().
 	* Updated Loadable.java.
 		* The Javadoc now uses paragraphs.
 	* Updated Savable.java.
