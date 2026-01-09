@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-/* 
- * TODO: Elaborate more onto the package description, like in the pacio
- * package.
+/*
+ * TODO: Elaborate more onto the package description.
  */
 
 /**
- * <p>The file package of the PacIO library. It handles generic IO
- * handling to the system's disk.</p>
+ * <p>The catalog package of the PacIO library. It contains lists of
+ * filenames that PacIO will use when searching for ROMs in a ROM
+ * set.</p>
  */
-package io.github.thatgarlicdude.pacio.file;
+package io.github.thatgarlicdude.pacio.catalog;

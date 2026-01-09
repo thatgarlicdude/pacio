@@ -30,6 +30,15 @@
 		* The Javadoc now uses paragraphs.
 	* Updated Savable.java.
 		* The Javadoc now uses paragraphs.
+	* Added the catalog package for PacIO.
+		* It features a package-info.java that briefly describes the
+		package.
+	* Added the rom package for PacIO.
+		* It features a package-info.java that briefly describes the
+		package.
+	* Added the util package for PacIO.
+		* It features a package-info.java that briefly describes the
+		package.
 
 2026-01-01 GarlicDude <https://www.github.com/thatgarlicdude>
 
