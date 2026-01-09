@@ -13,6 +13,10 @@
 	* Updated PacIO.java.
 		* The Javadoc now uses paragraphs.
 		* Compacted the code.
+	* Updated package-info.java from the file package.
+		* The Javadoc now uses paragraphs.
+		* Reworked on the Javadoc comment, now explaining what it's used
+		for.
 	* Updated PacObject.java.
 		* Removed the name variable, as it is already stored in the path
 		variable.

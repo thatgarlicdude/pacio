@@ -14,5 +14,8 @@
  * limitations under the License.
  */
 
-/**The file package from the PacIO library.*/
+/**
+ * <p>The file package from the PacIO library. It handles generic IO
+ * handling to the system's disk.</p>
+ */
 package io.github.thatgarlicdude.pacio.file;
