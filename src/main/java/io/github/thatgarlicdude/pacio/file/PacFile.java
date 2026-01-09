@@ -23,13 +23,19 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
-/**A class that represents a file in a file system.*/
+/**
+ * <p>A class that represents a file in a file system.</p>
+ */
 public final class PacFile extends PacObject implements Loadable, Savable {
 	
-	/**The byte data inside the file.*/
+	/**
+	 * <p>The byte data inside the file.</p>
+	 */
 	private byte[] data = null;
 	
-	/**Loads the file.*/
+	/**
+	 * <p>Loads the file.</p>
+	 */
 	@Override
 	public final void load() throws IOException {
 		// Stop if the data array is already opened.
@@ -37,7 +43,9 @@ public final class PacFile extends PacObject implements Loadable, Savable {
 		data = Files.readAllBytes(path);
 	}
 	
-	/**Unloads the file.*/
+	/**
+	 * <p>Unloads the file.</p>
+	 */
 	@Override
 	public final void unload() {
 		// Stop if the data array is already closed.
@@ -48,7 +56,9 @@ public final class PacFile extends PacObject implements Loadable, Savable {
 		data = null;
 	}
 	
-	/**Saves the file.*/
+	/**
+	 * <p>Saves the file.</p>
+	 */
 	@Override
 	public final void save() throws IOException {
 		// Stop if the data array is closed.
@@ -56,12 +66,16 @@ public final class PacFile extends PacObject implements Loadable, Savable {
 		Files.write(path, data, StandardOpenOption.TRUNCATE_EXISTING);
 	}
 	
-	/**Reads a single byte in the data array.*/
+	/**
+	 * <p>Reads a single byte in the data array.</p>
+	 */
 	public final byte read(final int offset) {
 		return data[offset];
 	}
 	
-	/**Reads multiple bytes in the data array.*/
+	/**
+	 * <p>Reads multiple bytes in the data array.</p>
+	 */
 	public final byte[] read(final int offset, final int size) {
 		byte[] data = new byte[size];
 		for (int index = 0; index < size; index++) {
@@ -70,7 +84,9 @@ public final class PacFile extends PacObject implements Loadable, Savable {
 		return data;
 	}
 	
-	/**Reads all the bytes in the data array.*/
+	/**
+	 * <p>Reads all the bytes in the data array.</p>
+	 */
 	public final byte[] readAll() {
 		int size = data.length;
 		byte[] data = new byte[size];
@@ -78,12 +94,16 @@ public final class PacFile extends PacObject implements Loadable, Savable {
 		return data;
 	}
 	
-	/**Writes a single byte in the data array.*/
+	/**
+	 * <p>Writes a single byte in the data array.</p>
+	 */
 	public final void write(final int offset, final byte b) {
 		data[offset] = b;
 	}
 	
-	/**Writes multiple bytes in the data array.*/
+	/**
+	 * <p>Writes multiple bytes in the data array.</p>
+	 */
 	public final void write(final int offset, final byte[] bytes) {
 		int size = bytes.length;
 		for (int index = 0; index < size; index++) {
@@ -91,27 +111,35 @@ public final class PacFile extends PacObject implements Loadable, Savable {
 		}
 	}
 	
-	/**Creates a new PacFile using a Path.*/
+	/**
+	 * <p>Creates a new PacFile using a Path.</p>
+	 */
 	public static PacFile from(final Path path) throws IOException {
 		PacFile rom = new PacFile(path);
 		return rom;
 	}
 	
-	/**Creates a new PacFile using a URI.*/
+	/**
+	 * <p>Creates a new PacFile using a URI.</p>
+	 */
 	public static PacFile from(final URI pathURI) throws IOException {
 		Path path = Paths.get(pathURI);
 		PacFile rom = from(path);
 		return rom;
 	}
 	
-	/**Creates a new PacFile using a string.*/
+	/**
+	 * <p>Creates a new PacFile using a string.</p>
+	 */
 	public static PacFile from(final String pathString) throws IOException {
 		Path path = Paths.get(pathString);
 		PacFile rom = from(path);
 		return rom;
 	}
 	
-	/**Constructs an instance of this class.*/
+	/**
+	 * <p>Constructs an instance of this class.</p>
+	 */
 	protected PacFile(final Path path) {
 		super(path);
 	}

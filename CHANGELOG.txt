@@ -22,6 +22,10 @@
 		variable.
 		* The method getName() now functions differently, now returning
 		with path.getFileName.toString().
+	* Updated PacFile.java.
+		* The Javadoc now uses paragraphs.
+	* Updated PacDirectory.java.
+		* The Javadoc now uses paragraphs.
 	* Updated Loadable.java.
 		* The Javadoc now uses paragraphs.
 	* Updated Savable.java.

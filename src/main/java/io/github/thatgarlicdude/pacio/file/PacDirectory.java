@@ -26,13 +26,19 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**A class that represents a directory in a file system.*/
+/**
+ * <p>A class that represents a directory in a file system.</p>
+ */
 public final class PacDirectory extends PacObject implements Loadable, Savable {
 	
-	/**The files within the directory.*/
+	/**
+	 * <p>The files within the directory.</p>
+	 */
 	private final List<PacFile> files = new ArrayList<PacFile>();
 	
-	/**Loads the directory.*/
+	/**
+	 * <p>Loads the directory.</p>
+	 */
 	@Override
 	public void load() throws IOException {
 		try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(path)) {
@@ -43,7 +49,9 @@ public final class PacDirectory extends PacObject implements Loadable, Savable {
 		}
 	}
 	
-	/**Unloads the directory and its files.*/
+	/**
+	 * <p>Unloads the directory and its files.</p>
+	 */
 	@Override
 	public void unload() {
 		for (PacFile file : files) {
@@ -53,7 +61,9 @@ public final class PacDirectory extends PacObject implements Loadable, Savable {
 		files.clear();
 	}
 	
-	/**Saves the files within the directory.*/
+	/**
+	 * <p>Saves the files within the directory.</p>
+	 */
 	@Override
 	public final void save() throws IOException {
 		for (PacFile file : files) {
@@ -61,12 +71,16 @@ public final class PacDirectory extends PacObject implements Loadable, Savable {
 		}
 	}
 	
-	/**Returns an unmodifiable list of files in the PacDirectory.*/
+	/**
+	 * <p>Returns an unmodifiable list of files in the PacDirectory.</p>
+	 */
 	public List<PacFile> getFiles() {
 		return Collections.unmodifiableList(files);
 	}
 	
-	/**Finds a specific file within the directory.*/
+	/**
+	 * <p>Finds a specific file within the directory.</p>
+	 */
 	public final PacFile find(final String name) {
 		for (PacFile file : files) {
 			if (file.getName().matches(name)) return file;
@@ -74,27 +88,35 @@ public final class PacDirectory extends PacObject implements Loadable, Savable {
 		return null;
 	}
 	
-	/**Creates a new PacDirectory using a path.*/
+	/**
+	 * <p>Creates a new PacDirectory using a path.</p>
+	 */
 	public static PacDirectory from(final Path path) throws IOException {
 		PacDirectory romSet = new PacDirectory(path);
 		return romSet;
 	}
 	
-	/**Creates a new PacDirectory using a URI.*/
+	/**
+	 * <p>Creates a new PacDirectory using a URI.</p>
+	 */
 	public static PacDirectory from(final URI pathURI) throws IOException {
 		Path path = Paths.get(pathURI);
 		PacDirectory romSet = from(path);
 		return romSet;
 	}
 	
-	/**Creates a new PacDirectory using a string.*/
+	/**
+	 * <p>Creates a new PacDirectory using a string.</p>
+	 */
 	public static PacDirectory from(final String pathString) throws IOException {
 		Path path = Paths.get(pathString);
 		PacDirectory romSet = from(path);
 		return romSet;
 	}
 	
-	/**The main constructor of the PacRomSet.*/
+	/**
+	 * <p>The main constructor of the PacRomSet.</p>
+	 */
 	protected PacDirectory(final Path path) {
 		super(path);
 	}
