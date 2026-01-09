@@ -26,6 +26,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/*
+ * TODO: Work on the method descriptions and rework the class description.
+ * Compact the code.
+ */
+
 /**
  * <p>A class that represents a directory in a file system.</p>
  */

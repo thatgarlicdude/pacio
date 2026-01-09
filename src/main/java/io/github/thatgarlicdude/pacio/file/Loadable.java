@@ -18,6 +18,11 @@ package io.github.thatgarlicdude.pacio.file;
 
 import java.io.IOException;
 
+/*
+ * TODO: Rework on the description for the interface and and elaborate
+ * on the methods.
+ */
+
 /**
  * <p>An interface used for loading and unloading something from
  * memory.</p>

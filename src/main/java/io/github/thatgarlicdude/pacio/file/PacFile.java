@@ -23,6 +23,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
+/*
+ * TODO: Work on the method descriptions and rework the class description.
+ * Compact the code.
+ */
+
 /**
  * <p>A class that represents a file in a file system.</p>
  */

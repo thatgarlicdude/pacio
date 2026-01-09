@@ -19,6 +19,10 @@ package io.github.thatgarlicdude.pacio.file;
 import java.io.IOException;
 import java.nio.file.Path;
 
+/*
+ * TODO: Work on the method descriptions and rework the class description.
+ */
+
 /**
  * <p>A class that represents a file object within the file system.</p>
  */

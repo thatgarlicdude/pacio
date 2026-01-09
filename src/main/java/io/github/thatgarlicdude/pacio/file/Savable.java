@@ -18,6 +18,10 @@ package io.github.thatgarlicdude.pacio.file;
 
 import java.io.IOException;
 
+/*
+ * TODO: Rework on the description of the interface and the method.
+ */
+
 /**
  * <p>An interface where something can be saved from memory.</p>
  */
