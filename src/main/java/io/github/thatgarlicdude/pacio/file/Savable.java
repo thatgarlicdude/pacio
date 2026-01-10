@@ -18,17 +18,32 @@ package io.github.thatgarlicdude.pacio.file;
 
 import java.io.IOException;
 
-/*
- * TODO: Rework on the description of the interface and the method.
- */
-
 /**
- * <p>An interface where something can be saved from memory.</p>
+ * An interface used for saving file objects from memory to the system's
+ * disk.
+ * 
+ * <p>Classes that implement this interface should make use of the
+ * {@link #save()} method, as it accesses system's disk and memory.
+ * The {@link #save()} method saves the file object's contents from
+ * memory to the system's disk.</p>
+ * 
+ * <p>The classes that implement this interface are {@link PacObject}.
+ * {@link PacFile}, and {@link PacDirectory}. Each of these classes handle
+ * the {@link #save()} method differently. {@link PacObject} keeps the
+ * method abstract, {@link PacFile} will save the file's bytes from memory
+ * to the system's disk, and {@link PacDirectory} will save the
+ * directory's entries's bytes to the system's disk.</p>
  */
 public interface Savable {
 	
 	/**
-	 * <p>Saves something from memory.</p>
+	 * Saves a file object's contents from memory to the system's disk.
+	 * 
+	 * <p>This method should only work when a file path is valid, hence
+	 * why the method throws the {@link IOException}. If the file path
+	 * is invalid, then it'll throw the exception instead.</p>
+	 * 
+	 * @throws IOException if writing from disk fails.
 	 */
-	public abstract void save() throws IOException;
+	void save() throws IOException;
 }

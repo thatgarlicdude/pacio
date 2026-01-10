@@ -36,6 +36,8 @@
 		* Changed unload() to close().
 	* Updated Savable.java.
 		* The Javadoc now uses paragraphs.
+		* The save method is now simply a default method and no longer a
+		public static method.
 	* Added the catalog package for PacIO.
 		* It features a package-info.java that briefly describes the
 		package.
