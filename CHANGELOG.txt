@@ -20,6 +20,8 @@
 	* Updated PacObject.java.
 		* Removed the name variable, as it is already stored in the path
 		variable.
+		* The constructor now throws an IllegalArgumentException when the
+		file path is null.
 		* The method getName() now functions differently, now returning
 		with path.getFileName.toString().
 	* Updated PacFile.java.
