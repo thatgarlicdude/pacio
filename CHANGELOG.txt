@@ -1,4 +1,4 @@
-2026-01-10 GarlicDude <https://www.github.com/thatgarlicdude>
+2026-01-11 GarlicDude <https://www.github.com/thatgarlicdude>
 
 	PacIO Version 1.6.0-alpha
 	* Added the docs directory.
@@ -16,7 +16,7 @@
 	* Updated package-info.java from the file package.
 		* The Javadoc now uses paragraphs.
 		* Reworked on the Javadoc comment, now explaining what it's used
-		for.
+		for, and how it's used.
 	* Updated PacObject.java.
 		* Removed the name variable, as it is already stored in the path
 		variable.
