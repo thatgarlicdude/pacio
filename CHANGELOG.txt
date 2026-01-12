@@ -1,4 +1,4 @@
-2026-01-11 GarlicDude <https://www.github.com/thatgarlicdude>
+2026-01-12 GarlicDude <https://www.github.com/thatgarlicdude>
 
 	PacIO Version 1.6.0-alpha
 	* Added the docs directory.
@@ -26,6 +26,11 @@
 		with path.getFileName.toString().
 	* Updated PacFile.java.
 		* The Javadoc now uses paragraphs.
+		* The read() methods now return 0 if it is out of bounds.
+		* The write() methods now won't do anything if it is out of bounds.
+		* The from() methods now automatically open the PacFile.
+		* Changed the local variable names from the from() methods.
+		* The constructor is now public.
 	* Updated PacDirectory.java.
 		* The Javadoc now uses paragraphs.
 	* Updated Loadable.java.
