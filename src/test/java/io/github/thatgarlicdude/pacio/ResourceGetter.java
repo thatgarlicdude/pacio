@@ -19,24 +19,44 @@ package io.github.thatgarlicdude.pacio;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-/**A class used for getting the testRomSet directory for the test function.*/
+/**
+ * A class used for getting the testRomSet directory for the test function.
+ */
 public final class ResourceGetter {
 	
-	/**The name of the test ROM set.*/
+	/**
+	 * The name of the test ROM set.
+	 */
 	public static final String testRomSet = "testRomSet";
 	
-	/**The first ROM in the testRomSet.*/
+	/**
+	 * The first ROM in the testRomSet.
+	 */
 	public static final String rom1 = "testRomSet/testRom.8a";
 	
-	/**Returns the URI of the testRomSet directory.*/
+	/**
+	 * Returns the URI of the testRomSet directory.
+	 * 
+	 * @return the URI reference to the testRomSet directory.
+	 * @throws URISyntaxException if URI creation fails.
+	 */
 	public static final URI getTestRomSetURI() throws URISyntaxException {
-		URI testRomSetURI = ResourceGetter.class.getClassLoader().getResource(testRomSet).toURI();
+		URI testRomSetURI = ResourceGetter.class.getClassLoader()
+				.getResource(testRomSet)
+				.toURI();
 		return testRomSetURI;
 	}
 	
-	/**Returns the URI of the testRomSet directory.*/
+	/**
+	 * Returns the URI of the testRom.8a file.
+	 * 
+	 * @return the URI reference to the testRom.8a file.
+	 * @throws URISyntaxException if URI creation fails.
+	 */
 	public static final URI getTestRom1URI() throws URISyntaxException {
-		URI testRomURI = ResourceGetter.class.getClassLoader().getResource(rom1).toURI();
+		URI testRomURI = ResourceGetter.class.getClassLoader()
+				.getResource(rom1)
+				.toURI();
 		return testRomURI;
 	}
 }

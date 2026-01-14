@@ -32,9 +32,15 @@ import org.junit.jupiter.api.Test;
 /**A test class used for testing out the PacIO class.*/
 public final class TestPacIO {
 	
-	/**Tests the newPacFile method using the Path interface.*/
+	/**
+	 * Tests the newPacFile method using the Path interface.
+	 * 
+	 * @throws URISyntaxException if URI creation fails.
+	 * @throws IOException if reading from disk fails.
+	 */
 	@Test
-	public void testNewPacFilePath() throws URISyntaxException, IOException {
+	public void testNewPacFilePath()
+			throws URISyntaxException, IOException {
 		URI testRomURI = getTestRom1URI();
 		Path testRomPath = Paths.get(testRomURI);
 		PacFile pacFile = PacIO.newPacFile(testRomPath);
@@ -43,9 +49,15 @@ public final class TestPacIO {
 		System.out.println("Filename: " + pacFile.getName());
 	}
 	
-	/**Tests the newPacFile method using the URI object.*/
+	/**
+	 * Tests the newPacFile method using the URI object.
+	 * 
+	 * @throws URISyntaxException if URI creation fails.
+	 * @throws IOException if reading from disk fails.
+	 */
 	@Test
-	public void testNewPacFileURI() throws URISyntaxException, IOException {
+	public void testNewPacFileURI()
+			throws URISyntaxException, IOException {
 		URI testRomURI = getTestRom1URI();
 		PacFile pacFile = PacIO.newPacFile(testRomURI);
 		assertNotNull(pacFile);
@@ -53,9 +65,15 @@ public final class TestPacIO {
 		System.out.println("Filename: " + pacFile.getName());
 	}
 	
-	/**Tests the newPacFile method using a String object.*/
+	/**
+	 * Tests the newPacFile method using a String object.
+	 * 
+	 * @throws URISyntaxException if URI creation fails.
+	 * @throws IOException if reading from disk fails.
+	 */
 	@Test
-	public void testNewPacFileString() throws URISyntaxException, IOException {
+	public void testNewPacFileString()
+			throws URISyntaxException, IOException {
 		URI testRomURI = getTestRom1URI();
 		String testRomString = testRomURI.getPath();
 		PacFile pacFile = PacIO.newPacFile(testRomString);
@@ -64,33 +82,54 @@ public final class TestPacIO {
 		System.out.println("Filename: " + pacFile.getName());
 	}
 	
-	/**Tests the newPacDirectory method using a Path interface.*/
+	/**
+	 * Tests the newPacDirectory method using a Path interface.
+	 * 
+	 * @throws URISyntaxException if URI creation fails.
+	 * @throws IOException if reading from disk fails.
+	 */
 	@Test
-	public void testNewPacDirectoryPath() throws URISyntaxException, IOException {
+	public void testNewPacDirectoryPath()
+			throws URISyntaxException, IOException {
 		URI testRomSetURI = getTestRomSetURI();
 		Path testRomPath = Paths.get(testRomSetURI);
-		PacDirectory pacDirectory = PacIO.newPacDirectory(testRomPath);
+		PacDirectory pacDirectory =
+				PacIO.newPacDirectory(testRomPath);
 		assertNotNull(pacDirectory);
 		System.out.println("File path: " + pacDirectory.getPath());
 		System.out.println("Filename: " + pacDirectory.getName());
 	}
 	
-	/**Tests the newPacDirectory method using a URI object.*/
+	/**
+	 * Tests the newPacDirectory method using a URI object.
+	 * 
+	 * @throws URISyntaxException if URI creation fails.
+	 * @throws IOException if reading from disk fails.
+	 */
 	@Test
-	public void testNewPacDirectoryURI() throws URISyntaxException, IOException {
+	public void testNewPacDirectoryURI()
+			throws URISyntaxException, IOException {
 		URI testRomSetURI = getTestRomSetURI();
-		PacDirectory pacDirectory = PacIO.newPacDirectory(testRomSetURI);
+		PacDirectory pacDirectory =
+				PacIO.newPacDirectory(testRomSetURI);
 		assertNotNull(pacDirectory);
 		System.out.println("File path: " + pacDirectory.getPath());
 		System.out.println("Filename: " + pacDirectory.getName());
 	}
 	
-	/**Tests the newPacDirectory method using a String object.*/
+	/**
+	 * Tests the newPacDirectory method using a String object.
+	 * 
+	 * @throws URISyntaxException if URI creation fails.
+	 * @throws IOException if reading from disk fails.
+	 */
 	@Test
-	public void testNewPacDirectoryString() throws URISyntaxException, IOException {
+	public void testNewPacDirectoryString()
+			throws URISyntaxException, IOException {
 		URI testRomSetURI = getTestRomSetURI();
 		String testRomSetString = testRomSetURI.getPath();
-		PacDirectory pacDirectory = PacIO.newPacDirectory(testRomSetString);
+		PacDirectory pacDirectory =
+				PacIO.newPacDirectory(testRomSetString);
 		assertNotNull(pacDirectory);
 		System.out.println("File path: " + pacDirectory.getPath());
 		System.out.println("Filename: " + pacDirectory.getName());

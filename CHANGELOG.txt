@@ -61,6 +61,12 @@
 	* Added the util package for PacIO.
 		* It features a package-info.java that briefly describes the
 		package.
+	* Updated TestPacIO.java.
+		* Compacted the code.
+		* Updated the Javadoc comments.
+	* Updated ResourceGetter.java.
+		* Compacted the code.
+		* Updated the Javadoc comments.
 
 2026-01-01 GarlicDude <https://www.github.com/thatgarlicdude>
 
