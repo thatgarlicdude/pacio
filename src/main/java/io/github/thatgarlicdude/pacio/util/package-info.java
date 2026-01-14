@@ -19,7 +19,9 @@
  */
 
 /**
- * <p>The utility package of the PacIO library. It contains helper classes
- * for the library.</p>
+ * The utility package of the PacIO library. It contains helper classes
+ * for the library.
+ * 
+ * @author GarlicDude
  */
 package io.github.thatgarlicdude.pacio.util;

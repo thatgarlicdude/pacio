@@ -19,8 +19,10 @@
  */
 
 /**
- * <p>The catalog package of the PacIO library. It contains lists of
+ * The catalog package of the PacIO library. It contains lists of
  * filenames that PacIO will use when searching for ROMs in a ROM
- * set.</p>
+ * set.
+ * 
+ * @author GarlicDude
  */
 package io.github.thatgarlicdude.pacio.catalog;

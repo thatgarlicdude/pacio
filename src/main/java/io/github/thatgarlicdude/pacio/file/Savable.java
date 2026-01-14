@@ -33,6 +33,8 @@ import java.io.IOException;
  * method abstract, {@link PacFile} will save the file's bytes from memory
  * to the system's disk, and {@link PacDirectory} will save the
  * directory's entries's bytes to the system's disk.</p>
+ * 
+ * @author GarlicDude
  */
 public interface Savable {
 	

@@ -35,6 +35,8 @@ import java.io.IOException;
  * {@link PacObject} keeps them abstract, {@link PacFile} will load the
  * file's bytes to memory, and {@link PacDirectory} loads the directory's
  * entries to memory.</p>
+ * 
+ * @author GarlicDude
  */
 public interface Loadable {
 	

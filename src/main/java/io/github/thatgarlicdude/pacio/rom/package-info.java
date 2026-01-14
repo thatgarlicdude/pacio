@@ -19,8 +19,10 @@
  */
 
 /**
- * <p>The ROM package of PacIO. Like the
+ * The ROM package of PacIO. Like the
  * {@link io.github.thatgarlicdude.pacio.file} package, it handles IO for
- * files, but treats them like ROMs and ROM sets instead.</p>
+ * files, but treats them like ROMs and ROM sets instead.
+ * 
+ * @author GarlicDude
  */
 package io.github.thatgarlicdude.pacio.rom;
