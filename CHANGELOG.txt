@@ -1,4 +1,4 @@
-2026-01-12 GarlicDude <https://www.github.com/thatgarlicdude>
+2026-01-13 GarlicDude <https://www.github.com/thatgarlicdude>
 
 	PacIO Version 1.6.0-alpha
 	* Added the docs directory.
@@ -33,6 +33,9 @@
 		* The constructor is now public.
 	* Updated PacDirectory.java.
 		* The Javadoc now uses paragraphs.
+		* The save() method is no longer final.
+		* The getFiles() method is now final.
+		* The open() method does not automatically open the file entries.
 	* Updated Loadable.java.
 		* The Javadoc now uses paragraphs.
 		* The methods are now simply default methods and no longer
