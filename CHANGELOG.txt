@@ -1,5 +1,10 @@
 2026-01-14 GarlicDude <https://www.github.com/thatgarlicdude>
 
+	PacIO Version 1.6.1-alpha
+	* Moved the Javadocs to the docs folder instead of docs/javadocs.
+
+2026-01-14 GarlicDude <https://www.github.com/thatgarlicdude>
+
 	PacIO Version 1.6.0-alpha
 	* Added the docs directory.
 		* The docs directory features the javadoc directory where the
