@@ -1,4 +1,4 @@
-2026-01-13 GarlicDude <https://www.github.com/thatgarlicdude>
+2026-01-14 GarlicDude <https://www.github.com/thatgarlicdude>
 
 	PacIO Version 1.6.0-alpha
 	* Added the docs directory.
@@ -13,6 +13,8 @@
 	* Updated PacIO.java.
 		* The Javadoc now uses paragraphs.
 		* Compacted the code.
+		* Added a private constructor and an error message for
+		instantiating the class.
 	* Updated package-info.java from the file package.
 		* The Javadoc now uses paragraphs.
 		* Reworked on the Javadoc comment, now explaining what it's used

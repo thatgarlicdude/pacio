@@ -16,15 +16,15 @@
 
 package io.github.thatgarlicdude.pacio;
 
+import io.github.thatgarlicdude.pacio.file.PacDirectory;
+import io.github.thatgarlicdude.pacio.file.PacFile;
+
 import java.io.IOException;
 import java.net.URI;
 import java.nio.file.Path;
 
-import io.github.thatgarlicdude.pacio.file.PacDirectory;
-import io.github.thatgarlicdude.pacio.file.PacFile;
-
 /**
- * <p>The main class of the PacIO library.</p>
+ * The main class of the PacIO library.
  * 
  * <p>This class features factory methods for {@link PacFile} and
  * {@link PacDirectory}.</p>
@@ -34,7 +34,13 @@ import io.github.thatgarlicdude.pacio.file.PacFile;
 public final class PacIO {
 	
 	/**
-	 * <p>Creates a new PacFile through a Path interface.</p>
+	 * An error message for when PacIO somehow gets constructed.
+	 */
+	private static final String ERR_MSG_CONSTRUCT =
+			"PacIO should not be instantiated";
+	
+	/**
+	 * Creates a new {@link PacFile} through a Path interface.
 	 * 
 	 * @param path the file path to the file in the system's disk.
 	 * @return a {@link PacFile} that's automatically opened.
@@ -46,7 +52,7 @@ public final class PacIO {
 	}
 	
 	/**
-	 * <p>Creates a new PacFile through a URI object.</p>
+	 * Creates a new {@link PacFile} through a URI object.
 	 * 
 	 * @param pathURI the URI reference of the file path to the file in
 	 * the system's disk.
@@ -60,7 +66,7 @@ public final class PacIO {
 	}
 	
 	/**
-	 * <p>Creates a new PacFile through a string.</p>
+	 * Creates a new {@link PacFile} through a string.
 	 * 
 	 * @param pathString the string of the file path to the file in the
 	 * system's disk.
@@ -74,7 +80,7 @@ public final class PacIO {
 	}
 	
 	/**
-	 * <p>Creates a new PacDirectory through a Path interface.</p>
+	 * Creates a new {@link PacDirectory} through a Path interface.
 	 * 
 	 * @param path the file path to the directory in the system's disk.
 	 * @return a {@link PacDirectory} that's automatically opened.
@@ -87,7 +93,7 @@ public final class PacIO {
 	}
 	
 	/**
-	 * <p>Creates a new PacDirectory through a URI object.</p>
+	 * Creates a new {@link PacDirectory} through a URI object.
 	 * 
 	 * @param pathURI the URI reference of the file path to the directory
 	 * in the system's disk.
@@ -101,7 +107,7 @@ public final class PacIO {
 	}
 	
 	/**
-	 * <p>Creates a new PacDirectory through a string.</p>
+	 * Creates a new {@link PacDirectory} through a string.
 	 * 
 	 * @param pathString the string of the file path to the directory in
 	 * the system's disk.
@@ -112,5 +118,14 @@ public final class PacIO {
 			final String pathString
 	) throws IOException {
 		return PacDirectory.from(pathString);
+	}
+	
+	/**
+	 * Private constructor; cannot be used by any means.
+	 * 
+	 * @throws AssertionError when the constructor is called.
+	 */
+	private PacIO() {
+		throw new AssertionError(ERR_MSG_CONSTRUCT);
 	}
 }
