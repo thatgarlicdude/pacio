@@ -21,6 +21,8 @@ import java.net.URISyntaxException;
 
 /**
  * A class used for getting the testRomSet directory for the test function.
+ * 
+ * @author GarlicDude
  */
 public final class ResourceGetter {
 	

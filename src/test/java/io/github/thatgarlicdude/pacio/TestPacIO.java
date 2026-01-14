@@ -29,7 +29,11 @@ import java.nio.file.Paths;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-/**A test class used for testing out the PacIO class.*/
+/**
+ * A test class used for testing out the PacIO class.
+ * 
+ * @author GarlicDude
+ */
 public final class TestPacIO {
 	
 	/**
