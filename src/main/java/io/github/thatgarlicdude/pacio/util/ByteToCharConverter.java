@@ -43,8 +43,17 @@ public final class ByteToCharConverter {
 	 * @param b a byte used to convert to a character.
 	 * @return a character that was converted.
 	 */
-	public final char convert(final byte b) {
+	public static final char convert(final byte b) {
 		if (b < MINIMUM_POINT || b == MAXIMUM_POINT) return GENERIC_CHAR;
 		return (char) b;
+	}
+	
+	/**
+	 * Private constructor; cannot be used by any means.
+	 * 
+	 * @throws AssertionError when the constructor is called.
+	 */
+	private ByteToCharConverter() {
+		throw new AssertionError("Cannot instantiate ByteToCharConverter");
 	}
 }

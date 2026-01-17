@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"io.github.thatgarlicdude.pacio"},{"l":"io.github.thatgarlicdude.pacio.file"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"io.github.thatgarlicdude.pacio"},{"l":"io.github.thatgarlicdude.pacio.file"},{"l":"io.github.thatgarlicdude.pacio.util"}];updateSearchResults();

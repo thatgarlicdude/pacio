@@ -35,10 +35,9 @@ public final class TestByteToCharConverter {
 	 */
 	@Test
 	public final void testConvert() {
-		ByteToCharConverter converter = new ByteToCharConverter();
 		byte index = 0;
 		do {
-			char character = converter.convert(index);
+			char character = ByteToCharConverter.convert(index);
 			String message = String.format(MSG, index, character);
 			System.out.println(message);
 			index++;
