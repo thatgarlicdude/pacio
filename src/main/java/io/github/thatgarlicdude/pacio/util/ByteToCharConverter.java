@@ -17,6 +17,8 @@
 package io.github.thatgarlicdude.pacio.util;
 
 /**
+ * A class that is used to convert a byte to a character.
+ * 
  * @author GarlicDude
  */
 public final class ByteToCharConverter {
@@ -41,7 +43,7 @@ public final class ByteToCharConverter {
 	 * @param b a byte used to convert to a character.
 	 * @return a character that was converted.
 	 */
-	public char convert(final byte b) {
+	public final char convert(final byte b) {
 		if (b < MINIMUM_POINT || b == MAXIMUM_POINT) return GENERIC_CHAR;
 		return (char) b;
 	}
