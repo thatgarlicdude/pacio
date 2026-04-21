@@ -1,0 +1,50 @@
+/*
+ * Copyright 2026 GarlicDude
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ * 	http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package io.github.thatgarlicdude.pacio;
+
+/**
+ * The main class of the PacIO library.
+ * 
+ * @author GarlicDude
+ */
+public final class PacIO {
+	
+	/**
+	 * Error message used when the constructor has been called.
+	 */
+	private static final String ERROR_MESSAGE =
+			"PacIO can't be instantiated";
+	
+	/**
+	 * Test method.
+	 * 
+	 * @return Will always return true.
+	 */
+	public final boolean isLibrary() {
+		return true;
+	}
+	
+	/**
+	 * Private constructor; object cannot be instantiated by any means.
+	 * 
+	 * @throws UnsupportedOperationException When the constructor is
+	 * called.
+	 */
+	private PacIO() {
+		throw new UnsupportedOperationException(ERROR_MESSAGE);
+	}
+}
