@@ -19,6 +19,7 @@ package io.github.thatgarlicdude.pacio;
 /**
  * The main class of the PacIO library.
  * 
+ * @version 1.0.0
  * @author GarlicDude
  */
 public final class PacIO {
@@ -34,7 +35,7 @@ public final class PacIO {
 	 * 
 	 * @return Will always return true.
 	 */
-	public final boolean isLibrary() {
+	public static final boolean isLibrary() {
 		return true;
 	}
 	

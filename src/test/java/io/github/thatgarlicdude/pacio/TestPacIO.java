@@ -16,11 +16,24 @@
 
 package io.github.thatgarlicdude.pacio;
 
+import org.junit.Test;
+import static org.junit.Assert.*;
+
 /**
  * A test class of the PacIO class.
  * 
+ * @version 1.0.0
  * @author GarlicDude
  */
 public final class TestPacIO {
 	
+	/**
+	 * Test method for the isLibrary method in the PacIO class.
+	 */
+	@Test
+	public final void testIsLibrary() {
+		boolean isLibrary = PacIO.isLibrary();
+		assertSame(isLibrary, true);
+		System.out.println("Is this program a library?: " + isLibrary);
+	}
 }
