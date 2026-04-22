@@ -16,6 +16,8 @@
 
 package io.github.thatgarlicdude.pacio;
 
+import io.github.thatgarlicdude.pacio.rom.PacROM;
+
 /**
  * The main class of the PacIO library.
  * 
@@ -37,6 +39,37 @@ public final class PacIO {
 	 */
 	public static final boolean isLibrary() {
 		return true;
+	}
+	
+	/**
+	 * Imports an existing Pac-Man ROM set to a universal ROM set.
+	 * 
+	 * @param path The file path to the original ROM set.
+	 * @return A universal, assembled Pac-Man ROM set.
+	 */
+	public final PacROM importROMSet(final String path) {
+		// TODO: There needs to be a ROM builder for this.
+		return null;
+	}
+	
+	/**
+	 * Opens an existing universal Pac-Man ROM set to memory.
+	 * 
+	 * @param path The file path to the universal ROM set.
+	 * @return A universal, assembled Pac-Man ROM set.
+	 */
+	public final PacROM openROMSet(final String path) {
+		// TODO: There needs to be a ROM builder for this.
+		return null;
+	}
+	
+	/**
+	 * Saves the universal Pac-Man ROM set to disk.
+	 * 
+	 * @param path The destination file path.
+	 */
+	public final void saveROMSet(final String path) {
+		return;
 	}
 	
 	/**
