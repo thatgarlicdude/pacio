@@ -29,7 +29,7 @@ import org.junit.Test;
 public abstract class TestPacCatalog<T extends PacCatalog> {
 	
 	/**
-	 * 
+	 * Placeholder message for the assertList method.
 	 */
 	private static final String PLACEHOLDER_MESSAGE = "List index %d: %s";
 	
