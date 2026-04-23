@@ -16,46 +16,24 @@
 
 package io.github.thatgarlicdude.pacio.catalog;
 
-import static org.junit.Assert.*;
-import org.junit.Test;
-
 /**
  * A test class of the PacManCatalog class.
  * 
  * @version 1.0.0
  * @author GarlicDude
  */
-public final class TestPacManCatalog extends TestPacCatalog {
+public final class TestPacManCatalog extends
+TestPacCatalog<PacManCatalog> {
 	
-	private final PacManCatalog pacCatalog = new PacManCatalog();
+	/**
+	 * The Pac-Man catalog used for testing purposes.
+	 */
+	private static final PacManCatalog pacCatalog = new PacManCatalog();
 	
-	@Test
-	@Override
-	public void testGetProgramROMs() {
-		
-	}
-	
-	@Test
-	@Override
-	public void testGetGraphicROMs() {
-		
-	}
-	
-	@Test
-	@Override
-	public void testGetColorROMs() {
-		
-	}
-	
-	@Test
-	@Override
-	public void testGetPaletteROMs() {
-		
-	}
-	
-	@Test
-	@Override
-	public void testGetSoundROMs() {
-		
+	/**
+	 * Constructs an instance of the test class.
+	 */
+	public TestPacManCatalog() {
+		super(pacCatalog);
 	}
 }
