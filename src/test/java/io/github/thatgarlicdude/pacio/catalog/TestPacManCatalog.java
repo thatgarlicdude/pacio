@@ -22,8 +22,7 @@ package io.github.thatgarlicdude.pacio.catalog;
  * @version 1.0.0
  * @author GarlicDude
  */
-public final class TestPacManCatalog extends
-TestPacCatalog<PacManCatalog> {
+public final class TestPacManCatalog extends TestPacCatalog {
 	
 	/**
 	 * The Pac-Man catalog used for testing purposes.

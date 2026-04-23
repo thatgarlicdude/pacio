@@ -22,11 +22,10 @@ import org.junit.Test;
 /**
  * A test class of the PacCatalog class.
  * 
- * @param <T> The type of PacCatalog used for testing purposes.
  * @version 1.0.0
  * @author GarlicDude
  */
-public abstract class TestPacCatalog<T extends PacCatalog> {
+public abstract class TestPacCatalog {
 	
 	/**
 	 * Placeholder message for the assertList method.
@@ -36,7 +35,7 @@ public abstract class TestPacCatalog<T extends PacCatalog> {
 	/**
 	 * The PacCatalog used for testing purposes.
 	 */
-	private final T pacCatalog;
+	private final PacCatalog pacCatalog;
 	
 	/**
 	 * Asserts a list within the class's PacCatalog to check if it's not
@@ -106,7 +105,7 @@ public abstract class TestPacCatalog<T extends PacCatalog> {
 	 * 
 	 * @param pacCatalog The type of PacCatalog used for testing purposes.
 	 */
-	public TestPacCatalog(final T pacCatalog) {
+	public TestPacCatalog(final PacCatalog pacCatalog) {
 		this.pacCatalog = pacCatalog;
 	}
 }
