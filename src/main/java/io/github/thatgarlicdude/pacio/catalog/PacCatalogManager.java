@@ -25,53 +25,37 @@ package io.github.thatgarlicdude.pacio.catalog;
 public final class PacCatalogManager {
 	
 	/**
-	 * The Pac-Man catalog.
+	 * The list of PacCatalog objects.
 	 */
-	public final PacManCatalog pacManCatalog;
+	private final PacCatalog[] pacCatalogs = new PacCatalog[3];
 	
 	/**
-	 * The Puck-Man catalog.
-	 */
-	public final PuckManCatalog puckManCatalog;
-	
-	/**
-	 * The test catalog.
-	 */
-	public final TestCatalog testCatalog;
-	
-	/**
-	 * Gets the Pac-Man catalog.
+	 * Returns a copied list of PacCatalog objects.
 	 * 
-	 * @return The Pac-Man catalog.
+	 * @return A list of PacCatalog objects.
 	 */
-	public final PacManCatalog getPacManCatalog() {
-		return pacManCatalog;
+	public final PacCatalog[] getPacCatalogs() {
+		PacCatalog[] newPacCatalogs = pacCatalogs.clone();
+		return newPacCatalogs;
 	}
 	
 	/**
-	 * Gets the Puck-Man catalog.
+	 * Returns a specific PacCatalog object from the list using an index.
 	 * 
-	 * @return The Puck-Man catalog.
+	 * @param index The index of the array.
+	 * @return A specific PacCatalog object from the list.
 	 */
-	public final PuckManCatalog getPuckManCatalog() {
-		return puckManCatalog;
-	}
-	
-	/**
-	 * Gets the test catalog.
-	 * 
-	 * @return The test catalog.
-	 */
-	public final TestCatalog getTestCatalog() {
-		return testCatalog;
+	public final PacCatalog getPacCatalog(final int index) {
+		PacCatalog pacCatalog = pacCatalogs[index];
+		return pacCatalog;
 	}
 	
 	/**
 	 * Constructs an instance of the PacCatalog manager.
 	 */
 	public PacCatalogManager() {
-		this.pacManCatalog = new PacManCatalog();
-		this.puckManCatalog = new PuckManCatalog();
-		this.testCatalog = new TestCatalog();
+		this.pacCatalogs[0] = new PacManCatalog();
+		this.pacCatalogs[1] = new PuckManCatalog();
+		this.pacCatalogs[2] = new TestCatalog();
 	}
 }
