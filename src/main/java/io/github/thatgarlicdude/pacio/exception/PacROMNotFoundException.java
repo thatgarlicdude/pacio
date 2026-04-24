@@ -22,7 +22,7 @@ package io.github.thatgarlicdude.pacio.exception;
  * @version 1.0.0
  * @author GarlicDude
  */
-public final class PacROMNotFound extends PacIOException {
+public final class PacROMNotFoundException extends PacIOException {
 	
 	/**
 	 * The serial version UID of the exception.
@@ -50,7 +50,7 @@ public final class PacROMNotFound extends PacIOException {
 	 * 
 	 * @param romName The name for the missing ROM file.
 	 */
-	public PacROMNotFound(final String romName) {
+	public PacROMNotFoundException(final String romName) {
 		super(format(romName));
 	}
 }
