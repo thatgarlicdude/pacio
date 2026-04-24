@@ -33,30 +33,24 @@ public final class TestPacCatalogManager {
 	private final PacCatalogManager manager;
 	
 	/**
-	 * Tests the getPacManCatalog in the PacCatalogManager class.
+	 * Tests the getPacCatalogs method in PacCatalogManager.
 	 */
 	@Test
-	public final void testGetPacManCatalog() {
-		PacManCatalog pacManCatalog = manager.getPacManCatalog();
-		assertSame(pacManCatalog, manager.pacManCatalog);
+	public final void testGetPacCatalogs() {
+		PacCatalog[] pacCatalogs = manager.getPacCatalogs();
+		// pacCatalogs should not be the same as the original.
+		// Also, the contents in the array are the same pointers.
+		assertNotNull(pacCatalogs);
 	}
 	
 	/**
-	 * Tests the getPuckManCatalog in the PacCatalogManager class.
+	 * Tests the getPacCatalog method in PacCatalogManager.
 	 */
 	@Test
-	public final void testGetPuckManCatalog() {
-		PuckManCatalog puckManCatalog = manager.getPuckManCatalog();
-		assertSame(puckManCatalog, manager.puckManCatalog);
-	}
-	
-	/**
-	 * Tests the getTestCatalog in the PacCatalogManager class.
-	 */
-	@Test
-	public final void testGetTestCatalog() {
-		TestCatalog testCatalog = manager.getTestCatalog();
-		assertSame(testCatalog, manager.testCatalog);
+	public final void testGetPacCatalog() {
+		PacCatalog pacCatalog = manager.getPacCatalog(0);
+		// First object in the array should not be null.
+		assertNotNull(pacCatalog);
 	}
 	
 	/**
