@@ -16,27 +16,41 @@
 
 package io.github.thatgarlicdude.pacio.exception;
 
-import java.io.IOException;
-
 /**
- * An abstract, generic exception class designed for the PacIO library.
+ * An exception class used when a ROM is not found in the ROM set.
  * 
  * @version 1.0.0
  * @author GarlicDude
  */
-public abstract class PacIOException extends IOException {
+public final class PacROMNotFound extends PacIOException {
 	
 	/**
 	 * The serial version UID of the exception.
 	 */
-	private static final long serialVersionUID = 6754633321120389575L;
+	private static final long serialVersionUID = 6043878143295530574L;
+	
+	/**
+	 * The placeholder message when the exception occurs.
+	 */
+	private static final String PLACEHOLDER_MESSAGE =
+			"ROM not found: %s";
+	
+	/**
+	 * Formats the error message for the exception.
+	 * 
+	 * @param romName The name for the missing ROM file.
+	 * @return The formatted error message.
+	 */
+	private static final String format(final String romName) {
+		return String.format(PLACEHOLDER_MESSAGE, romName);
+	}
 	
 	/**
 	 * Constructs an instance of the exception.
 	 * 
-	 * @param message The error message.
+	 * @param romName The name for the missing ROM file.
 	 */
-	public PacIOException(String message) {
-		super(message);
+	public PacROMNotFound(final String romName) {
+		super(format(romName));
 	}
 }
