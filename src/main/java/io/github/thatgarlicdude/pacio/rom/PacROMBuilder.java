@@ -16,6 +16,13 @@
 
 package io.github.thatgarlicdude.pacio.rom;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.zip.ZipEntry;
+
+import io.github.thatgarlicdude.pacio.catalog.PacCatalog;
+import io.github.thatgarlicdude.pacio.catalog.PacCatalogManager;
 import io.github.thatgarlicdude.pacio.io.PacZip;
 
 /**
@@ -27,6 +34,11 @@ import io.github.thatgarlicdude.pacio.io.PacZip;
 public final class PacROMBuilder {
 	
 	/**
+	 * The size of a buffer used to read ZIP entry files.
+	 */
+	private static final int BUFFER_SIZE = 256;
+	
+	/**
 	 * The ZIP file required to build the universal ROM set.
 	 */
 	private final PacZip pacZip;
@@ -35,10 +47,70 @@ public final class PacROMBuilder {
 	 * Turns the ZIP file into a universal ROM set.
 	 * 
 	 * @return A universal, assembled ROM set.
+	 * @throws IOException 
 	 */
-	public final PacROM buildROM() {
+	public final PacROM buildROM() throws IOException {
 		PacROM pacROM = null;
+		PacCatalogManager pacCatalogManager = new PacCatalogManager();
+		PacCatalog[] pacCatalogs = pacCatalogManager.getPacCatalogs();
+		byte[] programData = null;
+		byte[] graphicData = null;
+		byte[] colorData = null;
+		byte[] paletteData = null;
+		byte[] soundData = null;
+		// Go through each of the PacCatalogs to scan through.
+		for (PacCatalog pacCatalog : pacCatalogs) {
+			programData = assembleProgramROMs(pacCatalog);
+		}
+		pacROM = new PacROM(programData, graphicData, colorData,
+				paletteData, soundData);
 		return pacROM;
+	}
+	
+	/**
+	 * Assembles multiple ROM files into a single byte array.
+	 * 
+	 * @param filenames A list of filenames in a PacCatalog.
+	 * @return A single byte array containing all the bytes in the files.
+	 * @throws IOException When accessing the ZIP entries fail.
+	 */
+	private final byte[] assembleROMs(final String[] filenames)
+			throws IOException {
+		ByteArrayOutputStream stream = new ByteArrayOutputStream();
+		byte[] buffer = new byte[BUFFER_SIZE];
+		int bytesRead = 0;
+		// Go through each of the filenames in the PacCatalog list.
+		for (String filename : filenames) {
+			ZipEntry zipEntry = pacZip.getEntry(filename);
+			// TODO: Add an error message to this.
+			if (zipEntry == null) throw new IOException();
+			// Create the InputStream for the ZIP entry.
+			try (InputStream inputStream =
+					pacZip.getInputStream(zipEntry)) {
+				/*
+				 * Stop when the buffer is full or it reached the end of
+				 * the ZIP entry.
+				 */
+				while ((bytesRead = inputStream.read(buffer)) != -1) {
+					stream.write(buffer, 0, bytesRead);
+				}
+			}
+		}
+		return stream.toByteArray();
+	}
+	
+	/**
+	 * Assembles all the program ROMs into a single byte array.
+	 * 
+	 * @param pacCatalog The PacCatalog needed to access the list.
+	 * @return An assembled byte array of the program ROMs.
+	 * @throws IOException When accessing the ZIP entries fail.
+	 */
+	private final byte[] assembleProgramROMs(final PacCatalog pacCatalog)
+			throws IOException {
+		String[] programROMs = pacCatalog.getProgramROMs();
+		byte[] programData = assembleROMs(programROMs);
+		return programData;
 	}
 	
 	/**
