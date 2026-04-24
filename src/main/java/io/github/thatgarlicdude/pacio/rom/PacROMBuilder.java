@@ -23,6 +23,7 @@ import java.util.zip.ZipEntry;
 
 import io.github.thatgarlicdude.pacio.catalog.PacCatalog;
 import io.github.thatgarlicdude.pacio.catalog.PacCatalogManager;
+import io.github.thatgarlicdude.pacio.exception.PacROMNotFound;
 import io.github.thatgarlicdude.pacio.io.PacZip;
 
 /**
@@ -82,8 +83,8 @@ public final class PacROMBuilder {
 		// Go through each of the filenames in the PacCatalog list.
 		for (String filename : filenames) {
 			ZipEntry zipEntry = pacZip.getEntry(filename);
-			// TODO: Add an error message to this.
-			if (zipEntry == null) throw new IOException();
+			// Throw an error when a ROM file name is not found.
+			if (zipEntry == null) throw new PacROMNotFound(filename);
 			// Create the InputStream for the ZIP entry.
 			try (InputStream inputStream =
 					pacZip.getInputStream(zipEntry)) {
