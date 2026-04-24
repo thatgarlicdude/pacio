@@ -16,6 +16,8 @@
 
 package io.github.thatgarlicdude.pacio.rom;
 
+import io.github.thatgarlicdude.pacio.io.PacZip;
+
 /**
  * A class that builds universal ROM sets.
  * 
@@ -25,9 +27,26 @@ package io.github.thatgarlicdude.pacio.rom;
 public final class PacROMBuilder {
 	
 	/**
-	 * Constructs an instance of the ROM builder.
+	 * The ZIP file required to build the universal ROM set.
 	 */
-	public PacROMBuilder() {
-		
+	private final PacZip pacZip;
+	
+	/**
+	 * Turns the ZIP file into a universal ROM set.
+	 * 
+	 * @return A universal, assembled ROM set.
+	 */
+	public final PacROM buildROM() {
+		PacROM pacROM = null;
+		return pacROM;
+	}
+	
+	/**
+	 * Constructs an instance of the ROM builder.
+	 * 
+	 * @param pacZip The ZIP file required to build the universal ROM set.
+	 */
+	public PacROMBuilder(final PacZip pacZip) {
+		this.pacZip = pacZip;
 	}
 }
