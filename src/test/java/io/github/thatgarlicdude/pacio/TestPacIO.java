@@ -57,11 +57,11 @@ public final class TestPacIO {
 	@Test
 	public final void testImportROMSet() throws IOException {
 		PacROM pacROM = PacIO.importROMSet(zipFile.getFile());
-		System.out.print(new String(pacROM.getProgramData()));
-		System.out.print(new String(pacROM.getGraphicData()));
-		System.out.print(new String(pacROM.getColorData()));
-		System.out.print(new String(pacROM.getPaletteData()));
-		System.out.print(new String(pacROM.getSoundData()));
+		System.out.println(new String(pacROM.getProgramData()));
+		System.out.println(new String(pacROM.getGraphicData()));
+		System.out.println(new String(pacROM.getColorData()));
+		System.out.println(new String(pacROM.getPaletteData()));
+		System.out.println(new String(pacROM.getSoundData()));
 	}
 	
 	/**
