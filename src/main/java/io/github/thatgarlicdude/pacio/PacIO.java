@@ -18,7 +18,9 @@ package io.github.thatgarlicdude.pacio;
 
 import java.io.IOException;
 
+import io.github.thatgarlicdude.pacio.io.PacZip;
 import io.github.thatgarlicdude.pacio.rom.PacROM;
+import io.github.thatgarlicdude.pacio.rom.PacROMBuilder;
 
 /**
  * The main class of the PacIO library.
@@ -52,8 +54,8 @@ public final class PacIO {
 	 */
 	public static final PacROM importROMSet(final String path)
 			throws IOException {
-		// TODO: There needs to be a ROM builder for this.
-		PacROM pacROM = null;
+		PacZip pacZip = new PacZip(path);
+		PacROM pacROM = new PacROMBuilder(pacZip).buildROM();
 		return pacROM;
 	}
 	

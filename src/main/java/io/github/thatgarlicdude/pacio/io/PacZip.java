@@ -19,8 +19,6 @@ package io.github.thatgarlicdude.pacio.io;
 import java.io.IOException;
 import java.util.zip.ZipFile;
 
-import io.github.thatgarlicdude.pacio.rom.PacROM;
-
 /**
  * A class that represents a Pac-Man ROM set ZIP file.
  * 
@@ -29,16 +27,7 @@ import io.github.thatgarlicdude.pacio.rom.PacROM;
  */
 public final class PacZip extends ZipFile {
 	
-	/**
-	 * Turns the ZIP file into a universal Pac-Man ROM set.
-	 * 
-	 * @return The universal Pac-Man ROM set.
-	 */
-	public final PacROM toPacROM() {
-		// TODO: This is not finished.
-		PacROM pacROM = null;
-		return pacROM;
-	}
+	// TODO: Why does this class exists, specifically?
 	
 	/**
 	 * Constructs an instance of the ZIP file.

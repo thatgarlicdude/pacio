@@ -17,8 +17,12 @@
 package io.github.thatgarlicdude.pacio;
 
 import org.junit.Test;
+
+import io.github.thatgarlicdude.pacio.rom.PacROM;
+
 import static org.junit.Assert.*;
 
+import java.io.IOException;
 import java.net.URL;
 
 /**
@@ -47,10 +51,17 @@ public final class TestPacIO {
 	
 	/**
 	 * Test method for the importROMSet method in the PacIO class.
+	 * 
+	 * @throws IOException When accessing the ZIP file fails.
 	 */
 	@Test
-	public final void testImportROMSet() {
-		System.out.println(zipFile.getFile());
+	public final void testImportROMSet() throws IOException {
+		PacROM pacROM = PacIO.importROMSet(zipFile.getFile());
+		System.out.print(new String(pacROM.getProgramData()));
+		System.out.print(new String(pacROM.getGraphicData()));
+		System.out.print(new String(pacROM.getColorData()));
+		System.out.print(new String(pacROM.getPaletteData()));
+		System.out.print(new String(pacROM.getSoundData()));
 	}
 	
 	/**
