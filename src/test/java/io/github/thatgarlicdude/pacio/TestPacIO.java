@@ -19,6 +19,8 @@ package io.github.thatgarlicdude.pacio;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import java.net.URL;
+
 /**
  * A test class of the PacIO class.
  * 
@@ -28,6 +30,12 @@ import static org.junit.Assert.*;
 public final class TestPacIO {
 	
 	/**
+	 * The file path to the test ROM set ZIP file.
+	 */
+	private static final URL zipFile = TestPacIO.class.getClassLoader()
+			.getResource("testROM.zip");
+	
+	/**
 	 * Test method for the isLibrary method in the PacIO class.
 	 */
 	@Test
@@ -35,5 +43,29 @@ public final class TestPacIO {
 		boolean isLibrary = PacIO.isLibrary();
 		assertSame(isLibrary, true);
 		System.out.println("Is this program a library?: " + isLibrary);
+	}
+	
+	/**
+	 * Test method for the importROMSet method in the PacIO class.
+	 */
+	@Test
+	public final void testImportROMSet() {
+		System.out.println(zipFile.getFile());
+	}
+	
+	/**
+	 * Test method for the openROMSet method in the PacIO class.
+	 */
+	@Test
+	public final void testOpenROMSet() {
+		
+	}
+	
+	/**
+	 * Test method for the saveROMSet method in the PacIO class.
+	 */
+	@Test
+	public final void testSaveROMSet() {
+		
 	}
 }
