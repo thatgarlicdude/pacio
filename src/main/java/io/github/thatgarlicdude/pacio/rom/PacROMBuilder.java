@@ -61,10 +61,21 @@ public final class PacROMBuilder {
 		byte[] soundData = null;
 		// Go through each of the PacCatalogs to scan through.
 		for (PacCatalog pacCatalog : pacCatalogs) {
-			programData = assembleProgramROMs(pacCatalog);
+			// Assemble the ROMs, and make sure they're found.
+			try {
+				programData = assembleProgramROMs(pacCatalog);
+				graphicData = assembleGraphicROMs(pacCatalog);
+				colorData = assembleColorROMs(pacCatalog);
+				paletteData = assemblePaletteROMs(pacCatalog);
+				soundData = assembleSoundROMs(pacCatalog);
+			} catch(final PacROMNotFoundException exception) {
+				continue;
+			}
 		}
+		// Build the PacROM.
 		pacROM = new PacROM(programData, graphicData, colorData,
 				paletteData, soundData);
+		// Return the PacROM.
 		return pacROM;
 	}
 	
@@ -73,7 +84,7 @@ public final class PacROMBuilder {
 	 * 
 	 * @param filenames A list of filenames in a PacCatalog.
 	 * @return A single byte array containing all the bytes in the files.
-	 * @throws IOException When accessing the ZIP entries fail.
+	 * @throws IOException When accessing the ZIP entries fails.
 	 */
 	private final byte[] assembleROMs(final String[] filenames)
 			throws IOException {
@@ -106,13 +117,69 @@ public final class PacROMBuilder {
 	 * 
 	 * @param pacCatalog The PacCatalog needed to access the list.
 	 * @return An assembled byte array of the program ROMs.
-	 * @throws IOException When accessing the ZIP entries fail.
+	 * @throws IOException When accessing the ZIP entries fails.
 	 */
 	private final byte[] assembleProgramROMs(final PacCatalog pacCatalog)
 			throws IOException {
 		String[] programROMs = pacCatalog.getProgramROMs();
 		byte[] programData = assembleROMs(programROMs);
 		return programData;
+	}
+	
+	/**
+	 * Assembles all the graphic ROMs into a single byte array.
+	 * 
+	 * @param pacCatalog The PacCatalog needed to access the list.
+	 * @return An assembled byte array of the graphic ROMs.
+	 * @throws IOException When accessing the ZIP entries fails.
+	 */
+	private final byte[] assembleGraphicROMs(final PacCatalog pacCatalog)
+			throws IOException {
+		String[] graphicROMs = pacCatalog.getGraphicROMs();
+		byte[] graphicData = assembleROMs(graphicROMs);
+		return graphicData;
+	}
+	
+	/**
+	 * Assembles all the color ROMs into a single byte array.
+	 * 
+	 * @param pacCatalog The PacCatalog needed to access the list.
+	 * @return An assembled byte array of the color ROMs.
+	 * @throws IOException When accessing the ZIP entries fails.
+	 */
+	private final byte[] assembleColorROMs(final PacCatalog pacCatalog)
+			throws IOException {
+		String[] colorROMs = pacCatalog.getColorROMs();
+		byte[] colorData = assembleROMs(colorROMs);
+		return colorData;
+	}
+	
+	/**
+	 * Assembles all the palette ROMs into a single byte array.
+	 * 
+	 * @param pacCatalog The PacCatalog needed to access the list.
+	 * @return An assembled byte array of the palette ROMs.
+	 * @throws IOException When accessing the ZIP entries fails.
+	 */
+	private final byte[] assemblePaletteROMs(final PacCatalog pacCatalog)
+			throws IOException {
+		String[] paletteROMs = pacCatalog.getPaletteROMs();
+		byte[] paletteData = assembleROMs(paletteROMs);
+		return paletteData;
+	}
+	
+	/**
+	 * Assembles all the palette ROMs into a single byte array.
+	 * 
+	 * @param pacCatalog The PacCatalog needed to access the list.
+	 * @return An assembled byte array of the palette ROMs.
+	 * @throws IOException When accessing the ZIP entries fails.
+	 */
+	private final byte[] assembleSoundROMs(final PacCatalog pacCatalog)
+			throws IOException {
+		String[] soundROMs = pacCatalog.getSoundROMs();
+		byte[] soundData = assembleROMs(soundROMs);
+		return soundData;
 	}
 	
 	/**
