@@ -56,7 +56,7 @@ public abstract class PacCatalog {
 	 * @return The string array consisting of program ROM filenames.
 	 */
 	public final String[] getProgramROMs() {
-		return programROMs;
+		return programROMs.clone();
 	}
 	
 	/**
@@ -65,7 +65,7 @@ public abstract class PacCatalog {
 	 * @return The string array consisting of graphic ROM filenames.
 	 */
 	public final String[] getGraphicROMs() {
-		return graphicROMs;
+		return graphicROMs.clone();
 	}
 	
 	/**
@@ -74,7 +74,7 @@ public abstract class PacCatalog {
 	 * @return The string array consisting of color ROM filenames.
 	 */
 	public final String[] getColorROMs() {
-		return colorROMs;
+		return colorROMs.clone();
 	}
 	
 	/**
@@ -83,7 +83,7 @@ public abstract class PacCatalog {
 	 * @return The string array consisting of palette ROM filenames.
 	 */
 	public final String[] getPaletteROMs() {
-		return paletteROMs;
+		return paletteROMs.clone();
 	}
 	
 	/**
@@ -92,7 +92,7 @@ public abstract class PacCatalog {
 	 * @return The string array consisting of sound ROM filenames.
 	 */
 	public final String[] getSoundROMs() {
-		return soundROMs;
+		return soundROMs.clone();
 	}
 	
 	/**
