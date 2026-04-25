@@ -50,7 +50,7 @@ public final class PacIO {
 	 * @return A universal, assembled Pac-Man ROM set.
 	 * @throws IOException When accessing the ZIP file from disk fails.
 	 */
-	public final PacROM importROMSet(final String path)
+	public static final PacROM importROMSet(final String path)
 			throws IOException {
 		// TODO: There needs to be a ROM builder for this.
 		PacROM pacROM = null;
@@ -64,7 +64,7 @@ public final class PacIO {
 	 * @return A universal, assembled Pac-Man ROM set.
 	 * @throws IOException When accessing the ZIP file from disk fails.
 	 */
-	public final PacROM openROMSet(final String path)
+	public static final PacROM openROMSet(final String path)
 			throws IOException {
 		// TODO: There needs to be a ROM builder for this.
 		PacROM pacROM = null;
@@ -76,7 +76,7 @@ public final class PacIO {
 	 * 
 	 * @param path The destination file path.
 	 */
-	public final void saveROMSet(final String path)
+	public static final void saveROMSet(final String path)
 			throws IOException {
 		return;
 	}
