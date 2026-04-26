@@ -59,6 +59,7 @@ public final class PacROMBuilder {
 		byte[] colorData = null;
 		byte[] paletteData = null;
 		byte[] soundData = null;
+		byte[] mysteryData = null;
 		// Go through each of the PacCatalogs to scan through.
 		for (PacCatalog pacCatalog : pacCatalogs) {
 			// Assemble the ROMs, and make sure they're found.
@@ -68,13 +69,14 @@ public final class PacROMBuilder {
 				colorData = assembleColorROMs(pacCatalog);
 				paletteData = assemblePaletteROMs(pacCatalog);
 				soundData = assembleSoundROMs(pacCatalog);
+				mysteryData = assembleMysteryROMs(pacCatalog);
 			} catch(final PacROMNotFoundException exception) {
 				continue;
 			}
 		}
 		// Build the PacROM.
 		pacROM = new PacROM(programData, graphicData, colorData,
-				paletteData, soundData);
+				paletteData, soundData, mysteryData);
 		// Return the PacROM.
 		return pacROM;
 	}
@@ -169,10 +171,10 @@ public final class PacROMBuilder {
 	}
 	
 	/**
-	 * Assembles all the palette ROMs into a single byte array.
+	 * Assembles all the sound ROMs into a single byte array.
 	 * 
 	 * @param pacCatalog The PacCatalog needed to access the list.
-	 * @return An assembled byte array of the palette ROMs.
+	 * @return An assembled byte array of the sound ROMs.
 	 * @throws IOException When accessing the ZIP entries fails.
 	 */
 	private final byte[] assembleSoundROMs(final PacCatalog pacCatalog)
@@ -180,6 +182,20 @@ public final class PacROMBuilder {
 		String[] soundROMs = pacCatalog.getSoundROMs();
 		byte[] soundData = assembleROMs(soundROMs);
 		return soundData;
+	}
+	
+	/**
+	 * Assembles all the mystery ROMs into a single byte array.
+	 * 
+	 * @param pacCatalog The PacCatalog needed to access the list.
+	 * @return An assembled byte array of the mystery ROMs.
+	 * @throws IOException When accessing the ZIP entries fails.
+	 */
+	private final byte[] assembleMysteryROMs(final PacCatalog pacCatalog)
+			throws IOException {
+		String[] mysteryROMs = pacCatalog.getMysteryROMs();
+		byte[] mysteryData = assembleROMs(mysteryROMs);
+		return mysteryData;
 	}
 	
 	/**

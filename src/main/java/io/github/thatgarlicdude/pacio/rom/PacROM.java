@@ -50,6 +50,11 @@ public final class PacROM {
 	private final byte[] soundData;
 	
 	/**
+	 * The assembled byte data of the mystery ROMs.
+	 */
+	private final byte[] mysteryData;
+	
+	/**
 	 * Gets the assembled byte data of the program ROMs.
 	 * 
 	 * @return An assembled byte array of program ROM data.
@@ -95,6 +100,15 @@ public final class PacROM {
 	}
 	
 	/**
+	 * Gets the assembled byte data of the mystery ROMs.
+	 * 
+	 * @return An assembled byte array of mystery ROM data.
+	 */
+	public final byte[] getMysteryData() {
+		return mysteryData;
+	}
+	
+	/**
 	 * Constructs an instance of the Pac-Man ROM set.
 	 * 
 	 * @param programData The assembled array of bytes in the program ROMs.
@@ -108,11 +122,13 @@ public final class PacROM {
 			final byte[] graphicData,
 			final byte[] colorData,
 			final byte[] paletteData,
-			final byte[] soundData) {
+			final byte[] soundData,
+			final byte[] mysteryData) {
 		this.programData = programData;
 		this.graphicData = graphicData;
 		this.colorData = colorData;
 		this.paletteData = paletteData;
 		this.soundData = soundData;
+		this.mysteryData = mysteryData;
 	}
 }

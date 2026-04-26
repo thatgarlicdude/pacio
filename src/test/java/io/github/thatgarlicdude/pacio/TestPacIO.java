@@ -53,6 +53,7 @@ public final class TestPacIO {
 		System.out.println(new String(pacROM.getColorData()));
 		System.out.println(new String(pacROM.getPaletteData()));
 		System.out.println(new String(pacROM.getSoundData()));
+		System.out.println(new String(pacROM.getMysteryData()));
 	}
 	
 	/**
