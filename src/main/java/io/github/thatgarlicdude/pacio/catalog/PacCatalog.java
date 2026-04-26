@@ -51,6 +51,11 @@ public abstract class PacCatalog {
 	private final String[] soundROMs;
 	
 	/**
+	 * The list of mystery ROM filenames in the ROM set.
+	 */
+	private final String[] mysteryROMs;
+	
+	/**
 	 * Gets the list of program ROM filenames in the catalog.
 	 * 
 	 * @return The string array consisting of program ROM filenames.
@@ -96,6 +101,15 @@ public abstract class PacCatalog {
 	}
 	
 	/**
+	 * Gets the list of mystery ROM filenames in the catalog.
+	 * 
+	 * @return The string array consisting of mystery ROM filenames.
+	 */
+	public final String[] getMysteryROMs() {
+		return mysteryROMs.clone();
+	}
+	
+	/**
 	 * Constructs an instance of the PacCatalog.
 	 * 
 	 * @param programROMs The list of program ROM filenames in the ROM set.
@@ -103,17 +117,20 @@ public abstract class PacCatalog {
 	 * @param colorROMs The list of color ROM filenames in the ROM set.
 	 * @param paletteROMs The list of palette ROM filenames in the ROM set.
 	 * @param soundROMs The list of sound ROM filenames in the ROM set.
+	 * @param mysteryROMs The list of mystery ROM filenames in the ROM set.
 	 */
 	public PacCatalog(
 			final String[] programROMs,
 			final String[] graphicROMs,
 			final String[] colorROMs,
 			final String[] paletteROMs,
-			final String[] soundROMs) {
+			final String[] soundROMs,
+			final String[] mysteryROMs) {
 		this.programROMs = programROMs;
 		this.graphicROMs = graphicROMs;
 		this.colorROMs = colorROMs;
 		this.paletteROMs = paletteROMs;
 		this.soundROMs = soundROMs;
+		this.mysteryROMs = mysteryROMs;
 	}
 }

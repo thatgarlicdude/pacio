@@ -57,7 +57,14 @@ public final class PacManCatalog extends PacCatalog {
 	 * A static list of sound ROM filenames in the Pac-Man ROM set.
 	 */
 	private static final String[] SOUND_ROMS = {
-			"82s126.1m", "82s126.3m"
+			"82s126.1m"
+	};
+	
+	/**
+	 * A static list of mystery ROM filenames in the Pac-Man ROM set.
+	 */
+	private static final String[] MYSTERY_ROMS = {
+			"82s126.3m"
 	};
 	
 	/**
@@ -69,6 +76,7 @@ public final class PacManCatalog extends PacCatalog {
 				GRAPHIC_ROMS,
 				COLOR_ROMS,
 				PALETTE_ROMS,
-				SOUND_ROMS);
+				SOUND_ROMS,
+				MYSTERY_ROMS);
 	}
 }

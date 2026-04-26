@@ -60,6 +60,13 @@ public final class TestCatalog extends PacCatalog {
 	};
 	
 	/**
+	 * A static list of mystery ROM filenames in the test ROM set.
+	 */
+	private static final String[] MYSTERY_ROMS = {
+			"test_mys1", "test_mys2"
+	};
+	
+	/**
 	 * Constructs an instance of the test catalog.
 	 */
 	public TestCatalog() {
@@ -68,6 +75,7 @@ public final class TestCatalog extends PacCatalog {
 				GRAPHIC_ROMS,
 				COLOR_ROMS,
 				PALETTE_ROMS,
-				SOUND_ROMS);
+				SOUND_ROMS,
+				MYSTERY_ROMS);
 	}
 }

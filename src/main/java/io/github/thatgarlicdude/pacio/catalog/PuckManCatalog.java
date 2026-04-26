@@ -58,7 +58,14 @@ public final class PuckManCatalog extends PacCatalog {
 	 * A static list of sound ROM filenames in the Puck-Man ROM set.
 	 */
 	private static final String[] SOUND_ROMS = {
-			"pm1-3.1m", "pm1-2.3m"
+			"pm1-3.1m"
+	};
+	
+	/**
+	 * A static list of mystery ROM filenames in the Puck-Man ROM set.
+	 */
+	private static final String[] MYSTERY_ROMS = {
+			"pm1-2.3m"
 	};
 	
 	/**
@@ -70,6 +77,7 @@ public final class PuckManCatalog extends PacCatalog {
 				GRAPHIC_ROMS,
 				COLOR_ROMS,
 				PALETTE_ROMS,
-				SOUND_ROMS);
+				SOUND_ROMS,
+				MYSTERY_ROMS);
 	}
 }
