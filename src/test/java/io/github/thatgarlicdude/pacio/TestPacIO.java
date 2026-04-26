@@ -37,7 +37,7 @@ public final class TestPacIO {
 	 * The file path to the test ROM set ZIP file.
 	 */
 	private static final URL zipFile = TestPacIO.class.getClassLoader()
-			.getResource("testROM.zip");
+			.getResource("testROMSet.zip");
 	
 	/**
 	 * Test method for the isLibrary method in the PacIO class.
