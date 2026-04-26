@@ -52,8 +52,7 @@ public final class PacROMBuilder {
 	 */
 	public final PacROM buildROM() throws IOException {
 		PacROM pacROM = null;
-		PacCatalogManager pacCatalogManager = new PacCatalogManager();
-		PacCatalog[] pacCatalogs = pacCatalogManager.getPacCatalogs();
+		PacCatalog[] pacCatalogs = PacCatalogManager.getPacCatalogs();
 		byte[] programData = null;
 		byte[] graphicData = null;
 		byte[] colorData = null;

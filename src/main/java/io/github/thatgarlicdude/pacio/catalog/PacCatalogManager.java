@@ -25,16 +25,26 @@ package io.github.thatgarlicdude.pacio.catalog;
 public final class PacCatalogManager {
 	
 	/**
+	 * Error message used when the constructor has been called.
+	 */
+	private static final String ERROR_MESSAGE =
+			"PacCatalogManager can't be instantiated";
+	
+	/**
 	 * The list of PacCatalog objects.
 	 */
-	private final PacCatalog[] pacCatalogs = new PacCatalog[3];
+	private static final PacCatalog[] pacCatalogs = {
+			new PacManCatalog(),
+			new PuckManCatalog(),
+			new TestCatalog()
+	};
 	
 	/**
 	 * Returns a copied list of PacCatalog objects.
 	 * 
 	 * @return A list of PacCatalog objects.
 	 */
-	public final PacCatalog[] getPacCatalogs() {
+	public static final PacCatalog[] getPacCatalogs() {
 		PacCatalog[] newPacCatalogs = pacCatalogs.clone();
 		return newPacCatalogs;
 	}
@@ -45,17 +55,18 @@ public final class PacCatalogManager {
 	 * @param index The index of the array.
 	 * @return A specific PacCatalog object from the list.
 	 */
-	public final PacCatalog getPacCatalog(final int index) {
+	public static final PacCatalog getPacCatalog(final int index) {
 		PacCatalog pacCatalog = pacCatalogs[index];
 		return pacCatalog;
 	}
 	
 	/**
-	 * Constructs an instance of the PacCatalog manager.
+	 * Private constructor; object cannot be instantiated by any means.
+	 * 
+	 * @throws UnsupportedOperationException When the constructor is
+	 * called.
 	 */
-	public PacCatalogManager() {
-		this.pacCatalogs[0] = new PacManCatalog();
-		this.pacCatalogs[1] = new PuckManCatalog();
-		this.pacCatalogs[2] = new TestCatalog();
+	private PacCatalogManager() {
+		throw new UnsupportedOperationException(ERROR_MESSAGE);
 	}
 }

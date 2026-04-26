@@ -28,16 +28,11 @@ import org.junit.Test;
 public final class TestPacCatalogManager {
 	
 	/**
-	 * The PacCatalog manager.
-	 */
-	private final PacCatalogManager manager;
-	
-	/**
 	 * Tests the getPacCatalogs method in PacCatalogManager.
 	 */
 	@Test
 	public final void testGetPacCatalogs() {
-		PacCatalog[] pacCatalogs = manager.getPacCatalogs();
+		PacCatalog[] pacCatalogs = PacCatalogManager.getPacCatalogs();
 		// pacCatalogs should not be the same as the original.
 		// Also, the contents in the array are the same pointers.
 		assertNotNull(pacCatalogs);
@@ -48,15 +43,8 @@ public final class TestPacCatalogManager {
 	 */
 	@Test
 	public final void testGetPacCatalog() {
-		PacCatalog pacCatalog = manager.getPacCatalog(0);
+		PacCatalog pacCatalog = PacCatalogManager.getPacCatalog(0);
 		// First object in the array should not be null.
 		assertNotNull(pacCatalog);
-	}
-	
-	/**
-	 * Constructs an instance of the test class.
-	 */
-	public TestPacCatalogManager() {
-		this.manager = new PacCatalogManager();
 	}
 }
