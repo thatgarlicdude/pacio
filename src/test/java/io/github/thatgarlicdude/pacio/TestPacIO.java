@@ -40,16 +40,6 @@ public final class TestPacIO {
 			.getResource("testROMSet.zip");
 	
 	/**
-	 * Test method for the isLibrary method in the PacIO class.
-	 */
-	@Test
-	public final void testIsLibrary() {
-		boolean isLibrary = PacIO.isLibrary();
-		assertSame(isLibrary, true);
-		System.out.println("Is this program a library?: " + isLibrary);
-	}
-	
-	/**
 	 * Test method for the importROMSet method in the PacIO class.
 	 * 
 	 * @throws IOException When accessing the ZIP file fails.
@@ -57,6 +47,7 @@ public final class TestPacIO {
 	@Test
 	public final void testImportROMSet() throws IOException {
 		PacROM pacROM = PacIO.importROMSet(zipFile.getFile());
+		assertNotNull(pacROM);
 		System.out.println(new String(pacROM.getProgramData()));
 		System.out.println(new String(pacROM.getGraphicData()));
 		System.out.println(new String(pacROM.getColorData()));

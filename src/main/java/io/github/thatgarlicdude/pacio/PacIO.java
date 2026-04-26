@@ -37,15 +37,6 @@ public final class PacIO {
 			"PacIO can't be instantiated";
 	
 	/**
-	 * Test method.
-	 * 
-	 * @return Will always return true.
-	 */
-	public static final boolean isLibrary() {
-		return true;
-	}
-	
-	/**
 	 * Imports an existing Pac-Man ROM set to a universal ROM set.
 	 * 
 	 * @param path The file path to the original ROM set.
