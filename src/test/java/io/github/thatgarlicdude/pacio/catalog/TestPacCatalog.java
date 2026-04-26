@@ -56,48 +56,57 @@ public abstract class TestPacCatalog {
 	}
 	
 	/**
-	 * Tests the getProgramROMs method in the PacCatalog class.
+	 * Tests the getProgramROMNames method in the PacCatalog class.
 	 */
 	@Test
-	public final void testGetProgramROMs() {
-		String[] programROMs = pacCatalog.getProgramROMs();
-		assertList(programROMs);
+	public final void testGetProgramROMNames() {
+		String[] programROMNames = pacCatalog.getProgramROMNames();
+		assertList(programROMNames);
 	}
 	
 	/**
-	 * Tests the getGraphicROMs method in the PacCatalog class.
+	 * Tests the getGraphicROMNames method in the PacCatalog class.
 	 */
 	@Test
-	public final void testGetGraphicROMs() {
-		String[] graphicROMs = pacCatalog.getGraphicROMs();
-		assertList(graphicROMs);
+	public final void testGetGraphicROMNames() {
+		String[] graphicROMNames = pacCatalog.getGraphicROMNames();
+		assertList(graphicROMNames);
 	}
 	
 	/**
-	 * Tests the getColorROMs method in the PacCatalog class.
+	 * Tests the getColorROMNames method in the PacCatalog class.
 	 */
 	@Test
 	public final void testGetColorROMs() {
-		String[] colorROMs = pacCatalog.getColorROMs();
-		assertList(colorROMs);
+		String[] colorROMNames = pacCatalog.getColorROMNames();
+		assertList(colorROMNames);
 	}
 	
 	/**
-	 * Tests the getPaletteROMs method in the PacCatalog class.
+	 * Tests the getPaletteROMNames method in the PacCatalog class.
 	 */
 	@Test
-	public final void testGetPaletteROMs() {
-		String[] paletteROMs = pacCatalog.getPaletteROMs();
-		assertList(paletteROMs);
+	public final void testGetPaletteROMNames() {
+		String[] paletteROMNames = pacCatalog.getPaletteROMNames();
+		assertList(paletteROMNames);
 	}
 	
 	/**
-	 * Tests the getSoundROMs method in the PacCatalog class.
+	 * Tests the getSoundROMNames method in the PacCatalog class.
 	 */
 	@Test
-	public final void testGetSoundROMs() {
-		String[] soundROMs = pacCatalog.getSoundROMs();
-		assertList(soundROMs);
+	public final void testGetSoundROMNames() {
+		String[] soundROMNames = pacCatalog.getSoundROMNames();
+		assertList(soundROMNames);
+	}
+	
+	/**
+	 * Tests the getMysteryROMNames method in the PacCatalog class.
+	 */
+	@Test
+	public final void testGetMysteryROMNames() {
+		String[] mysteryROMNames = pacCatalog.getMysteryROMNames();
+		assertList(mysteryROMNames);
 	}
 	
 	/**

@@ -28,40 +28,40 @@ public abstract class PacCatalog {
 	/**
 	 * The list of program ROM filenames in the ROM set.
 	 */
-	private final String[] programROMs;
+	private final String[] programROMNames;
 	
 	/**
 	 * The list of graphic ROM filenames in the ROM set.
 	 */
-	private final String[] graphicROMs;
+	private final String[] graphicROMNames;
 	
 	/**
 	 * The list of color ROM filenames in the ROM set.
 	 */
-	private final String[] colorROMs;
+	private final String[] colorROMNames;
 	
 	/**
 	 * The list of palette ROM filenames in the ROM set.
 	 */
-	private final String[] paletteROMs;
+	private final String[] paletteROMNames;
 	
 	/**
 	 * The list of sound ROM filenames in the ROM set.
 	 */
-	private final String[] soundROMs;
+	private final String[] soundROMNames;
 	
 	/**
 	 * The list of mystery ROM filenames in the ROM set.
 	 */
-	private final String[] mysteryROMs;
+	private final String[] mysteryROMNames;
 	
 	/**
 	 * Gets the list of program ROM filenames in the catalog.
 	 * 
 	 * @return The string array consisting of program ROM filenames.
 	 */
-	public final String[] getProgramROMs() {
-		return programROMs.clone();
+	public final String[] getProgramROMNames() {
+		return programROMNames.clone();
 	}
 	
 	/**
@@ -69,8 +69,8 @@ public abstract class PacCatalog {
 	 * 
 	 * @return The string array consisting of graphic ROM filenames.
 	 */
-	public final String[] getGraphicROMs() {
-		return graphicROMs.clone();
+	public final String[] getGraphicROMNames() {
+		return graphicROMNames.clone();
 	}
 	
 	/**
@@ -78,8 +78,8 @@ public abstract class PacCatalog {
 	 * 
 	 * @return The string array consisting of color ROM filenames.
 	 */
-	public final String[] getColorROMs() {
-		return colorROMs.clone();
+	public final String[] getColorROMNames() {
+		return colorROMNames.clone();
 	}
 	
 	/**
@@ -87,8 +87,8 @@ public abstract class PacCatalog {
 	 * 
 	 * @return The string array consisting of palette ROM filenames.
 	 */
-	public final String[] getPaletteROMs() {
-		return paletteROMs.clone();
+	public final String[] getPaletteROMNames() {
+		return paletteROMNames.clone();
 	}
 	
 	/**
@@ -96,8 +96,8 @@ public abstract class PacCatalog {
 	 * 
 	 * @return The string array consisting of sound ROM filenames.
 	 */
-	public final String[] getSoundROMs() {
-		return soundROMs.clone();
+	public final String[] getSoundROMNames() {
+		return soundROMNames.clone();
 	}
 	
 	/**
@@ -105,32 +105,38 @@ public abstract class PacCatalog {
 	 * 
 	 * @return The string array consisting of mystery ROM filenames.
 	 */
-	public final String[] getMysteryROMs() {
-		return mysteryROMs.clone();
+	public final String[] getMysteryROMNames() {
+		return mysteryROMNames.clone();
 	}
 	
 	/**
 	 * Constructs an instance of the PacCatalog.
 	 * 
-	 * @param programROMs The list of program ROM filenames in the ROM set.
-	 * @param graphicROMs The list of graphic ROM filenames in the ROM set.
-	 * @param colorROMs The list of color ROM filenames in the ROM set.
-	 * @param paletteROMs The list of palette ROM filenames in the ROM set.
-	 * @param soundROMs The list of sound ROM filenames in the ROM set.
-	 * @param mysteryROMs The list of mystery ROM filenames in the ROM set.
+	 * @param programROMNames The list of program ROM filenames in the
+	 * ROM set.
+	 * @param graphicROMNames The list of graphic ROM filenames in the
+	 * ROM set.
+	 * @param colorROMNames The list of color ROM filenames in the ROM
+	 * set.
+	 * @param paletteROMNames The list of palette ROM filenames in the
+	 * ROM set.
+	 * @param soundROMNames The list of sound ROM filenames in the ROM
+	 * set.
+	 * @param mysteryROMNames The list of mystery ROM filenames in the
+	 * ROM set.
 	 */
 	public PacCatalog(
-			final String[] programROMs,
-			final String[] graphicROMs,
-			final String[] colorROMs,
-			final String[] paletteROMs,
-			final String[] soundROMs,
-			final String[] mysteryROMs) {
-		this.programROMs = programROMs;
-		this.graphicROMs = graphicROMs;
-		this.colorROMs = colorROMs;
-		this.paletteROMs = paletteROMs;
-		this.soundROMs = soundROMs;
-		this.mysteryROMs = mysteryROMs;
+			final String[] programROMNames,
+			final String[] graphicROMNames,
+			final String[] colorROMNames,
+			final String[] paletteROMNames,
+			final String[] soundROMNames,
+			final String[] mysteryROMNames) {
+		this.programROMNames = programROMNames;
+		this.graphicROMNames = graphicROMNames;
+		this.colorROMNames = colorROMNames;
+		this.paletteROMNames = paletteROMNames;
+		this.soundROMNames = soundROMNames;
+		this.mysteryROMNames = mysteryROMNames;
 	}
 }

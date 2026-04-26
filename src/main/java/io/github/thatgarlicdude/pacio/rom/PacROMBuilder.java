@@ -122,7 +122,7 @@ public final class PacROMBuilder {
 	 */
 	private final byte[] assembleProgramROMs(final PacCatalog pacCatalog)
 			throws IOException {
-		String[] programROMs = pacCatalog.getProgramROMs();
+		String[] programROMs = pacCatalog.getProgramROMNames();
 		byte[] programData = assembleROMs(programROMs);
 		return programData;
 	}
@@ -136,7 +136,7 @@ public final class PacROMBuilder {
 	 */
 	private final byte[] assembleGraphicROMs(final PacCatalog pacCatalog)
 			throws IOException {
-		String[] graphicROMs = pacCatalog.getGraphicROMs();
+		String[] graphicROMs = pacCatalog.getGraphicROMNames();
 		byte[] graphicData = assembleROMs(graphicROMs);
 		return graphicData;
 	}
@@ -150,7 +150,7 @@ public final class PacROMBuilder {
 	 */
 	private final byte[] assembleColorROMs(final PacCatalog pacCatalog)
 			throws IOException {
-		String[] colorROMs = pacCatalog.getColorROMs();
+		String[] colorROMs = pacCatalog.getColorROMNames();
 		byte[] colorData = assembleROMs(colorROMs);
 		return colorData;
 	}
@@ -164,7 +164,7 @@ public final class PacROMBuilder {
 	 */
 	private final byte[] assemblePaletteROMs(final PacCatalog pacCatalog)
 			throws IOException {
-		String[] paletteROMs = pacCatalog.getPaletteROMs();
+		String[] paletteROMs = pacCatalog.getPaletteROMNames();
 		byte[] paletteData = assembleROMs(paletteROMs);
 		return paletteData;
 	}
@@ -178,7 +178,7 @@ public final class PacROMBuilder {
 	 */
 	private final byte[] assembleSoundROMs(final PacCatalog pacCatalog)
 			throws IOException {
-		String[] soundROMs = pacCatalog.getSoundROMs();
+		String[] soundROMs = pacCatalog.getSoundROMNames();
 		byte[] soundData = assembleROMs(soundROMs);
 		return soundData;
 	}
@@ -192,7 +192,7 @@ public final class PacROMBuilder {
 	 */
 	private final byte[] assembleMysteryROMs(final PacCatalog pacCatalog)
 			throws IOException {
-		String[] mysteryROMs = pacCatalog.getMysteryROMs();
+		String[] mysteryROMs = pacCatalog.getMysteryROMNames();
 		byte[] mysteryData = assembleROMs(mysteryROMs);
 		return mysteryData;
 	}
