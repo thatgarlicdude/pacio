@@ -17,11 +17,11 @@
 package io.github.thatgarlicdude.pacio.io;
 
 /**
- * A class used to save universal Pac-Man ROM sets.
+ * A class used to open universal Pac-Man ROM sets.
  * 
  * @version 1.0.0
  * @author GarlicDude
  */
-public final class PacROMSaver {
+public final class PacROMSetOpener {
 
 }

@@ -50,8 +50,8 @@ public final class PacROMBuilder {
 	 * @return A universal, assembled ROM set.
 	 * @throws IOException 
 	 */
-	public final PacROM buildROM() throws IOException {
-		PacROM pacROM = null;
+	public final PacROMSet buildROM() throws IOException {
+		PacROMSet pacROM = null;
 		PacCatalog[] pacCatalogs = PacCatalogManager.getPacCatalogs();
 		byte[] programData = null;
 		byte[] graphicData = null;
@@ -74,7 +74,7 @@ public final class PacROMBuilder {
 			}
 		}
 		// Build the PacROM.
-		pacROM = new PacROM(programData, graphicData, colorData,
+		pacROM = new PacROMSet(programData, graphicData, colorData,
 				paletteData, soundData, mysteryData);
 		// Return the PacROM.
 		return pacROM;

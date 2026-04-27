@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package io.github.thatgarlicdude.pacio.io;
+package io.github.thatgarlicdude.pacio.rom;
 
 /**
- * A class used to import Pac-Man ROMs to universal ROM sets.
+ * A test class for the PacROM class.
  * 
  * @version 1.0.0
  * @author GarlicDude
  */
-public final class PacROMImporter {
+public final class TestPacROMSet {
 
 }

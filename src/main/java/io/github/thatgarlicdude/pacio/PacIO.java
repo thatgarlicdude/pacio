@@ -19,7 +19,7 @@ package io.github.thatgarlicdude.pacio;
 import java.io.IOException;
 
 import io.github.thatgarlicdude.pacio.io.PacZip;
-import io.github.thatgarlicdude.pacio.rom.PacROM;
+import io.github.thatgarlicdude.pacio.rom.PacROMSet;
 import io.github.thatgarlicdude.pacio.rom.PacROMBuilder;
 
 /**
@@ -43,11 +43,11 @@ public final class PacIO {
 	 * @return A universal, assembled Pac-Man ROM set.
 	 * @throws IOException When accessing the ZIP file from disk fails.
 	 */
-	public static final PacROM importROMSet(final String path)
+	public static final PacROMSet importROMSet(final String path)
 			throws IOException {
 		PacZip pacZip = new PacZip(path);
-		PacROM pacROM = new PacROMBuilder(pacZip).buildROM();
-		return pacROM;
+		PacROMSet pacROMSet = new PacROMBuilder(pacZip).buildROM();
+		return pacROMSet;
 	}
 	
 	/**
@@ -57,17 +57,18 @@ public final class PacIO {
 	 * @return A universal, assembled Pac-Man ROM set.
 	 * @throws IOException When accessing the ZIP file from disk fails.
 	 */
-	public static final PacROM openROMSet(final String path)
+	public static final PacROMSet openROMSet(final String path)
 			throws IOException {
 		// TODO: There needs to be a ROM builder for this.
-		PacROM pacROM = null;
-		return pacROM;
+		PacROMSet pacROMSet = null;
+		return pacROMSet;
 	}
 	
 	/**
 	 * Saves the universal Pac-Man ROM set to disk.
 	 * 
 	 * @param path The destination file path.
+	 * @throws IOException When saving the ZIP file from disk fails.
 	 */
 	public static final void saveROMSet(final String path)
 			throws IOException {

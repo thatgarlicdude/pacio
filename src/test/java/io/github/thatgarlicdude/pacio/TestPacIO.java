@@ -18,7 +18,7 @@ package io.github.thatgarlicdude.pacio;
 
 import org.junit.Test;
 
-import io.github.thatgarlicdude.pacio.rom.PacROM;
+import io.github.thatgarlicdude.pacio.rom.PacROMSet;
 
 import static org.junit.Assert.*;
 
@@ -46,14 +46,14 @@ public final class TestPacIO {
 	 */
 	@Test
 	public final void testImportROMSet() throws IOException {
-		PacROM pacROM = PacIO.importROMSet(zipFile.getFile());
-		assertNotNull(pacROM);
-		System.out.println(new String(pacROM.getProgramData()));
-		System.out.println(new String(pacROM.getGraphicData()));
-		System.out.println(new String(pacROM.getColorData()));
-		System.out.println(new String(pacROM.getPaletteData()));
-		System.out.println(new String(pacROM.getSoundData()));
-		System.out.println(new String(pacROM.getMysteryData()));
+		PacROMSet pacROMSet = PacIO.importROMSet(zipFile.getFile());
+		assertNotNull(pacROMSet);
+		System.out.println(new String(pacROMSet.getProgramData()));
+		System.out.println(new String(pacROMSet.getGraphicData()));
+		System.out.println(new String(pacROMSet.getColorData()));
+		System.out.println(new String(pacROMSet.getPaletteData()));
+		System.out.println(new String(pacROMSet.getSoundData()));
+		System.out.println(new String(pacROMSet.getMysteryData()));
 	}
 	
 	/**

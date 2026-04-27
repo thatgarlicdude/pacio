@@ -17,11 +17,11 @@
 package io.github.thatgarlicdude.pacio.io;
 
 /**
- * A test class of the PacROMSaver class.
+ * A test class of the PacROMSetOpener class.
  * 
  * @version 1.0.0
  * @author GarlicDude
  */
-public final class TestPacROMSaver {
+public final class TestPacROMSetOpener {
 
 }

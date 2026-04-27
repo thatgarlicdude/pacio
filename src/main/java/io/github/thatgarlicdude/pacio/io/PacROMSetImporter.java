@@ -17,11 +17,11 @@
 package io.github.thatgarlicdude.pacio.io;
 
 /**
- * A test class of the PacROMImporter class.
+ * A class used to import Pac-Man ROMs to universal ROM sets.
  * 
  * @version 1.0.0
  * @author GarlicDude
  */
-public final class TestPacROMImporter {
+public final class PacROMSetImporter {
 
 }

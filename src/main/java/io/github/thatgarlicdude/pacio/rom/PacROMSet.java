@@ -22,7 +22,7 @@ package io.github.thatgarlicdude.pacio.rom;
  * @version 1.0.0
  * @author GarlicDude
  */
-public final class PacROM {
+public final class PacROMSet {
 	
 	/**
 	 * The assembled byte data of the program ROMs.
@@ -117,7 +117,7 @@ public final class PacROM {
 	 * @param paletteData The assembled array of bytes in the palette ROMs.
 	 * @param soundData The assembled array of bytes in the sound ROMs.
 	 */
-	public PacROM(
+	public PacROMSet(
 			final byte[] programData,
 			final byte[] graphicData,
 			final byte[] colorData,
