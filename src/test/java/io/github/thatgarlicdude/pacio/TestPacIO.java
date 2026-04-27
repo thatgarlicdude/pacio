@@ -40,6 +40,12 @@ public final class TestPacIO {
 			.getResource("testROMSet.zip");
 	
 	/**
+	 * The file path to the test universal ROM set ZIP file.
+	 */
+	private static final URL universalZipFile = TestPacIO.class
+			.getClassLoader().getResource("testUniversalROMSet.zip");
+	
+	/**
 	 * Test method for the importROMSet method in the PacIO class.
 	 * 
 	 * @throws IOException When accessing the ZIP file fails.
@@ -66,9 +72,12 @@ public final class TestPacIO {
 	
 	/**
 	 * Test method for the saveROMSet method in the PacIO class.
+	 * 
+	 * @throws IOException When the saving process fails.
 	 */
 	@Test
-	public final void testSaveROMSet() {
-		
+	public final void testSaveROMSet() throws IOException {
+		PacROMSet pacROMSet = PacIO.importROMSet(zipFile.getFile());
+		PacIO.saveROMSet(universalZipFile.getFile(), pacROMSet);
 	}
 }

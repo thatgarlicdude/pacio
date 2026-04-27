@@ -21,6 +21,7 @@ import java.util.zip.ZipFile;
 
 import io.github.thatgarlicdude.pacio.io.PacROMSet;
 import io.github.thatgarlicdude.pacio.io.PacROMSetImporter;
+import io.github.thatgarlicdude.pacio.io.PacROMSetSaver;
 
 /**
  * The main class of the PacIO library.
@@ -69,9 +70,10 @@ public final class PacIO {
 	 * @param path The destination file path.
 	 * @throws IOException When saving the ZIP file from disk fails.
 	 */
-	public static final void saveROMSet(final String path)
-			throws IOException {
-		return;
+	public static final void saveROMSet(
+			final String path,
+			final PacROMSet pacROMSet) throws IOException {
+		new PacROMSetSaver(pacROMSet, path).saveROMSet();;
 	}
 	
 	/**
