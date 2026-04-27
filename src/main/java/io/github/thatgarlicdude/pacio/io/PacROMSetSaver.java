@@ -22,6 +22,6 @@ package io.github.thatgarlicdude.pacio.io;
  * @version 1.0.0
  * @author GarlicDude
  */
-public final class PacROMSetSaver {
-
+public final class PacROMSetSaver implements PacROMSetFilenames {
+	
 }
