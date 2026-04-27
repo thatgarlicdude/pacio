@@ -18,7 +18,7 @@ package io.github.thatgarlicdude.pacio;
 
 import org.junit.Test;
 
-import io.github.thatgarlicdude.pacio.rom.PacROMSet;
+import io.github.thatgarlicdude.pacio.io.PacROMSet;
 
 import static org.junit.Assert.*;
 

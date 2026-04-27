@@ -19,8 +19,8 @@ package io.github.thatgarlicdude.pacio;
 import java.io.IOException;
 import java.util.zip.ZipFile;
 
+import io.github.thatgarlicdude.pacio.io.PacROMSet;
 import io.github.thatgarlicdude.pacio.io.PacROMSetImporter;
-import io.github.thatgarlicdude.pacio.rom.PacROMSet;
 
 /**
  * The main class of the PacIO library.

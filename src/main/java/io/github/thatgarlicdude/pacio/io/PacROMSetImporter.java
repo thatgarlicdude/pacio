@@ -25,7 +25,6 @@ import java.util.zip.ZipFile;
 import io.github.thatgarlicdude.pacio.catalog.PacCatalog;
 import io.github.thatgarlicdude.pacio.catalog.PacCatalogManager;
 import io.github.thatgarlicdude.pacio.exception.PacROMNotFoundException;
-import io.github.thatgarlicdude.pacio.rom.PacROMSet;
 
 /**
  * A class used to import Pac-Man ROMs to universal ROM sets.
