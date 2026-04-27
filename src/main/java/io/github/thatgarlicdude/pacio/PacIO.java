@@ -17,10 +17,10 @@
 package io.github.thatgarlicdude.pacio;
 
 import java.io.IOException;
+import java.util.zip.ZipFile;
 
-import io.github.thatgarlicdude.pacio.io.PacZip;
+import io.github.thatgarlicdude.pacio.io.PacROMSetImporter;
 import io.github.thatgarlicdude.pacio.rom.PacROMSet;
-import io.github.thatgarlicdude.pacio.rom.PacROMBuilder;
 
 /**
  * The main class of the PacIO library.
@@ -45,9 +45,8 @@ public final class PacIO {
 	 */
 	public static final PacROMSet importROMSet(final String path)
 			throws IOException {
-		PacZip pacZip = new PacZip(path);
-		PacROMSet pacROMSet = new PacROMBuilder(pacZip).buildROM();
-		return pacROMSet;
+		ZipFile zipFile = new ZipFile(path);
+		return new PacROMSetImporter(zipFile).importROMSet();
 	}
 	
 	/**
