@@ -17,7 +17,7 @@
 package io.github.thatgarlicdude.pacio.io;
 
 /**
- * A class used to open universal Pac-Man ROM sets.
+ * A class used to open unified Pac-Man ROM sets.
  * 
  * @version 1.0.0
  * @author GarlicDude

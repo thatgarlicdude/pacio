@@ -38,10 +38,10 @@ public final class PacIO {
 			"PacIO can't be instantiated";
 	
 	/**
-	 * Imports an existing Pac-Man ROM set to a universal ROM set.
+	 * Imports an existing Pac-Man ROM set to a unified ROM set.
 	 * 
 	 * @param path The file path to the original ROM set.
-	 * @return A universal, assembled Pac-Man ROM set.
+	 * @return A unified Pac-Man ROM set.
 	 * @throws IOException When accessing the ZIP file from disk fails.
 	 */
 	public static final PacROMSet importROMSet(final String path)
@@ -51,10 +51,10 @@ public final class PacIO {
 	}
 	
 	/**
-	 * Opens an existing universal Pac-Man ROM set to memory.
+	 * Opens an existing unified Pac-Man ROM set to memory.
 	 * 
 	 * @param path The file path to the universal ROM set.
-	 * @return A universal, assembled Pac-Man ROM set.
+	 * @return A unified Pac-Man ROM set.
 	 * @throws IOException When accessing the ZIP file from disk fails.
 	 */
 	public static final PacROMSet openROMSet(final String path)
@@ -65,7 +65,7 @@ public final class PacIO {
 	}
 	
 	/**
-	 * Saves the universal Pac-Man ROM set to disk.
+	 * Saves the unified Pac-Man ROM set to disk.
 	 * 
 	 * @param path The destination file path.
 	 * @throws IOException When saving the ZIP file from disk fails.
@@ -73,7 +73,7 @@ public final class PacIO {
 	public static final void saveROMSet(
 			final String path,
 			final PacROMSet pacROMSet) throws IOException {
-		new PacROMSetSaver(pacROMSet, path).saveROMSet();;
+		new PacROMSetSaver(pacROMSet, path).saveROMSet();
 	}
 	
 	/**

@@ -17,7 +17,7 @@
 package io.github.thatgarlicdude.pacio.io;
 
 /**
- * An interface containing filenames for a universal ROM-set.
+ * An interface containing filenames for a unified ROM-set.
  * 
  * @version 1.0.0
  * @author GarlicDude
@@ -57,7 +57,8 @@ public interface PacROMSetFilenames {
 	/**
 	 * Gets the filename for the program file.
 	 * 
-	 * @return The file name for the file containing program data.
+	 * @return The file name for the file containing unified program
+	 * data.
 	 */
 	public default String getProgramName() {
 		return programName;
@@ -66,7 +67,8 @@ public interface PacROMSetFilenames {
 	/**
 	 * Gets the filename for the graphic file.
 	 * 
-	 * @return The file name for the file containing graphic data.
+	 * @return The file name for the file containing unified graphic
+	 * data.
 	 */
 	public default String getGraphicName() {
 		return graphicName;
@@ -75,7 +77,7 @@ public interface PacROMSetFilenames {
 	/**
 	 * Gets the filename for the color file.
 	 * 
-	 * @return The file name for the file containing color data.
+	 * @return The file name for the file containing unified color data.
 	 */
 	public default String getColorName() {
 		return colorName;
@@ -84,7 +86,8 @@ public interface PacROMSetFilenames {
 	/**
 	 * Gets the filename for the palette file.
 	 * 
-	 * @return The file name for the file containing palette data.
+	 * @return The file name for the file containing unified palette
+	 * data.
 	 */
 	public default String getPaletteName() {
 		return paletteName;
@@ -93,7 +96,7 @@ public interface PacROMSetFilenames {
 	/**
 	 * Gets the filename for the sound file.
 	 * 
-	 * @return The file name for the file containing sound data.
+	 * @return The file name for the file containing unified sound data.
 	 */
 	public default String getSoundName() {
 		return soundName;
@@ -102,7 +105,8 @@ public interface PacROMSetFilenames {
 	/**
 	 * Gets the filename for the mystery file.
 	 * 
-	 * @return The file name for the file containing mystery data.
+	 * @return The file name for the file containing unified mystery
+	 * data.
 	 */
 	public default String getMysteryName() {
 		return mysteryName;

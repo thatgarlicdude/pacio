@@ -40,7 +40,7 @@ public final class TestPacIO {
 			.getResource("testROMSet.zip");
 	
 	/**
-	 * The file path to the test universal ROM set ZIP file.
+	 * The file path to the test unified ROM set ZIP file.
 	 */
 	private static final URL universalZipFile = TestPacIO.class
 			.getClassLoader().getResource("testUniversalROMSet.zip");

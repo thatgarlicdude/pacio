@@ -22,7 +22,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 /**
- * A class used to save universal Pac-Man ROM sets.
+ * A class used to save unified Pac-Man ROM sets.
  * 
  * @version 1.0.0
  * @author GarlicDude
@@ -30,7 +30,7 @@ import java.util.zip.ZipOutputStream;
 public final class PacROMSetSaver implements PacROMSetFilenames {
 	
 	/**
-	 * The universal ROM set that is used to save on disk.
+	 * The unified ROM set that is used to save on disk.
 	 */
 	private final PacROMSet pacROMSet;
 	
@@ -40,7 +40,7 @@ public final class PacROMSetSaver implements PacROMSetFilenames {
 	private final String path;
 	
 	/**
-	 * Saves the universal ROM set to disk.
+	 * Saves the unified ROM set to disk.
 	 * 
 	 * @throws IOException When the saving process fails.
 	 */
@@ -58,7 +58,7 @@ public final class PacROMSetSaver implements PacROMSetFilenames {
 	}
 	
 	/**
-	 * Saves a specific ROM entry in the universal ROM set ZIP file.
+	 * Saves a specific ROM entry in the unified ROM set ZIP file.
 	 * 
 	 * @param zos The ZipOutputStream.
 	 * @param name The name of the ZIP file entry.
@@ -77,7 +77,7 @@ public final class PacROMSetSaver implements PacROMSetFilenames {
 	}
 	
 	/**
-	 * Saves the program ROM entry in the universal ROM set ZIP file.
+	 * Saves the program ROM entry in the unified ROM set ZIP file.
 	 * 
 	 * @param zos The ZipOutputStream.
 	 * @throws IOException When the saving process fails.
@@ -88,7 +88,7 @@ public final class PacROMSetSaver implements PacROMSetFilenames {
 	}
 	
 	/**
-	 * Saves the graphic ROM entry in the universal ROM set ZIP file.
+	 * Saves the graphic ROM entry in the unified ROM set ZIP file.
 	 * 
 	 * @param zos The ZipOutputStream.
 	 * @throws IOException When the saving process fails.
@@ -99,7 +99,7 @@ public final class PacROMSetSaver implements PacROMSetFilenames {
 	}
 	
 	/**
-	 * Saves the color ROM entry in the universal ROM set ZIP file.
+	 * Saves the color ROM entry in the unified ROM set ZIP file.
 	 * 
 	 * @param zos The ZipOutputStream.
 	 * @throws IOException When the saving process fails.
@@ -110,7 +110,7 @@ public final class PacROMSetSaver implements PacROMSetFilenames {
 	}
 	
 	/**
-	 * Saves the palette ROM entry in the universal ROM set ZIP file.
+	 * Saves the palette ROM entry in the unified ROM set ZIP file.
 	 * 
 	 * @param zos The ZipOutputStream.
 	 * @throws IOException When the saving process fails.
@@ -121,7 +121,7 @@ public final class PacROMSetSaver implements PacROMSetFilenames {
 	}
 	
 	/**
-	 * Saves the sound ROM entry in the universal ROM set ZIP file.
+	 * Saves the sound ROM entry in the unified ROM set ZIP file.
 	 * 
 	 * @param zos The ZipOutputStream.
 	 * @throws IOException When the saving process fails.
@@ -132,7 +132,7 @@ public final class PacROMSetSaver implements PacROMSetFilenames {
 	}
 	
 	/**
-	 * Saves the mystery ROM entry in the universal ROM set ZIP file.
+	 * Saves the mystery ROM entry in the unified ROM set ZIP file.
 	 * 
 	 * @param zos The ZipOutputStream.
 	 * @throws IOException When the saving process fails.
@@ -142,6 +142,13 @@ public final class PacROMSetSaver implements PacROMSetFilenames {
 		saveROM(zos, getMysteryName(), pacROMSet.getMysteryData());
 	}
 	
+	/**
+	 * Constructs an instance of the unified ROM set saver.
+	 * 
+	 * @param pacROMSet The unified Pac-Man ROM set as an object.
+	 * @param path The destination file path where the unified ROM Set
+	 * will be saved on.
+	 */
 	public PacROMSetSaver(final PacROMSet pacROMSet, final String path) {
 		this.pacROMSet = pacROMSet;
 		this.path = path;

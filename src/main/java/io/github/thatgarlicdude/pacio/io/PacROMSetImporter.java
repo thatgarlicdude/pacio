@@ -27,7 +27,7 @@ import io.github.thatgarlicdude.pacio.catalog.PacCatalogManager;
 import io.github.thatgarlicdude.pacio.exception.PacROMNotFoundException;
 
 /**
- * A class used to import Pac-Man ROMs to universal ROM sets.
+ * A class used to import Pac-Man ROM sets to unified ROM sets.
  * 
  * @version 1.0.0
  * @author GarlicDude
@@ -40,14 +40,14 @@ public final class PacROMSetImporter {
 	private static final int BUFFER_SIZE = 256;
 	
 	/**
-	 * The ZIP file required to import the universal ROM set.
+	 * The ZIP file required to import the unified ROM set.
 	 */
 	private final ZipFile zipFile;
 	
 	/**
-	 * Imports an existing Pac-Man ROM set into a universal ROM set.
+	 * Imports an existing Pac-Man ROM set into a unified ROM set.
 	 * 
-	 * @return A universal ROM set built off of the existing ROM set.
+	 * @return A unified ROM set built off of the existing ROM set.
 	 * @throws IOException When accessing the ZIP file fails.
 	 */
 	public final PacROMSet importROMSet() throws IOException {
@@ -196,7 +196,7 @@ public final class PacROMSetImporter {
 	/**
 	 * Constructs an instance of the ROM set importer.
 	 * 
-	 * @param zipFile The ZIP file needed to import the universal ROM set.
+	 * @param zipFile The ZIP file needed to import the unified ROM set.
 	 */
 	public PacROMSetImporter(final ZipFile zipFile) {
 		this.zipFile = zipFile;
