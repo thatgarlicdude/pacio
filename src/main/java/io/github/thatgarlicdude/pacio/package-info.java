@@ -18,15 +18,16 @@
  * A Java library for accessing <i>Pac-Man</i> ROM sets and opening,
  * saving, and modifying unified ROM sets.
  * 
- * <p>This package is home to the {@link PacIO} class, which is the main
- * class of the PacIO library. The {@link PacIO} class is used to import
- * existing <i>Pac-Man</i> ROM set ZIP files from disk, and turning them
- * into the {@link io.github.thatgarlicdude.pacio.io.PacROMSet} class to
- * memory, which is described as a <b>unified ROM set</b>. Not just that,
- * but it can also save unified ROM sets to disk as ZIP files and open
- * them from disk. The main class serves as a gateway to importing existing
- * <i>Pac-Man</i> ROM sets, opening unified ROM sets, and saving them to
- * disk.</p>
+ * <p>This package is home to the {@link io.github.thatgarlicdude.pacio
+ * .PacIO PacIO} class, which is the main class of the PacIO library. The
+ * {@link io.github.thatgarlicdude.pacio.PacIO PacIO} class is used to
+ * import existing <i>Pac-Man</i> ROM set ZIP files from disk, and turning
+ * them into the {@link io.github.thatgarlicdude.pacio.io.PacROMSet
+ * PacROMSet} object to memory, which is described as a <b>unified ROM
+ * set</b>. Not just that, but it can also save unified ROM sets to disk
+ * as ZIP files and open them from disk. The main class serves as a gateway
+ * to importing existing <i>Pac-Man</i> ROM sets, opening unified ROM sets,
+ * and saving them to disk.</p>
  * 
  * @author GarlicDude
  */
