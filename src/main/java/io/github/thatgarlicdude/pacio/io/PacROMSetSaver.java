@@ -24,7 +24,7 @@ import java.util.zip.ZipOutputStream;
 /**
  * A class used to save unified Pac-Man ROM sets.
  * 
- * @version 1.0.0
+ * @version 1.0.0-alpha
  * @author GarlicDude
  */
 public final class PacROMSetSaver implements PacROMSetFilenames {

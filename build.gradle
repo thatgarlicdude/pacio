@@ -11,7 +11,7 @@ plugins {
 }
 
 setGroup("io.github.thatgarlicdude")
-setVersion("1.0.0")
+setVersion("1.0.0-alpha")
 
 repositories {
 	// Use Maven Central for resolving dependencies.

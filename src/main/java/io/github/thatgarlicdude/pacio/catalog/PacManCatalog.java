@@ -20,7 +20,7 @@ package io.github.thatgarlicdude.pacio.catalog;
  * A class that represents a categorized list of the ROM file names in
  * the Pac-Man ROM set.
  * 
- * @version 1.0.0
+ * @version 1.0.0-alpha
  * @author GarlicDude
  */
 public final class PacManCatalog extends PacCatalog {

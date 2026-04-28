@@ -19,7 +19,7 @@ package io.github.thatgarlicdude.pacio.io;
 /**
  * An interface containing filenames for a unified ROM-set.
  * 
- * @version 1.0.0
+ * @version 1.0.0-alpha
  * @author GarlicDude
  */
 public interface PacROMSetFilenames {

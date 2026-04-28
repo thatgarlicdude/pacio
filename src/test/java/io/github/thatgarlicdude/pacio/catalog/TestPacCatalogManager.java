@@ -22,7 +22,7 @@ import org.junit.Test;
 /**
  * A test class of the PacCatalogManager class.
  * 
- * @version 1.0.0
+ * @version 1.0.0-alpha
  * @author GarlicDude
  */
 public final class TestPacCatalogManager {

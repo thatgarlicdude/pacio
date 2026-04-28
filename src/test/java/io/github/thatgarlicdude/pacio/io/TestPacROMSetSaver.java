@@ -19,7 +19,7 @@ package io.github.thatgarlicdude.pacio.io;
 /**
  * A test class of the PacROMSetSaver class.
  * 
- * @version 1.0.0
+ * @version 1.0.0-alpha
  * @author GarlicDude
  */
 public final class TestPacROMSetSaver {

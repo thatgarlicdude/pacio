@@ -26,7 +26,7 @@ import java.util.zip.ZipFile;
 /**
  * A class used to open unified Pac-Man ROM sets.
  * 
- * @version 1.0.0
+ * @version 1.0.0-alpha
  * @author GarlicDude
  */
 public final class PacROMSetOpener implements PacROMSetFilenames {

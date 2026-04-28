@@ -19,7 +19,7 @@ package io.github.thatgarlicdude.pacio.io;
 /**
  * A class that represents a unified Pac-Man ROM set.
  * 
- * @version 1.0.0
+ * @version 1.0.0-alpha
  * @author GarlicDude
  */
 public final class PacROMSet {

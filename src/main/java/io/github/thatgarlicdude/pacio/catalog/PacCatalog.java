@@ -20,7 +20,7 @@ package io.github.thatgarlicdude.pacio.catalog;
  * An abstract class that represents as a categorized list of ROM file
  * names.
  * 
- * @version 1.0.0
+ * @version 1.0.0-alpha
  * @author GarlicDude
  */
 public abstract class PacCatalog {

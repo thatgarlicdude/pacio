@@ -21,7 +21,7 @@ import java.io.IOException;
 /**
  * An abstract, generic exception class designed for the PacIO library.
  * 
- * @version 1.0.0
+ * @version 1.0.0-alpha
  * @author GarlicDude
  */
 public abstract class PacIOException extends IOException {

@@ -27,7 +27,7 @@ import io.github.thatgarlicdude.pacio.io.PacROMSetSaver;
 /**
  * The main class of the PacIO library.
  * 
- * @version 1.0.0
+ * @version 1.0.0-alpha
  * @author GarlicDude
  */
 public final class PacIO {

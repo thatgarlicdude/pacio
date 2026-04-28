@@ -18,7 +18,6 @@
  * A Java library for accessing <i>Pac-Man</i> ROM sets and opening,
  * saving, and modifying unified ROM sets.
  * 
- * @version 1.0.0
  * @author GarlicDude
  */
 package io.github.thatgarlicdude.pacio;

@@ -19,7 +19,7 @@ package io.github.thatgarlicdude.pacio.exception;
 /**
  * An exception class used when a ROM is not found in the ROM set.
  * 
- * @version 1.0.0
+ * @version 1.0.0-alpha
  * @author GarlicDude
  */
 public final class PacROMNotFoundException extends PacIOException {

@@ -29,7 +29,7 @@ import io.github.thatgarlicdude.pacio.exception.PacROMNotFoundException;
 /**
  * A class used to import Pac-Man ROM sets to unified ROM sets.
  * 
- * @version 1.0.0
+ * @version 1.0.0-alpha
  * @author GarlicDude
  */
 public final class PacROMSetImporter {

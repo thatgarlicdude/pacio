@@ -19,7 +19,7 @@ package io.github.thatgarlicdude.pacio.catalog;
 /**
  * The a class used for managing PacCatalog objects.
  * 
- * @version 1.0.0
+ * @version 1.0.0-alpha
  * @author GarlicDude
  */
 public final class PacCatalogManager {
