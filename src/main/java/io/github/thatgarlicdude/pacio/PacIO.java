@@ -21,6 +21,7 @@ import java.util.zip.ZipFile;
 
 import io.github.thatgarlicdude.pacio.io.PacROMSet;
 import io.github.thatgarlicdude.pacio.io.PacROMSetImporter;
+import io.github.thatgarlicdude.pacio.io.PacROMSetOpener;
 import io.github.thatgarlicdude.pacio.io.PacROMSetSaver;
 
 /**
@@ -59,9 +60,7 @@ public final class PacIO {
 	 */
 	public static final PacROMSet openROMSet(final String path)
 			throws IOException {
-		// TODO: There needs to be a ROM builder for this.
-		PacROMSet pacROMSet = null;
-		return pacROMSet;
+		return new PacROMSetOpener(path).openROMSet();
 	}
 	
 	/**

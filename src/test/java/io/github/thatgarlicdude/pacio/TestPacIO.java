@@ -42,8 +42,8 @@ public final class TestPacIO {
 	/**
 	 * The file path to the test unified ROM set ZIP file.
 	 */
-	private static final URL universalZipFile = TestPacIO.class
-			.getClassLoader().getResource("testUniversalROMSet.zip");
+	private static final URL unifiedZipFile = TestPacIO.class
+			.getClassLoader().getResource("testUnifiedROMSet.zip");
 	
 	/**
 	 * Test method for the importROMSet method in the PacIO class.
@@ -64,10 +64,19 @@ public final class TestPacIO {
 	
 	/**
 	 * Test method for the openROMSet method in the PacIO class.
+	 * 
+	 * @throws IOException When the opening process fails.
 	 */
 	@Test
-	public final void testOpenROMSet() {
-		
+	public final void testOpenROMSet() throws IOException {
+		PacROMSet pacROMSet = PacIO.openROMSet(unifiedZipFile.getFile());
+		assertNotNull(pacROMSet);
+		System.out.println(new String(pacROMSet.getProgramData()));
+		System.out.println(new String(pacROMSet.getGraphicData()));
+		System.out.println(new String(pacROMSet.getColorData()));
+		System.out.println(new String(pacROMSet.getPaletteData()));
+		System.out.println(new String(pacROMSet.getSoundData()));
+		System.out.println(new String(pacROMSet.getMysteryData()));
 	}
 	
 	/**
@@ -78,6 +87,6 @@ public final class TestPacIO {
 	@Test
 	public final void testSaveROMSet() throws IOException {
 		PacROMSet pacROMSet = PacIO.importROMSet(zipFile.getFile());
-		PacIO.saveROMSet(universalZipFile.getFile(), pacROMSet);
+		PacIO.saveROMSet(unifiedZipFile.getFile(), pacROMSet);
 	}
 }
