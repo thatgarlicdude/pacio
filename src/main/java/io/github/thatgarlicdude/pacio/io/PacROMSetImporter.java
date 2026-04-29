@@ -16,18 +16,24 @@
 
 package io.github.thatgarlicdude.pacio.io;
 
+import io.github.thatgarlicdude.pacio.catalog.PacCatalog;
+import io.github.thatgarlicdude.pacio.catalog.PacCatalogManager;
+
 import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-import io.github.thatgarlicdude.pacio.catalog.PacCatalog;
-import io.github.thatgarlicdude.pacio.catalog.PacCatalogManager;
-import io.github.thatgarlicdude.pacio.exception.PacROMNotFoundException;
-
 /**
- * A class used to import Pac-Man ROM sets to unified ROM sets.
+ * A class used to import the <i>Pac-Man</i> ROM set ZIP files to
+ * {@link io.github.thatgarlicdude.pacio.io.PacROMSet PacROMSet} objects,
+ * which represent as digital, unified ROM sets in memory.
+ * 
+ * <p>The main method of this class is the {@link #importROMSet()
+ * importROMSet} method, which is used to turn existing <i>Pac-Man</i>
+ * ROM set ZIP files from disk into unified ROM sets to memory.</p>
  * 
  * @version 1.0.0-alpha
  * @author GarlicDude
@@ -35,19 +41,22 @@ import io.github.thatgarlicdude.pacio.exception.PacROMNotFoundException;
 public final class PacROMSetImporter {
 	
 	/**
-	 * The size of a buffer used to read ZIP entry files.
+	 * The size of a buffer used to read the file entries in a ZIP file.
 	 */
 	private static final int BUFFER_SIZE = 256;
 	
 	/**
-	 * The ZIP file required to import the unified ROM set.
+	 * The ROM set ZIP file required to import the unified ROM set.
 	 */
 	private final ZipFile zipFile;
 	
 	/**
-	 * Imports an existing Pac-Man ROM set into a unified ROM set.
+	 * Imports an existing <i>Pac-Man</i> ROM set ZIP file from disk to a
+	 * {@link IOException.github.thatgarlicdude.io.PacROMSet PacROMSet}
+	 * object to memory, which are unified ROM sets.
 	 * 
-	 * @return A unified ROM set built off of the existing ROM set.
+	 * @return A unified ROM set built off of the existing ROM set ZIP
+	 * file.
 	 * @throws IOException When accessing the ZIP file fails.
 	 */
 	public final PacROMSet importROMSet() throws IOException {
@@ -68,7 +77,8 @@ public final class PacROMSetImporter {
 				paletteData = concatPaletteROMs(pacCatalog);
 				soundData = concatSoundROMs(pacCatalog);
 				mysteryData = concatMysteryROMs(pacCatalog);
-			} catch(final PacROMNotFoundException exception) {
+				break;
+			} catch(final FileNotFoundException exception) {
 				// Just continue when a ROM isn't found.
 				// TODO: Make this print an error instead of continuing.
 				continue;
@@ -98,7 +108,7 @@ public final class PacROMSetImporter {
 			ZipEntry zipEntry = zipFile.getEntry(filename);
 			// Throw an error when a ROM file name is not found.
 			if (zipEntry == null)
-				throw new PacROMNotFoundException(filename);
+				throw new FileNotFoundException(filename);
 			// Create the InputStream for the ZIP entry.
 			try (InputStream inputStream =
 					zipFile.getInputStream(zipEntry)) {
