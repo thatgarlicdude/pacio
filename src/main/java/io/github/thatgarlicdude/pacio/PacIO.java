@@ -22,7 +22,6 @@ import io.github.thatgarlicdude.pacio.io.PacROMSetOpener;
 import io.github.thatgarlicdude.pacio.io.PacROMSetSaver;
 
 import java.io.IOException;
-import java.util.zip.ZipFile;
 
 /**
  * The main class of the PacIO library.
@@ -74,8 +73,7 @@ public final class PacIO {
 	 */
 	public static final PacROMSet importROMSet(final String path)
 			throws IOException {
-		ZipFile zipFile = new ZipFile(path);
-		return new PacROMSetImporter(zipFile).importROMSet();
+		return new PacROMSetImporter(path).importROMSet();
 	}
 	
 	/**

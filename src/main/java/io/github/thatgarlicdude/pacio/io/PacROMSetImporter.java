@@ -46,9 +46,9 @@ public final class PacROMSetImporter {
 	private static final int BUFFER_SIZE = 256;
 	
 	/**
-	 * The ROM set ZIP file required to import the unified ROM set.
+	 * The file path to the original source ROM set ZIP file.
 	 */
-	private final ZipFile zipFile;
+	private final String path;
 	
 	/**
 	 * Imports an existing <i>Pac-Man</i> ROM set ZIP file from disk to a
@@ -61,6 +61,7 @@ public final class PacROMSetImporter {
 	 */
 	public final PacROMSet importROMSet() throws IOException {
 		PacCatalog[] pacCatalogs = PacCatalogManager.getPacCatalogs();
+		ZipFile zipFile = new ZipFile(path);
 		byte[] programData = null;
 		byte[] graphicData = null;
 		byte[] colorData = null;
@@ -71,12 +72,12 @@ public final class PacROMSetImporter {
 		for (PacCatalog pacCatalog : pacCatalogs) {
 			// Concatenate the ROMs.
 			try {
-				programData = concatProgramROMs(pacCatalog);
-				graphicData = concatGraphicROMs(pacCatalog);
-				colorData = concatColorROMs(pacCatalog);
-				paletteData = concatPaletteROMs(pacCatalog);
-				soundData = concatSoundROMs(pacCatalog);
-				mysteryData = concatMysteryROMs(pacCatalog);
+				programData = concatProgramROMs(zipFile, pacCatalog);
+				graphicData = concatGraphicROMs(zipFile, pacCatalog);
+				colorData = concatColorROMs(zipFile, pacCatalog);
+				paletteData = concatPaletteROMs(zipFile, pacCatalog);
+				soundData = concatSoundROMs(zipFile, pacCatalog);
+				mysteryData = concatMysteryROMs(zipFile, pacCatalog);
 				break;
 			} catch(final FileNotFoundException exception) {
 				// Just continue when a ROM isn't found.
@@ -92,14 +93,17 @@ public final class PacROMSetImporter {
 	/**
 	 * Concatenate a specific group of ROMs into a single byte array.
 	 * 
+	 * @param zipFile The ZIP file that will be used to access the ROM
+	 * entry.
 	 * @param filenames A list of filenames that the ZIP file will look
 	 * for.
 	 * @return A single byte array that has all the byte data from the ROM
 	 * files.
 	 * @throws IOException When reading the ZIP file fails.
 	 */
-	private final byte[] concatROMs(final String[] filenames)
-			throws IOException {
+	private final byte[] concatROMs(
+			final ZipFile zipFile,
+			final String[] filenames) throws IOException {
 		ByteArrayOutputStream stream = new ByteArrayOutputStream();
 		byte[] buffer = new byte[BUFFER_SIZE];
 		int bytesRead = 0;
@@ -129,86 +133,104 @@ public final class PacROMSetImporter {
 	 * Concatenate the program ROMs from the ZIP file into a single byte
 	 * array.
 	 * 
+	 * @param zipFile The ZIP file that will be used to access the ROM
+	 * entry.
 	 * @param pacCatalog The PacCatalog needed to access the list.
 	 * @return A concatenated byte array of program data.
 	 * @throws IOException When reading the ZIP file fails.
 	 */
-	private final byte[] concatProgramROMs(final PacCatalog pacCatalog)
-			throws IOException {
-		return concatROMs(pacCatalog.getProgramROMNames());
+	private final byte[] concatProgramROMs(
+			final ZipFile zipFile,
+			final PacCatalog pacCatalog) throws IOException {
+		return concatROMs(zipFile, pacCatalog.getProgramROMNames());
 	}
 	
 	/**
 	 * Concatenate the graphic ROMs from the ZIP file into a single byte
 	 * array.
 	 * 
+	 * @param zipFile The ZIP file that will be used to access the ROM
+	 * entry.
 	 * @param pacCatalog The PacCatalog needed to access the list.
 	 * @return A concatenated byte array of graphic data.
 	 * @throws IOException When reading the ZIP file fails.
 	 */
-	private final byte[] concatGraphicROMs(final PacCatalog pacCatalog)
-			throws IOException {
-		return concatROMs(pacCatalog.getGraphicROMNames());
+	private final byte[] concatGraphicROMs(
+			final ZipFile zipFile,
+			final PacCatalog pacCatalog) throws IOException {
+		return concatROMs(zipFile, pacCatalog.getGraphicROMNames());
 	}
 	
 	/**
 	 * Concatenate the color ROMs from the ZIP file into a single byte
 	 * array.
 	 * 
+	 * @param zipFile The ZIP file that will be used to access the ROM
+	 * entry.
 	 * @param pacCatalog The PacCatalog needed to access the list.
 	 * @return A concatenated byte array of color data.
 	 * @throws IOException When reading the ZIP file fails.
 	 */
-	private final byte[] concatColorROMs(final PacCatalog pacCatalog)
-			throws IOException {
-		return concatROMs(pacCatalog.getColorROMNames());
+	private final byte[] concatColorROMs(
+			final ZipFile zipFile,
+			final PacCatalog pacCatalog) throws IOException {
+		return concatROMs(zipFile, pacCatalog.getColorROMNames());
 	}
 	
 	/**
 	 * Concatenate the palette ROMs from the ZIP file into a single byte
 	 * array.
 	 * 
+	 * @param zipFile The ZIP file that will be used to access the ROM
+	 * entry.
 	 * @param pacCatalog The PacCatalog needed to access the list.
 	 * @return A concatenated byte array of palette data.
 	 * @throws IOException When reading the ZIP file fails.
 	 */
-	private final byte[] concatPaletteROMs(final PacCatalog pacCatalog)
-			throws IOException {
-		return concatROMs(pacCatalog.getGraphicROMNames());
+	private final byte[] concatPaletteROMs(
+			final ZipFile zipFile,
+			final PacCatalog pacCatalog) throws IOException {
+		return concatROMs(zipFile, pacCatalog.getPaletteROMNames());
 	}
 	
 	/**
 	 * Concatenate the sound ROMs from the ZIP file into a single byte
 	 * array.
 	 * 
+	 * @param zipFile The ZIP file that will be used to access the ROM
+	 * entry.
 	 * @param pacCatalog The PacCatalog needed to access the list.
 	 * @return A concatenated byte array of sound data.
 	 * @throws IOException When reading the ZIP file fails.
 	 */
-	private final byte[] concatSoundROMs(final PacCatalog pacCatalog)
-			throws IOException {
-		return concatROMs(pacCatalog.getProgramROMNames());
+	private final byte[] concatSoundROMs(
+			final ZipFile zipFile,
+			final PacCatalog pacCatalog) throws IOException {
+		return concatROMs(zipFile, pacCatalog.getSoundROMNames());
 	}
 	
 	/**
 	 * Concatenate the mystery ROMs from the ZIP file into a single byte
 	 * array.
 	 * 
+	 * @param zipFile The ZIP file that will be used to access the ROM
+	 * entry.
 	 * @param pacCatalog The PacCatalog needed to access the list.
 	 * @return A concatenated byte array of mystery data.
 	 * @throws IOException When reading the ZIP file fails.
 	 */
-	private final byte[] concatMysteryROMs(final PacCatalog pacCatalog)
-			throws IOException {
-		return concatROMs(pacCatalog.getGraphicROMNames());
+	private final byte[] concatMysteryROMs(
+			final ZipFile zipFile,
+			final PacCatalog pacCatalog) throws IOException {
+		return concatROMs(zipFile, pacCatalog.getMysteryROMNames());
 	}
 	
 	/**
 	 * Constructs an instance of the ROM set importer.
 	 * 
-	 * @param zipFile The ZIP file needed to import the unified ROM set.
+	 * @param path The file path to the unified ROM set.
 	 */
-	public PacROMSetImporter(final ZipFile zipFile) {
-		this.zipFile = zipFile;
+	public PacROMSetImporter(final String path) {
+		this.path = path;
 	}
 }

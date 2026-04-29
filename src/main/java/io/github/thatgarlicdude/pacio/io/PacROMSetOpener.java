@@ -171,7 +171,7 @@ public final class PacROMSetOpener implements PacROMSetFilenames {
 	 */
 	private final byte[] openMysteryROM(final ZipFile zipFile)
 			throws IOException {
-		return openROM(zipFile, getSoundName());
+		return openROM(zipFile, getMysteryName());
 	}
 	
 	/**
