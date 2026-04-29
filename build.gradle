@@ -36,5 +36,5 @@ jar {
 }
 
 javadoc {
-	options.overview = file('docs/overview.html');
+	destinationDir = file("${buildDir}/docs/javadoc")
 }
