@@ -24,7 +24,8 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 /**
- * A class used to open unified Pac-Man ROM sets.
+ * A class used to open unified <i>Pac-Man</i> ROM set ZIP files from
+ * disk.
  * 
  * @version 1.0.0-alpha
  * @author GarlicDude
@@ -32,12 +33,12 @@ import java.util.zip.ZipFile;
 public final class PacROMSetOpener implements PacROMSetFilenames {
 	
 	/**
-	 * The size of a buffer used to read ZIP entry files.
+	 * The size of a buffer used to read the file entries in a ZIP file.
 	 */
 	private static final int BUFFER_SIZE = 256;
 	
 	/**
-	 * The file path to the unified ROM set.
+	 * The file path to the unified ROM set ZIP file.
 	 */
 	private final String path;
 	
