@@ -17,7 +17,22 @@
 package io.github.thatgarlicdude.pacio.io;
 
 /**
- * An interface containing filenames for a unified ROM-set.
+ * An interface containing filenames for a unified <i>Pac-Man</i>
+ * ROM-set.
+ * 
+ * <p>This interface is implemented by the {@link
+ * io.github.thatgarlicdude.pacio.io.PacROMSetOpener PacROMSetOpener}
+ * and the {@link
+ * io.github.thatgarlicdude.pacio.io.PacROMSetSaver PacROMSetSaver}
+ * classes. It is used to get the filenames such as <b>program.bin</b> and
+ * <b>graphic.bin</b>, which are used when accessing or saving the
+ * entries from a unified ROM set ZIP file.</p>
+ * 
+ * <p>Methods include {@link #getProgramName}, {@link #getGraphicName},
+ * {@link #getColorName}, {@link #getPaletteName}, {@link #getSoundName},
+ * and {@link #getMysteryName}. They are all default methods, so the
+ * classes that implement this interface don't need to fill out the
+ * methods with their own code.</p>
  * 
  * @version 1.0.0-alpha
  * @author GarlicDude
@@ -25,88 +40,90 @@ package io.github.thatgarlicdude.pacio.io;
 public interface PacROMSetFilenames {
 	
 	/**
-	 * The filename for the file containing program data.
+	 * The filename for the <b>program.bin</b> entry.
 	 */
 	static final String programName = "program.bin";
 	
 	/**
-	 * The filename for the file containing graphic data.
+	 * The filename for the <b>graphic.bin</b> entry.
 	 */
 	static final String graphicName = "graphic.bin";
 	
 	/**
-	 * The filename for the file containing color data.
+	 * The filename for the <b>color.bin</b> entry.
 	 */
 	static final String colorName = "color.bin";
 	
 	/**
-	 * The filename for the file containing palette data.
+	 * The filename for the <b>palette.bin</b> entry.
 	 */
 	static final String paletteName = "palette.bin";
 	
 	/**
-	 * The filename for the file containing sound data.
+	 * The filename for the <b>sound.bin</b> entry.
 	 */
 	static final String soundName = "sound.bin";
 	
 	/**
-	 * The filename for the file containing mystery data.
+	 * The filename for the <b>mystery.bin</b> entry.
 	 */
 	static final String mysteryName = "mystery.bin";
 	
 	/**
-	 * Gets the filename for the program file.
+	 * Gets the {@link #programName}, which is the filename of the
+	 * <b>program.bin</b> entry.
 	 * 
-	 * @return The file name for the file containing unified program
-	 * data.
+	 * @return The filename of the <b>program.bin</b> entry as a string.
 	 */
 	public default String getProgramName() {
 		return programName;
 	}
 	
 	/**
-	 * Gets the filename for the graphic file.
+	 * Gets the {@link #graphicName}, which is the filename of the
+	 * <b>graphic.bin</b> entry.
 	 * 
-	 * @return The file name for the file containing unified graphic
-	 * data.
+	 * @return The filename of the <b>graphic.bin</b> entry as a string.
 	 */
 	public default String getGraphicName() {
 		return graphicName;
 	}
 	
 	/**
-	 * Gets the filename for the color file.
+	 * Gets the {@link #colorName}, which is the filename of the
+	 * <b>color.bin</b> entry.
 	 * 
-	 * @return The file name for the file containing unified color data.
+	 * @return The filename of the <b>color.bin</b> entry as a string.
 	 */
 	public default String getColorName() {
 		return colorName;
 	}
 	
 	/**
-	 * Gets the filename for the palette file.
+	 * Gets the {@link #paletteName}, which is the filename of the
+	 * <b>palette.bin</b> entry.
 	 * 
-	 * @return The file name for the file containing unified palette
-	 * data.
+	 * @return The filename of the <b>palette.bin</b> entry as a string.
 	 */
 	public default String getPaletteName() {
 		return paletteName;
 	}
 	
 	/**
-	 * Gets the filename for the sound file.
+	 * Gets the {@link #soundName}, which is the filename of the
+	 * <b>sound.bin</b> entry.
 	 * 
-	 * @return The file name for the file containing unified sound data.
+	 * @return The filename of the <b>sound.bin</b> entry as a string.
 	 */
 	public default String getSoundName() {
 		return soundName;
 	}
 	
 	/**
-	 * Gets the filename for the mystery file.
+	 * Gets the {@link #mysteryName}, which is the filename of the
+	 * <b>mystery.bin</b> entry.
 	 * 
-	 * @return The file name for the file containing unified mystery
-	 * data.
+	 * @return The filename of the <b>mystery.bin</b> entry as a string.
 	 */
 	public default String getMysteryName() {
 		return mysteryName;
