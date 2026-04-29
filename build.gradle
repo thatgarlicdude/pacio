@@ -34,3 +34,7 @@ jar {
 	archiveBaseName = "pacio"
 	archiveVersion = getVersion()
 }
+
+javadoc {
+	options.overview = file('docs/overview.html');
+}
