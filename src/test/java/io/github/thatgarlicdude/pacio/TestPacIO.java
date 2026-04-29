@@ -67,7 +67,7 @@ public final class TestPacIO {
 	 * 
 	 * @throws IOException When the opening process fails.
 	 */
-	//@Test
+	@Test
 	public final void testOpenROMSet() throws IOException {
 		PacROMSet pacROMSet = PacIO.openROMSet(unifiedZipFile.getFile());
 		assertNotNull(pacROMSet);
