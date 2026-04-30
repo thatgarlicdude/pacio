@@ -52,7 +52,7 @@ public final class PacROMSetImporter {
 	
 	/**
 	 * Imports an existing <i>Pac-Man</i> ROM set ZIP file from disk to a
-	 * {@link IOException.github.thatgarlicdude.io.PacROMSet PacROMSet}
+	 * {@link io.github.thatgarlicdude.pacio.io.PacROMSet PacROMSet}
 	 * object to memory, which are unified ROM sets.
 	 * 
 	 * @return A unified ROM set built off of the existing ROM set ZIP
