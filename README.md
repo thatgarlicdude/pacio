@@ -2,7 +2,7 @@
 
 ## Overview
 
-A Java library for accessing and modifying the *Pac-Man* ROM set.
+A Java library for importing *Pac-Man* ROM sets from disk to **unified ROM sets** to memory, as well as saving and opening them from disk.
 
 ## License
 
