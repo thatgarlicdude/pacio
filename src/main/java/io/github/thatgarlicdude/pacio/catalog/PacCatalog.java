@@ -125,7 +125,7 @@ public abstract class PacCatalog {
 	 * @param mysteryROMNames The list of mystery ROM filenames in the
 	 * ROM set.
 	 */
-	public PacCatalog(
+	protected PacCatalog(
 			final String[] programROMNames,
 			final String[] graphicROMNames,
 			final String[] colorROMNames,
