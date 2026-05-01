@@ -4,7 +4,7 @@
 
 - Java 8 or above.
 
-If you are not sure what Java version you're on, go to your terminal and type `java -version`. It should be Java 8 or above. If you meet the requirement, you're good to go!
+If you are unsure about what Java version you're on, go to your terminal and type `java -version`. It should be Java 8 or above. If you meet the requirement, you're good to go!
 
 Also, Gradle is **not** a prerequisite for this project. As a fair warning, Gradle will be automatically downloaded by running `./gradlew build` on Linux, or `gradle.bat build` on Windows. Just a heads up.
 
