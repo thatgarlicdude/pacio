@@ -17,7 +17,8 @@
 package io.github.thatgarlicdude.pacio.catalog;
 
 /**
- * A test class extending from PacCatalog used for the test ROM set.
+ * A class that represents a categorized list of the ROM file names in
+ * the test ROM set.
  * 
  * @version 1.0.0-alpha
  * @author GarlicDude
@@ -25,42 +26,42 @@ package io.github.thatgarlicdude.pacio.catalog;
 public final class TestCatalog extends PacCatalog {
 	
 	/**
-	 * A static list of program ROM filenames in the test ROM set.
+	 * A static list of the program ROM filenames in the test ROM set.
 	 */
 	private static final String[] PROGRAM_ROMS = {
 			"test_prog1", "test_prog2"
 	};
 	
 	/**
-	 * A static list of graphic ROM filenames in the test ROM set.
+	 * A static list of the graphic ROM filenames in the test ROM set.
 	 */
 	private static final String[] GRAPHIC_ROMS = {
 			"test_gfx1", "test_gfx2"
 	};
 	
 	/**
-	 * A static list of color ROM filenames in the test ROM set.
+	 * A static list of the color ROM filenames in the test ROM set.
 	 */
 	private static final String[] COLOR_ROMS = {
 			"test_clr1", "test_clr2"
 	};
 	
 	/**
-	 * A static list of palette ROM filenames in the test ROM set.
+	 * A static list of the palette ROM filenames in the test ROM set.
 	 */
 	private static final String[] PALETTE_ROMS = {
 			"test_pal1", "test_pal2"
 	};
 	
 	/**
-	 * A static list of sound ROM filenames in the test ROM set.
+	 * A static list of the sound ROM filenames in the test ROM set.
 	 */
 	private static final String[] SOUND_ROMS = {
 			"test_sfx1", "test_sfx2"
 	};
 	
 	/**
-	 * A static list of mystery ROM filenames in the test ROM set.
+	 * A static list of the mystery ROM filenames in the test ROM set.
 	 */
 	private static final String[] MYSTERY_ROMS = {
 			"test_mys1", "test_mys2"
