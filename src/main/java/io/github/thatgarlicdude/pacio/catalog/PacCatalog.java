@@ -56,7 +56,7 @@ public abstract class PacCatalog {
 	private final String[] mysteryROMNames;
 	
 	/**
-	 * Gets the list of program ROM filenames in the catalog.
+	 * Gets a copied list of the program ROM filenames in the catalog.
 	 * 
 	 * @return The string array consisting of program ROM filenames.
 	 */
@@ -65,7 +65,7 @@ public abstract class PacCatalog {
 	}
 	
 	/**
-	 * Gets the list of graphic ROM filenames in the catalog.
+	 * Gets a copied list of the graphic ROM filenames in the catalog.
 	 * 
 	 * @return The string array consisting of graphic ROM filenames.
 	 */
@@ -74,7 +74,7 @@ public abstract class PacCatalog {
 	}
 	
 	/**
-	 * Gets the list of color ROM filenames in the catalog.
+	 * Gets a copied list of the color ROM filenames in the catalog.
 	 * 
 	 * @return The string array consisting of color ROM filenames.
 	 */
@@ -83,7 +83,7 @@ public abstract class PacCatalog {
 	}
 	
 	/**
-	 * Gets the list of palette ROM filenames in the catalog.
+	 * Gets a copied list of the palette ROM filenames in the catalog.
 	 * 
 	 * @return The string array consisting of palette ROM filenames.
 	 */
@@ -92,7 +92,7 @@ public abstract class PacCatalog {
 	}
 	
 	/**
-	 * Gets the list of sound ROM filenames in the catalog.
+	 * Gets a copied list of the sound ROM filenames in the catalog.
 	 * 
 	 * @return The string array consisting of sound ROM filenames.
 	 */
@@ -101,7 +101,7 @@ public abstract class PacCatalog {
 	}
 	
 	/**
-	 * Gets the list of mystery ROM filenames in the catalog.
+	 * Gets a copied list of the mystery ROM filenames in the catalog.
 	 * 
 	 * @return The string array consisting of mystery ROM filenames.
 	 */
