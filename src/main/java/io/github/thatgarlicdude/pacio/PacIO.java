@@ -29,11 +29,11 @@ import java.io.IOException;
  * <p>This class serves as the main gateway for importing <i>Pac-Man</i>
  * ROM sets into a {@link
  * io.github.thatgarlicdude.pacio.io.PacROMSet PacROMSet} instance, which
- * resemble <b>unified ROM sets</b>, using the {@link #importROMSet}
- * method. It can also save the unified ROM sets to disk as ZIP files via
- * the {@link #saveROMSet} method, and open them into memory with the
- * {@link #openROMSet} method. It is the go-to class for accessing and
- * managing <i>Pac-Man</i> ROM sets.</p>
+ * resemble <b>unified ROM sets</b>, using the {@link #importROMSet
+ * importROMSet} method. It can also save the unified ROM sets to disk as
+ * ZIP files via the {@link #saveROMSet saveROMSet} method, and open them
+ * into memory with the {@link #openROMSet openROMSet} method. It is the
+ * go-to class for accessing and managing <i>Pac-Man</i> ROM sets.</p>
  * 
  * <p>Because this is a main class for a library, it cannot be
  * instantiated by any means via its private constructor,
@@ -65,7 +65,8 @@ public final class PacIO {
 	 * 
 	 * <p>On the other note, this method should not work on existing
 	 * unified versions of the ROM set ZIP file. To open these kinds of
-	 * ZIP files, the {@link #openROMSet} method should be relied on.</p>
+	 * ZIP files, the {@link #openROMSet openROMSet} method should be
+	 * relied on.</p>
 	 * 
 	 * @param path The file path to the original ROM set ZIP file.
 	 * @return An instance of the unified <i>Pac-Man</i> ROM set.
@@ -84,8 +85,8 @@ public final class PacIO {
 	 * <i>Pac-Man</i> ROM set ZIP files, which contains entries like
 	 * <b>program.bin</b> and <b>graphic.bin</b>. It should not work on
 	 * the original ROM set ZIP files, which have their own ROM files.
-	 * They should be imported via the {@link #importROMSet} method
-	 * instead.</p>
+	 * They should be imported via the {@link #importROMSet importROMSet}
+	 * method instead.</p>
 	 * 
 	 * @param path The file path to the universal ROM set ZIP file.
 	 * @return An instance of the unified <i>Pac-Man</i> ROM set.
