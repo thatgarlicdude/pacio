@@ -4,6 +4,10 @@
 
 A Java library for importing *Pac-Man* ROM sets from disk to **unified ROM sets** to memory, as well as saving and opening them from disk.
 
+## Install
+
+The Java library can be installed by following the instructions in `INSTALL.md`.
+
 ## License
 
 This project is licensed under the Apache License Version 2.0.
