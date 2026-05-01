@@ -130,10 +130,12 @@ extends java.lang.Object</pre>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
 <caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
-<th class="colOne" scope="col">Constructor and Description</th>
+<th class="colFirst" scope="col">Modifier</th>
+<th class="colLast" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../io/github/thatgarlicdude/pacio/catalog/PacCatalog.html#PacCatalog-java.lang.String:A-java.lang.String:A-java.lang.String:A-java.lang.String:A-java.lang.String:A-java.lang.String:A-">PacCatalog</a></span>(java.lang.String[]&nbsp;programROMNames,
+<td class="colFirst"><code>protected </code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/github/thatgarlicdude/pacio/catalog/PacCatalog.html#PacCatalog-java.lang.String:A-java.lang.String:A-java.lang.String:A-java.lang.String:A-java.lang.String:A-java.lang.String:A-">PacCatalog</a></span>(java.lang.String[]&nbsp;programROMNames,
           java.lang.String[]&nbsp;graphicROMNames,
           java.lang.String[]&nbsp;colorROMNames,
           java.lang.String[]&nbsp;paletteROMNames,
@@ -160,37 +162,37 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>java.lang.String[]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/github/thatgarlicdude/pacio/catalog/PacCatalog.html#getColorROMNames--">getColorROMNames</a></span>()</code>
-<div class="block">Gets the list of color ROM filenames in the catalog.</div>
+<div class="block">Gets a copied list of the color ROM filenames in the catalog.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>java.lang.String[]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/github/thatgarlicdude/pacio/catalog/PacCatalog.html#getGraphicROMNames--">getGraphicROMNames</a></span>()</code>
-<div class="block">Gets the list of graphic ROM filenames in the catalog.</div>
+<div class="block">Gets a copied list of the graphic ROM filenames in the catalog.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>java.lang.String[]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/github/thatgarlicdude/pacio/catalog/PacCatalog.html#getMysteryROMNames--">getMysteryROMNames</a></span>()</code>
-<div class="block">Gets the list of mystery ROM filenames in the catalog.</div>
+<div class="block">Gets a copied list of the mystery ROM filenames in the catalog.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>java.lang.String[]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/github/thatgarlicdude/pacio/catalog/PacCatalog.html#getPaletteROMNames--">getPaletteROMNames</a></span>()</code>
-<div class="block">Gets the list of palette ROM filenames in the catalog.</div>
+<div class="block">Gets a copied list of the palette ROM filenames in the catalog.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>java.lang.String[]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/github/thatgarlicdude/pacio/catalog/PacCatalog.html#getProgramROMNames--">getProgramROMNames</a></span>()</code>
-<div class="block">Gets the list of program ROM filenames in the catalog.</div>
+<div class="block">Gets a copied list of the program ROM filenames in the catalog.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>java.lang.String[]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/github/thatgarlicdude/pacio/catalog/PacCatalog.html#getSoundROMNames--">getSoundROMNames</a></span>()</code>
-<div class="block">Gets the list of sound ROM filenames in the catalog.</div>
+<div class="block">Gets a copied list of the sound ROM filenames in the catalog.</div>
 </td>
 </tr>
 </table>
@@ -221,12 +223,12 @@ extends java.lang.Object</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>PacCatalog</h4>
-<pre>public&nbsp;PacCatalog(java.lang.String[]&nbsp;programROMNames,
-                  java.lang.String[]&nbsp;graphicROMNames,
-                  java.lang.String[]&nbsp;colorROMNames,
-                  java.lang.String[]&nbsp;paletteROMNames,
-                  java.lang.String[]&nbsp;soundROMNames,
-                  java.lang.String[]&nbsp;mysteryROMNames)</pre>
+<pre>protected&nbsp;PacCatalog(java.lang.String[]&nbsp;programROMNames,
+                     java.lang.String[]&nbsp;graphicROMNames,
+                     java.lang.String[]&nbsp;colorROMNames,
+                     java.lang.String[]&nbsp;paletteROMNames,
+                     java.lang.String[]&nbsp;soundROMNames,
+                     java.lang.String[]&nbsp;mysteryROMNames)</pre>
 <div class="block">Constructs an instance of the PacCatalog.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -260,7 +262,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getProgramROMNames</h4>
 <pre>public final&nbsp;java.lang.String[]&nbsp;getProgramROMNames()</pre>
-<div class="block">Gets the list of program ROM filenames in the catalog.</div>
+<div class="block">Gets a copied list of the program ROM filenames in the catalog.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The string array consisting of program ROM filenames.</dd>
@@ -274,7 +276,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getGraphicROMNames</h4>
 <pre>public final&nbsp;java.lang.String[]&nbsp;getGraphicROMNames()</pre>
-<div class="block">Gets the list of graphic ROM filenames in the catalog.</div>
+<div class="block">Gets a copied list of the graphic ROM filenames in the catalog.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The string array consisting of graphic ROM filenames.</dd>
@@ -288,7 +290,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getColorROMNames</h4>
 <pre>public final&nbsp;java.lang.String[]&nbsp;getColorROMNames()</pre>
-<div class="block">Gets the list of color ROM filenames in the catalog.</div>
+<div class="block">Gets a copied list of the color ROM filenames in the catalog.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The string array consisting of color ROM filenames.</dd>
@@ -302,7 +304,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getPaletteROMNames</h4>
 <pre>public final&nbsp;java.lang.String[]&nbsp;getPaletteROMNames()</pre>
-<div class="block">Gets the list of palette ROM filenames in the catalog.</div>
+<div class="block">Gets a copied list of the palette ROM filenames in the catalog.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The string array consisting of palette ROM filenames.</dd>
@@ -316,7 +318,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getSoundROMNames</h4>
 <pre>public final&nbsp;java.lang.String[]&nbsp;getSoundROMNames()</pre>
-<div class="block">Gets the list of sound ROM filenames in the catalog.</div>
+<div class="block">Gets a copied list of the sound ROM filenames in the catalog.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The string array consisting of sound ROM filenames.</dd>
@@ -330,7 +332,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getMysteryROMNames</h4>
 <pre>public final&nbsp;java.lang.String[]&nbsp;getMysteryROMNames()</pre>
-<div class="block">Gets the list of mystery ROM filenames in the catalog.</div>
+<div class="block">Gets a copied list of the mystery ROM filenames in the catalog.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The string array consisting of mystery ROM filenames.</dd>

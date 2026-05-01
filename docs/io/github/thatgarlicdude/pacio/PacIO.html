@@ -113,11 +113,10 @@ extends java.lang.Object</pre>
  
  <p>This class serves as the main gateway for importing <i>Pac-Man</i>
  ROM sets into a <a href="../../../../io/github/thatgarlicdude/pacio/io/PacROMSet.html" title="class in io.github.thatgarlicdude.pacio.io"><code>PacROMSet</code></a> instance, which
- resemble <b>unified ROM sets</b>, using the <a href="../../../../io/github/thatgarlicdude/pacio/PacIO.html#importROMSet-java.lang.String-"><code>importROMSet(java.lang.String)</code></a>
- method. It can also save the unified ROM sets to disk as ZIP files via
- the <a href="../../../../io/github/thatgarlicdude/pacio/PacIO.html#saveROMSet-java.lang.String-io.github.thatgarlicdude.pacio.io.PacROMSet-"><code>saveROMSet(java.lang.String, io.github.thatgarlicdude.pacio.io.PacROMSet)</code></a> method, and open them into memory with the
- <a href="../../../../io/github/thatgarlicdude/pacio/PacIO.html#openROMSet-java.lang.String-"><code>openROMSet(java.lang.String)</code></a> method. It is the go-to class for accessing and
- managing <i>Pac-Man</i> ROM sets.</p>
+ resemble <b>unified ROM sets</b>, using the <a href="../../../../io/github/thatgarlicdude/pacio/PacIO.html#importROMSet-java.lang.String-"><code>importROMSet</code></a> method. It can also save the unified ROM sets to disk as
+ ZIP files via the <a href="../../../../io/github/thatgarlicdude/pacio/PacIO.html#saveROMSet-java.lang.String-io.github.thatgarlicdude.pacio.io.PacROMSet-"><code>saveROMSet</code></a> method, and open them
+ into memory with the <a href="../../../../io/github/thatgarlicdude/pacio/PacIO.html#openROMSet-java.lang.String-"><code>openROMSet</code></a> method. It is the
+ go-to class for accessing and managing <i>Pac-Man</i> ROM sets.</p>
  
  <p>Because this is a main class for a library, it cannot be
  instantiated by any means via its private constructor,
@@ -206,7 +205,8 @@ extends java.lang.Object</pre>
  
  <p>On the other note, this method should not work on existing
  unified versions of the ROM set ZIP file. To open these kinds of
- ZIP files, the <a href="../../../../io/github/thatgarlicdude/pacio/PacIO.html#openROMSet-java.lang.String-"><code>openROMSet(java.lang.String)</code></a> method should be relied on.</p></div>
+ ZIP files, the <a href="../../../../io/github/thatgarlicdude/pacio/PacIO.html#openROMSet-java.lang.String-"><code>openROMSet</code></a> method should be
+ relied on.</p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>path</code> - The file path to the original ROM set ZIP file.</dd>
@@ -232,8 +232,8 @@ extends java.lang.Object</pre>
  <i>Pac-Man</i> ROM set ZIP files, which contains entries like
  <b>program.bin</b> and <b>graphic.bin</b>. It should not work on
  the original ROM set ZIP files, which have their own ROM files.
- They should be imported via the <a href="../../../../io/github/thatgarlicdude/pacio/PacIO.html#importROMSet-java.lang.String-"><code>importROMSet(java.lang.String)</code></a> method
- instead.</p></div>
+ They should be imported via the <a href="../../../../io/github/thatgarlicdude/pacio/PacIO.html#importROMSet-java.lang.String-"><code>importROMSet</code></a>
+ method instead.</p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>path</code> - The file path to the universal ROM set ZIP file.</dd>
