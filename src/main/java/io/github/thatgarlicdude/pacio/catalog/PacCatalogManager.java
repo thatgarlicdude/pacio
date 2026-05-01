@@ -45,8 +45,7 @@ public final class PacCatalogManager {
 	 * @return A list of PacCatalog objects.
 	 */
 	public static final PacCatalog[] getPacCatalogs() {
-		PacCatalog[] newPacCatalogs = pacCatalogs.clone();
-		return newPacCatalogs;
+		return pacCatalogs.clone();
 	}
 	
 	/**
@@ -56,8 +55,7 @@ public final class PacCatalogManager {
 	 * @return A specific PacCatalog object from the list.
 	 */
 	public static final PacCatalog getPacCatalog(final int index) {
-		PacCatalog pacCatalog = pacCatalogs[index];
-		return pacCatalog;
+		return pacCatalogs[index];
 	}
 	
 	/**
