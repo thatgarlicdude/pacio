@@ -18,7 +18,7 @@ package io.github.thatgarlicdude.pacio.catalog;
 
 /**
  * A class that represents a categorized list of the ROM file names in
- * the Pac-Man ROM set.
+ * the <i>Pac-Man</i> ROM set.
  * 
  * @version 1.0.0-alpha
  * @author GarlicDude
@@ -26,49 +26,55 @@ package io.github.thatgarlicdude.pacio.catalog;
 public final class PacManCatalog extends PacCatalog {
 	
 	/**
-	 * A static list of program ROM filenames in the Pac-Man ROM set.
+	 * A static list of the program ROM filenames in the <i>Pac-Man</i>
+	 * ROM set.
 	 */
 	private static final String[] PROGRAM_ROMS = {
 			"pacman.6e", "pacman.6f", "pacman.6h", "pacman.6j"
 	};
 	
 	/**
-	 * A static list of graphic ROM filenames in the Pac-Man ROM set.
+	 * A static list of the graphic ROM filenames in the <i>Pac-Man</i>
+	 * ROM set.
 	 */
 	private static final String[] GRAPHIC_ROMS = {
 			"pacman.5e", "pacman.5f"
 	};
 	
 	/**
-	 * A static list of color ROM filenames in the Pac-Man ROM set.
+	 * A static list of the color ROM filenames in the <i>Pac-Man</i>
+	 * ROM set.
 	 */
 	private static final String[] COLOR_ROMS = {
 			"82s123.7f"
 	};
 	
 	/**
-	 * A static list of palette ROM filenames in the Pac-Man ROM set.
+	 * A static list of the palette ROM filenames in the <i>Pac-Man</i>
+	 * ROM set.
 	 */
 	private static final String[] PALETTE_ROMS = {
 			"82s126.4a"
 	};
 	
 	/**
-	 * A static list of sound ROM filenames in the Pac-Man ROM set.
+	 * A static list of the sound ROM filenames in the <i>Pac-Man</i>
+	 * ROM set.
 	 */
 	private static final String[] SOUND_ROMS = {
 			"82s126.1m"
 	};
 	
 	/**
-	 * A static list of mystery ROM filenames in the Pac-Man ROM set.
+	 * A static list of the mystery ROM filenames in the <i>Pac-Man</i>
+	 * ROM set.
 	 */
 	private static final String[] MYSTERY_ROMS = {
 			"82s126.3m"
 	};
 	
 	/**
-	 * Constructs an instance of the Pac-Man catalog.
+	 * Constructs an instance of the <i>Pac-Man</i> catalog.
 	 */
 	public PacManCatalog() {
 		super(
