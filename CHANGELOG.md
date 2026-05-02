@@ -1,3 +1,9 @@
+2025-05-02 GarlicDude <garlicdudedev@gmail.com>
+
+	PacIO Version 1.0.1-alpha
+	* Updated build.gradle.
+		* Cleaned the layout of the file to be more friendly to JitPack, if possible.
+
 2025-05-01 GarlicDude <garlicdudedev@gmail.com>
 
 	PacIO Version 1.0.0-alpha
