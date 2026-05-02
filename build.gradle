@@ -8,6 +8,7 @@
 plugins {
 	// Apply the java-library plugin for API and implementation separation.
 	id 'java-library'
+	id 'maven-publish'
 }
 
 group = "io.github.thatgarlicdude"
@@ -33,4 +34,12 @@ java {
 	
 	withSourcesJar()
 	withJavadocJar()
+}
+
+publishing {
+	publications {
+		mavenJava(MavenPublication) {
+			from components.java
+		}
+	}
 }

@@ -3,6 +3,7 @@
 	PacIO Version 1.0.1-alpha
 	* Updated build.gradle.
 		* Cleaned the layout of the file to be more friendly to JitPack, if possible.
+		* Added the ability to publish to Maven Local.
 
 2025-05-01 GarlicDude <garlicdudedev@gmail.com>
 
