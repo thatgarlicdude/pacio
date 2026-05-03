@@ -12,13 +12,13 @@ plugins {
 }
 
 group = "io.github.thatgarlicdude"
-version = "1.0.1-alpha"
+version = "1.0.2-alpha"
 
 repositories {
+	// Use Maven Local for resolving local dependencies.
+	mavenLocal()
 	// Use Maven Central for resolving dependencies.
 	mavenCentral()
-	// Use Jitpack for the GitHub repositories.
-	maven {url = 'https://www.jitpack.io'}
 }
 
 dependencies {
