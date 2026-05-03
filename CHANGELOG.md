@@ -1,3 +1,15 @@
+2025-05-03 GarlicDude <garlicdudedev@gmail.com>
+
+	PacIO Version 1.0.2-alpha
+	* Updated build.gradle.
+		* Removed JitPack functionality.
+		* Added Maven Local functionality.
+	* Updated INSTALL.md.
+		* Added instructions about publishing to Maven Local.
+	* Updated README.md.
+		* Added the version shield.
+		* Added the license shield.
+
 2025-05-02 GarlicDude <garlicdudedev@gmail.com>
 
 	PacIO Version 1.0.1-alpha
