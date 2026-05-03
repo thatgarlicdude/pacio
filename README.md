@@ -1,5 +1,8 @@
 # PacIO
 
+![GitHub Tag](https://img.shields.io/github/v/tag/thatgarlicdude/pacio)
+![GitHub License](https://img.shields.io/github/license/thatgarlicdude/pacio)
+
 ## Overview
 
 A Java library for importing *Pac-Man* ROM sets from disk to **unified ROM sets** to memory, as well as saving and opening them from disk.
