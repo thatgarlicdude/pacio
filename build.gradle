@@ -9,10 +9,11 @@ plugins {
 	// Apply the java-library plugin for API and implementation separation.
 	id 'java-library'
 	id 'maven-publish'
+	id 'signing'
 }
 
 group = "io.github.thatgarlicdude"
-version = "1.0.2-alpha"
+version = "1.0.3-alpha"
 
 repositories {
 	// Use Maven Local for resolving local dependencies.
@@ -28,6 +29,9 @@ dependencies {
 
 // Apply a specific Java toolchain to ease working on different environments.
 java {
+	sourceCompatibility = JavaVersion.VERSION_1_8
+	targetCompatibility = JavaVersion.VERSION_1_8
+
 	toolchain {
 		languageVersion = JavaLanguageVersion.of(8)
 	}
@@ -40,6 +44,44 @@ publishing {
 	publications {
 		mavenJava(MavenPublication) {
 			from components.java
+			
+			pom {
+				name = 'PacIO'
+				description = 'Pac-Man ROM Set Import/Export Library'
+				url = 'https://github.com/thatgarlicdude/pacio'
+				
+				licenses {
+					license {
+						name = 'MIT License'
+						url = 'https://opensource.org/license/mit/'
+					}
+				}
+				
+				developers {
+					developer {
+						id = 'thatgarlicdude'
+						name = 'GarlicDude'
+					}
+				}
+				
+				scm {
+					connection = 'scm:git:git://github.com/thatgarlicdude/pacio.git'
+					developerConnection = 'scm:git:ssh://github.com/thatgarlicdude/pacio.git'
+					url = 'https://github.com/thatgarlicdude/pacio'
+				}
+			}
+		}
+	}
+	
+	repositories {
+		maven {
+			name = "central"
+			url = uri("https://central.sonatype.com/api/v1/publisher")
+			
+			credentials {
+				username = project.findProperty("mavenCentralUsername")
+				password = project.findProperty("mavenCentralPassword")
+			}
 		}
 	}
 }
