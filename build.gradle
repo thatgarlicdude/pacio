@@ -88,12 +88,6 @@ publishing {
 						post = 'https://github.com/thatgarlicdude/pacio/discussions'
 					}
 				}
-				
-				properties {
-					property 'maven.compiler.source', '1.8'
-					property 'maven.compiler.target', '1.8'
-					property 'project.build.sourceEncoding', 'UTF-8'
-				}
 			}
 		}
 	}
@@ -109,4 +103,14 @@ publishing {
 			}
 		}
 	}
+}
+
+signing {
+
+	useInMemoryPgpKeys(
+		findProperty("signingKey"),
+		findProperty("signingPassword")
+	)
+	
+	sign publishing.publications.mavenJava
 }
