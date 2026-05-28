@@ -54,6 +54,7 @@ publishing {
 					license {
 						name = 'MIT License'
 						url = 'https://opensource.org/license/mit/'
+						distribution = 'repo'
 					}
 				}
 				
@@ -69,6 +70,23 @@ publishing {
 					connection = 'scm:git:git://github.com/thatgarlicdude/pacio.git'
 					developerConnection = 'scm:git:ssh://github.com/thatgarlicdude/pacio.git'
 					url = 'https://github.com/thatgarlicdude/pacio'
+				}
+				
+				issueManagement {
+					system = 'GitHub Issues'
+					url = 'https://github.com/thatgarlicdude/pacio/issues'
+				}
+				
+				ciManagement {
+					system = 'GitHub Actions'
+					url = 'https://github.com/thatgarlicdude/pacio/actions'
+				}
+				
+				mailingLists {
+					mailingList {
+						name = 'GitHub Discussions'
+						post = 'https://github.com/thatgarlicdude/pacio/discussions'
+					}
 				}
 				
 				properties {
