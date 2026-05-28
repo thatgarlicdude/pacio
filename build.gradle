@@ -45,8 +45,10 @@ publishing {
 			
 			pom {
 				name = 'PacIO'
-				description = 'Pac-Man ROM Set Import/Export Library'
+				description = 'Pac-Man ROM Set IO Library'
 				url = 'https://github.com/thatgarlicdude/pacio'
+				
+				inceptionYear = '2026'
 				
 				licenses {
 					license {
@@ -59,6 +61,7 @@ publishing {
 					developer {
 						id = 'thatgarlicdude'
 						name = 'GarlicDude'
+						url = 'https://github.com/thatgarlicdude'
 					}
 				}
 				
@@ -66,6 +69,12 @@ publishing {
 					connection = 'scm:git:git://github.com/thatgarlicdude/pacio.git'
 					developerConnection = 'scm:git:ssh://github.com/thatgarlicdude/pacio.git'
 					url = 'https://github.com/thatgarlicdude/pacio'
+				}
+				
+				properties {
+					property 'maven.compiler.source', '1.8'
+					property 'maven.compiler.target', '1.8'
+					property 'project.build.sourceEncoding', 'UTF-8'
 				}
 			}
 		}
