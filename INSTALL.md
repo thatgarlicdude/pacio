@@ -16,8 +16,6 @@ Also, Gradle is **not** a prerequisite for this project. As a fair warning, Grad
 
 3. Now that you're in the repository, type `./gradlew build` to build the project.
 
-4. To publish the library to your local Maven repository, type `./gradlew publishToMavenLocal` to your terminal.
-
 5. You're good to go!
 
 ## Steps (Windows)
@@ -27,7 +25,5 @@ Also, Gradle is **not** a prerequisite for this project. As a fair warning, Grad
 2. In your terminal, change your working directory to the root of the cloned repository by typing `cd pacio`.
 
 3. Now that you're in the repository, type `gradlew.bat build` to build the project.
-
-4. To publish the library to your local Maven repository, type `gradle.bat publishToMavenLocal` to your terminal.
 
 5. You're good to go!
