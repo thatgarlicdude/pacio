@@ -43,6 +43,8 @@ publishing {
 		mavenJava(MavenPublication) {
 			from components.java
 			
+			artifactId = 'pacio'
+			
 			pom {
 				name = 'PacIO'
 				description = 'Pac-Man ROM Set IO Library'
@@ -88,18 +90,6 @@ publishing {
 						post = 'https://github.com/thatgarlicdude/pacio/discussions'
 					}
 				}
-			}
-		}
-	}
-	
-	repositories {
-		maven {
-			name = "central"
-			url = uri("https://central.sonatype.com/api/v1/publisher")
-			
-			credentials {
-				username = project.findProperty("mavenCentralUsername")
-				password = project.findProperty("mavenCentralPassword")
 			}
 		}
 	}
