@@ -1,4 +1,4 @@
-# PacIO
+# ![PacIO](src/main/resources/logo/logo.svg)
 
 ![GitHub Tag](https://img.shields.io/github/v/tag/thatgarlicdude/pacio)
 ![GitHub License](https://img.shields.io/github/license/thatgarlicdude/pacio)
