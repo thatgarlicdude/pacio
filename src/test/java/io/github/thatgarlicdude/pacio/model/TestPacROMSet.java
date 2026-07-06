@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.github.thatgarlicdude.pacio.io;
+package io.github.thatgarlicdude.pacio.model;
 
 /**
  * A test class for the PacROM class.

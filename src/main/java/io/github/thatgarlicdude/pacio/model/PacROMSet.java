@@ -14,23 +14,10 @@
  * limitations under the License.
  */
 
-package io.github.thatgarlicdude.pacio.io;
+package io.github.thatgarlicdude.pacio.model;
 
 /**
  * A class that represents a unified <i>Pac-Man</i> ROM set.
- * 
- * <p>This class contains all the bytes loaded from disk via the {@link
- * io.github.thatgarlicdude.pacio.PacIO#importROMSet(String) importROMSet}
- * or {@link io.github.thatgarlicdude.pacio.PacIO#openROMSet(String)
- * openROMSet} methods in the {@link io.github.thatgarlicdude.pacio.PacIO
- * PacIO} class, or using the {@link
- * io.github.thatgarlicdude.pacio.io.PacROMSetImporter PacROMSetImporter}
- * or {@link io.github.thatgarlicdude.pacio.io.PacROMSetOpener
- * PacROMSetOpener} classes. Those bytes are stored and concatenated
- * together into categorized arrays, such as {@link #programData} from the
- * <i>Pac-Man</i> PCB's multiple program ROMs. In other words, it's
- * basically a digital, editable ROM set that has everything it needs to
- * represent <i>Pac-Man</i> as a game.</p>
  * 
  * @version 1.0.0-alpha
  * @author GarlicDude

@@ -18,6 +18,7 @@ package io.github.thatgarlicdude.pacio.io;
 
 import io.github.thatgarlicdude.pacio.catalog.PacCatalog;
 import io.github.thatgarlicdude.pacio.catalog.PacCatalogManager;
+import io.github.thatgarlicdude.pacio.model.PacROMSet;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
@@ -28,7 +29,7 @@ import java.util.zip.ZipFile;
 
 /**
  * A class used to import the <i>Pac-Man</i> ROM set ZIP files to
- * {@link io.github.thatgarlicdude.pacio.io.PacROMSet PacROMSet} objects,
+ * {@link io.github.thatgarlicdude.pacio.model.PacROMSet PacROMSet} objects,
  * which represent as digital, unified ROM sets in memory.
  * 
  * <p>The main method of this class is the {@link #importROMSet()
@@ -52,7 +53,7 @@ public final class PacROMSetImporter {
 	
 	/**
 	 * Imports an existing <i>Pac-Man</i> ROM set ZIP file from disk to a
-	 * {@link io.github.thatgarlicdude.pacio.io.PacROMSet PacROMSet}
+	 * {@link io.github.thatgarlicdude.pacio.model.PacROMSet PacROMSet}
 	 * object to memory, which are unified ROM sets.
 	 * 
 	 * @return A unified ROM set built off of the existing ROM set ZIP

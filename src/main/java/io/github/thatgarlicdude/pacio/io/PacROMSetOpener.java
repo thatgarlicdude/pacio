@@ -23,6 +23,8 @@ import java.io.InputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
+import io.github.thatgarlicdude.pacio.model.PacROMSet;
+
 /**
  * A class used to open unified <i>Pac-Man</i> ROM set ZIP files from
  * disk.

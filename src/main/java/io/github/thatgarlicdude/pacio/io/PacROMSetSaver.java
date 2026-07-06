@@ -21,6 +21,8 @@ import java.io.IOException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
+import io.github.thatgarlicdude.pacio.model.PacROMSet;
+
 /**
  * A class used to save unified Pac-Man ROM sets.
  * 
