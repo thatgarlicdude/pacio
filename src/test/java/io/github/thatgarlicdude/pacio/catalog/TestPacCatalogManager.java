@@ -19,32 +19,51 @@ package io.github.thatgarlicdude.pacio.catalog;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
+/*
+ * TODO: This test needs to be deleted like its source counterpart. The
+ * reasoning for this is that there shouldn't be a need to have a
+ * PacCatalogManager, and the PacCatalog class itself will be reworked as
+ * something that can be saved to disk and loaded to memory.
+ */
+
 /**
- * A test class of the PacCatalogManager class.
+ * A test class of the {@link PacCatalogManager} class.
  * 
- * @version 1.0.0-alpha
+ * @since 1.0.0-alpha
  * @author GarlicDude
+ * @see PacCatalogManager
  */
 public final class TestPacCatalogManager {
 	
 	/**
-	 * Tests the getPacCatalogs method in PacCatalogManager.
+	 * Tests the {@link PacCatalogManager#getPacCatalogs()} method.
+	 * 
+	 * @since 1.0.0-alpha
+	 * @author GarlicDude
+	 * @see PacCatalogManager#getPacCatalogs()
 	 */
 	@Test
 	public final void testGetPacCatalogs() {
-		PacCatalog[] pacCatalogs = PacCatalogManager.getPacCatalogs();
-		// pacCatalogs should not be the same as the original.
-		// Also, the contents in the array are the same pointers.
+		// Get the array of PacCatalogs.
+		final PacCatalog[] pacCatalogs =
+				PacCatalogManager.getPacCatalogs();
+		// Just assert it as not null. There's not much else to do with it.
 		assertNotNull(pacCatalogs);
 	}
 	
 	/**
-	 * Tests the getPacCatalog method in PacCatalogManager.
+	 * Tests the {@link PacCatalogManager#getPacCatalog(int)} method.
+	 * 
+	 * @since 1.0.0-alpha
+	 * @author GarlicDude
+	 * @see PacCatalogManager#getPacCatalog(int)
 	 */
 	@Test
 	public final void testGetPacCatalog() {
-		PacCatalog pacCatalog = PacCatalogManager.getPacCatalog(0);
-		// First object in the array should not be null.
+		// Get the first PacCatalog object in the array.
+		final PacCatalog pacCatalog =
+				PacCatalogManager.getPacCatalog(0);
+		// Assert that as not null. It should not be null.
 		assertNotNull(pacCatalog);
 	}
 }

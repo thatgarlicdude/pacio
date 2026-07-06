@@ -16,22 +16,36 @@
 
 package io.github.thatgarlicdude.pacio.catalog;
 
-/**
- * The a class used for managing PacCatalog objects.
+/*
+ * TODO: In the future, this class shouldn't exist. All it really does is
+ * manage objects that are in memory, and will stay in memory throughout
+ * the duration of a program, let's say Relaxian. The Pac-Man, Puck-Man,
+ * and test catalogs shouldn't exist either. The best solution for this
+ * issue is to treat PacCatalog classes as data stored from disk, and can
+ * be read to memory and written back to disk.
  * 
- * @version 1.0.0-alpha
+ * Also, the name of the class is very misleading. It's more of a static
+ * container of PacCatalog objects than a manager. No wonder it should be
+ * deleted.
+ */
+
+/**
+ * A static class used for managing {@link PacCatalog} objects.
+ * 
+ * @since 1.0.0-alpha
  * @author GarlicDude
+ * @see PacCatalog
  */
 public final class PacCatalogManager {
 	
 	/**
-	 * Error message used when the constructor has been called.
-	 */
-	private static final String ERROR_MESSAGE =
-			"PacCatalogManager can't be instantiated";
-	
-	/**
-	 * The list of PacCatalog objects.
+	 * The list of {@link PacCatalog} objects that are currently available
+	 * in memory.
+	 * 
+	 * @since 1.0.0-alpha
+	 * @author GarlicDude
+	 * @see #getPacCatalogs()
+	 * @see #getPacCatalog(int)
 	 */
 	private static final PacCatalog[] pacCatalogs = {
 			new PacManCatalog(),
@@ -40,31 +54,58 @@ public final class PacCatalogManager {
 	};
 	
 	/**
-	 * Returns a copied list of PacCatalog objects.
+	 * Gets the {@link #pacCatalogs} array, which is a list of available
+	 * {@link PacCatalog} objects that are currently in memory.
 	 * 
 	 * @return A list of PacCatalog objects.
+	 * @since 1.0.0-alpha
+	 * @author GarlicDude
+	 * @see #pacCatalogs
+	 * @see #getPacCatalog(int)
 	 */
 	public static final PacCatalog[] getPacCatalogs() {
+		// Clone the PacCatalogs array.
 		return pacCatalogs.clone();
 	}
 	
 	/**
-	 * Returns a specific PacCatalog object from the list using an index.
+	 * Gets a specific {@link PacCatalog} object that is within the
+	 * {@link #pacCatalogs} array.
+	 * 
+	 * <p>Here's a list of available {@link PacCatalog} objects that can
+	 * be obtained from the {@link #pacCatalogs} array:</p>
+	 * 
+	 * <ol>
+	 * 	<li>{@link PacManCatalog}</li>
+	 * 	<li>{@link PuckManCatalog}</li>
+	 * 	<li>{@link TestCatalog}</li>
+	 * </ol>
 	 * 
 	 * @param index The index of the array.
 	 * @return A specific PacCatalog object from the list.
+	 * @since 1.0.0-alpha
+	 * @see #pacCatalogs
+	 * @see #getPacCatalogs()
 	 */
-	public static final PacCatalog getPacCatalog(final int index) {
+	public static final PacCatalog getPacCatalog(
+			final int index) {
+		// Get a specific PacCatalog in the array based on the index.
 		return pacCatalogs[index];
 	}
 	
 	/**
-	 * Private constructor; object cannot be instantiated by any means.
+	 * Private constructor; class cannot be instantiated by any means.
+	 * 
+	 * <p>Even if the constructor has somehow been called, it will throw
+	 * an error, which is an {@code UnsupportedOperationException}.</p>
 	 * 
 	 * @throws UnsupportedOperationException When the constructor is
 	 * called.
+	 * @since 1.0.0-alpha
+	 * @author GarlicDude
 	 */
 	private PacCatalogManager() {
-		throw new UnsupportedOperationException(ERROR_MESSAGE);
+		// Throw the exception when the constructor has been called.
+		throw new UnsupportedOperationException();
 	}
 }
