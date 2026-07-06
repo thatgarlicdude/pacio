@@ -15,6 +15,14 @@
  */
 
 /**
- * The catalog package of the PacIO library.
+ * The <b>catalog</b> package of the PacIO library.
+ * 
+ * @since 1.0.0-alpha
+ * @author GarlicDude
+ * @see PacCatalog
+ * @see PacManCatalog
+ * @see PuckManCatalog
+ * @see TestCatalog
+ * @see PacCatalogManager
  */
 package io.github.thatgarlicdude.pacio.catalog;
