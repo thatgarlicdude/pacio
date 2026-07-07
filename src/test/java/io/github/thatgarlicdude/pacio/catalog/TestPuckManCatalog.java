@@ -16,23 +16,36 @@
 
 package io.github.thatgarlicdude.pacio.catalog;
 
+/*
+ * TODO: Delete this, since there wouldn't be a need to have a
+ * PuckManCatalog class in the future.
+ */
+
 /**
- * A test class of the PuckManCatalog class.
+ * A test class of the {@link PuckManCatalog} class.
  * 
- * @version 1.0.0-alpha
+ * @since 1.0.0-alpha
  * @author GarlicDude
+ * @see PuckManCatalog
  */
 public final class TestPuckManCatalog extends TestPacCatalog {
 
 	/**
-	 * The Puck-Man catalog used for testing purposes.
+	 * The <i>Puck-Man</i> catalog used for testing purposes.
+	 * 
+	 * @since 1.0.0-alpha
+	 * @author GarlicDude
 	 */
 	private static final PuckManCatalog pacCatalog = new PuckManCatalog();
 	
 	/**
-	 * Constructs an instance of the test class.
+	 * Constructs an instance of the {@link TestPuckManCatalog} class.
+	 * 
+	 * @since 1.0.0-alpha
+	 * @author GarlicDude
 	 */
 	public TestPuckManCatalog() {
+		// Build the test with the PacCatalog object.
 		super(pacCatalog);
 	}
 }
