@@ -30,6 +30,9 @@ package io.github.thatgarlicdude.pacio.catalog;
  * 
  * @since 1.0.0-alpha
  * @author GarlicDude
+ * @see PacCatalog
+ * @see PacManCatalog
+ * @see TestCatalog
  */
 public final class PuckManCatalog extends PacCatalog {
 	

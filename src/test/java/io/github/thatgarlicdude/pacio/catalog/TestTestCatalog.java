@@ -16,23 +16,38 @@
 
 package io.github.thatgarlicdude.pacio.catalog;
 
-/**
- * A test class of the TestCatalog class.
+/*
+ * TODO: Delete this, since there wouldn't be a need to have a
+ * TestCatalog class in the future.
  * 
- * @version 1.0.0-alpha
+ * Also, imagine being named "TestTestCatalog".
+ */
+
+/**
+ * A test class of the {@link TestCatalog} class.
+ * 
+ * @since 1.0.0-alpha
  * @author GarlicDude
+ * @see TestCatalog
  */
 public final class TestTestCatalog extends TestPacCatalog {
 	
 	/**
 	 * The test catalog used for testing purposes.
+	 * 
+	 * @since 1.0.0-alpha
+	 * @author GarlicDude
 	 */
 	private static final TestCatalog pacCatalog = new TestCatalog();
 	
 	/**
-	 * Constructs an instance of the test class.
+	 * Constructs an instance of the {@link TestTestCatalog} class.
+	 * 
+	 * @since 1.0.0-alpha
+	 * @author GarlicDude
 	 */
 	public TestTestCatalog() {
+		// Build the test with the PacCatalog object.
 		super(pacCatalog);
 	}
 }
