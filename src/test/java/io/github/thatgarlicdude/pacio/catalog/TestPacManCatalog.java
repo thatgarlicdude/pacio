@@ -16,23 +16,36 @@
 
 package io.github.thatgarlicdude.pacio.catalog;
 
+/*
+ * TODO: Delete this, since there wouldn't be a need to have a
+ * PacManCatalog class in the future.
+ */
+
 /**
- * A test class of the PacManCatalog class.
+ * A test class of the {@link PacManCatalog} class.
  * 
- * @version 1.0.0-alpha
+ * @since 1.0.0-alpha
  * @author GarlicDude
+ * @see PacManCatalog
  */
 public final class TestPacManCatalog extends TestPacCatalog {
 	
 	/**
-	 * The Pac-Man catalog used for testing purposes.
+	 * The <i>Pac-Man</i> catalog used for testing purposes.
+	 * 
+	 * @since 1.0.0-alpha
+	 * @author GarlicDude
 	 */
 	private static final PacManCatalog pacCatalog = new PacManCatalog();
 	
 	/**
-	 * Constructs an instance of the test class.
+	 * Constructs an instance of the {@link TestPacManCatalog} class.
+	 * 
+	 * @since 1.0.0-alpha
+	 * @author GarlicDude
 	 */
 	public TestPacManCatalog() {
+		// Build the test with the PacCatalog object.
 		super(pacCatalog);
 	}
 }

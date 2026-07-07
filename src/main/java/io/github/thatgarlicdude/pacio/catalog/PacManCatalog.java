@@ -16,18 +16,32 @@
 
 package io.github.thatgarlicdude.pacio.catalog;
 
+/*
+ * TODO: Like the PacCatalogManager, PuckManCatalog, and TestCatalog
+ * classes, this class should not exist. The PacCatalog class itself is
+ * planned to have more to it, like IO functionality. So there wouldn't be
+ * a need to have this class in particular at all in the future. That
+ * being said, this class is planned to be deleted.
+ */
+
 /**
  * A class that represents a categorized list of the ROM file names in
  * the <i>Pac-Man</i> ROM set.
  * 
- * @version 1.0.0-alpha
+ * @since 1.0.0-alpha
  * @author GarlicDude
+ * @see PacCatalog
+ * @see PuckManCatalog
+ * @see TestCatalog
  */
 public final class PacManCatalog extends PacCatalog {
 	
 	/**
 	 * A static list of the program ROM filenames in the <i>Pac-Man</i>
 	 * ROM set.
+	 * 
+	 * @since 1.0.0-alpha
+	 * @author GarlicDude
 	 */
 	private static final String[] PROGRAM_ROMS = {
 			"pacman.6e", "pacman.6f", "pacman.6h", "pacman.6j"
@@ -36,6 +50,9 @@ public final class PacManCatalog extends PacCatalog {
 	/**
 	 * A static list of the graphic ROM filenames in the <i>Pac-Man</i>
 	 * ROM set.
+	 * 
+	 * @since 1.0.0-alpha
+	 * @author GarlicDude
 	 */
 	private static final String[] GRAPHIC_ROMS = {
 			"pacman.5e", "pacman.5f"
@@ -44,6 +61,9 @@ public final class PacManCatalog extends PacCatalog {
 	/**
 	 * A static list of the color ROM filenames in the <i>Pac-Man</i>
 	 * ROM set.
+	 * 
+	 * @since 1.0.0-alpha
+	 * @author GarlicDude
 	 */
 	private static final String[] COLOR_ROMS = {
 			"82s123.7f"
@@ -52,6 +72,9 @@ public final class PacManCatalog extends PacCatalog {
 	/**
 	 * A static list of the palette ROM filenames in the <i>Pac-Man</i>
 	 * ROM set.
+	 * 
+	 * @since 1.0.0-alpha
+	 * @author GarlicDude
 	 */
 	private static final String[] PALETTE_ROMS = {
 			"82s126.4a"
@@ -60,6 +83,9 @@ public final class PacManCatalog extends PacCatalog {
 	/**
 	 * A static list of the sound ROM filenames in the <i>Pac-Man</i>
 	 * ROM set.
+	 * 
+	 * @since 1.0.0-alpha
+	 * @author GarlicDude
 	 */
 	private static final String[] SOUND_ROMS = {
 			"82s126.1m"
@@ -68,15 +94,22 @@ public final class PacManCatalog extends PacCatalog {
 	/**
 	 * A static list of the mystery ROM filenames in the <i>Pac-Man</i>
 	 * ROM set.
+	 * 
+	 * @since 1.0.0-alpha
+	 * @author GarlicDude
 	 */
 	private static final String[] MYSTERY_ROMS = {
 			"82s126.3m"
 	};
 	
 	/**
-	 * Constructs an instance of the <i>Pac-Man</i> catalog.
+	 * Constructs an instance of the {@link PacManCatalog} class.
+	 * 
+	 * @since 1.0.0-alpha
+	 * @author GarlicDude
 	 */
 	public PacManCatalog() {
+		// Build the PacCatalog with the static lists.
 		super(
 				PROGRAM_ROMS,
 				GRAPHIC_ROMS,
