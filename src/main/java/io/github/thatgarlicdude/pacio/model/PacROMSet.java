@@ -16,6 +16,7 @@
 
 package io.github.thatgarlicdude.pacio.model;
 
+import java.nio.file.Path;
 import java.util.Objects;
 
 /*
@@ -31,6 +32,16 @@ import java.util.Objects;
  * @author GarlicDude
  */
 public final class PacROMSet {
+	
+	private static final String UNSAVED_NAME = "Unsaved ROM Set";
+	
+	/**
+	 * The file path to the unified ROM set.
+	 * 
+	 * @since 1.1.0-alpha
+	 * @author GarlicDude
+	 */
+	private final Path filePath;
 	
 	/**
 	 * The unified byte data of the <b>program</b> ROMs.
@@ -87,6 +98,33 @@ public final class PacROMSet {
 	 * @see #getMysteryData()
 	 */
 	private final byte[] mysteryData;
+	
+	/**
+	 * Gets the {@link #filePath}, which is the path to the ROM set on
+	 * disk.
+	 * 
+	 * @return The {@link #filePath} variable.
+	 * @since 1.1.0-alpha
+	 * @author GarlicDude
+	 */
+	public final Path getFilePath() {
+		// Return the file path.
+		return this.filePath;
+	}
+	
+	/**
+	 * Gets the filename of the {@link #filePath}
+	 * 
+	 * @return The filename of the {@link #filePath}
+	 * @since 1.1.0-alpha
+	 * @author GarlicDude
+	 */
+	public final String getFilename() {
+		// Return the unsaved file name if the file path is null.
+		if (filePath == null) return UNSAVED_NAME;
+		// Return the filename as a string.
+		return filePath.getFileName().toString();
+	}
 	
 	/**
 	 * Gets a cloned array of the {@link #programData}, which is a
@@ -169,6 +207,7 @@ public final class PacROMSet {
 	/**
 	 * Constructs an instance of the unified <i>Pac-Man</i> ROM set.
 	 * 
+	 * @param filePath The file path to the ROM set.
 	 * @param programData The unified array of bytes in the
 	 * <b>program</b> ROMs.
 	 * @param graphicData The unified array of bytes in the
@@ -185,12 +224,14 @@ public final class PacROMSet {
 	 * @author GarlicDude
 	 */
 	public PacROMSet(
+			final Path filePath,
 			final byte[] programData,
 			final byte[] graphicData,
 			final byte[] colorData,
 			final byte[] paletteData,
 			final byte[] soundData,
 			final byte[] mysteryData) {
+		this.filePath = filePath;
 		this.programData = Objects.requireNonNull(programData);
 		this.graphicData = Objects.requireNonNull(graphicData);
 		this.colorData = Objects.requireNonNull(colorData);
