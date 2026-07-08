@@ -16,191 +16,173 @@
 
 package io.github.thatgarlicdude.pacio.model;
 
+import java.util.Objects;
+
+/*
+ * TODO: Maybe in the future, add a superclass called ROMSet that will
+ * handle proper IO functionality. It'll probably make managing classes
+ * easier if done so.
+ */
+
 /**
  * A class that represents a unified <i>Pac-Man</i> ROM set.
  * 
- * @version 1.0.0-alpha
+ * @since 1.0.0-alpha
  * @author GarlicDude
  */
 public final class PacROMSet {
 	
 	/**
-	 * The unified byte data of the program ROMs.
+	 * The unified byte data of the <b>program</b> ROMs.
 	 * 
-	 * <p>This is the data loaded from multiple program ROMs in the
-	 * <i>Pac-Man</i> and <i>Puck-Man</i> PCBs. They contain instructions
-	 * for the Zilog Z80, and some static data like music, sound effects,
-	 * mazes, and text.</p>
+	 * @since 1.0.0-alpha
+	 * @author GarlicDude
+	 * @see #getProgramData()
 	 */
 	private final byte[] programData;
 	
 	/**
-	 * The unified byte data of the graphic ROMs.
+	 * The unified byte data of the <b>graphic</b> ROMs.
 	 * 
-	 * <p>This is the data loaded from multiple graphic ROMs. The
-	 * <i>Pac-Man</i> ROM set has two of these ROMs being <b>5e</b> and
-	 * <b>5f</b>, while <i>Puck-Man</i> has four being <b>5e</b>,
-	 * <b>5h</b>, <b>5f</b>, and <b>5j</b>. The first half should be the
-	 * tile data while the second is the sprite data. Tiles are 8x8 in
-	 * size, while sprites are 16x16. Each pixel should be 2 bits in
-	 * length, therefore creating four possible colors in a palette to
-	 * choose from.</p>
+	 * @since 1.0.0-alpha
+	 * @author GarlicDude
+	 * @see #getGraphicData()
 	 */
 	private final byte[] graphicData;
 	
 	/**
-	 * The byte data of the color ROM.
+	 * The unified byte data of the <b>color</b> ROMs.
 	 * 
-	 * <p>This is the data loaded from the <b>7f</b> ROM, which is the
-	 * <i>Pac-Man</i> PCB's one and only color ROM. The colors are
-	 * encoded into a single byte, with the first three bits being the
-	 * red bits, other three being green, and the last two being blue.</p>
+	 * @since 1.0.0-alpha
+	 * @author GarlicDude
+	 * @see #getColorData()
 	 */
 	private final byte[] colorData;
 	
 	/**
-	 * The byte data of the palette ROM.
+	 * The unified byte data of the <b>palette</b> ROMs.
 	 * 
-	 * <p>This is the data loaded from the <b>4a</b> ROM, which is the
-	 * <i>Pac-Man</i> PCB's sole palette ROM. Each palette contains four
-	 * colors that are represented from the {@link #colorData}, loaded
-	 * from the <b>7f</b> ROM.</p>
+	 * @since 1.0.0-alpha
+	 * @author GarlicDude
+	 * @see #getPaletteData()
 	 */
 	private final byte[] paletteData;
 	
 	/**
-	 * The byte data of the sound ROM.
+	 * The unified byte data of the <b>sound</b> ROMs.
 	 * 
-	 * <p>This is the data loaded from the <b>1m</b> ROM, which is the
-	 * sound chip of the <i>Pac-Man</i> PCB. The sound chip contains
-	 * multiple waveforms that are 32 bytes long, and each byte in a
-	 * waveform ranges from 0 (0x0) to 15 (0xF), which is the amplitude.
-	 * Each byte powers the speakers depending on its strength.</p>
+	 * @since 1.0.0-alpha
+	 * @author GarlicDude
+	 * @see #getSoundData()
 	 */
 	private final byte[] soundData;
 	
+	// TODO: Should there even be an array containing mystery byte data?
+	
 	/**
-	 * The byte data of the mystery ROM.
+	 * The unified byte data of the <b>mystery</b> ROMs.
 	 * 
-	 * <p>This is the data that is usually loaded from the <b>3m</b> ROM
-	 * of the <i>Pac-Man</i> PCB. Nobody knows what this data is used for,
-	 * aside from the fact that it's slightly associated with the {@link
-	 * #soundData}, loaded from the <b>1m</b> ROM of the PCB. That is why
-	 * it is called the mysteryData.</p>
+	 * @since 1.0.0-alpha
+	 * @author GarlicDude
+	 * @see #getMysteryData()
 	 */
 	private final byte[] mysteryData;
 	
 	/**
-	 * Gets the {@link #programData}, a byte array that has all the byte
-	 * data from the PCB's program ROMs.
+	 * Gets a cloned array of the {@link #programData}, which is a
+	 * unified byte array containing <b>program</b> data.
 	 * 
-	 * <p>This does not return a cloned array of the byte data, meaning it
-	 * can be modified when obtained by other programs. This is useful for
-	 * ROM-hacking <i>Pac-Man</i> as a game.</p>
-	 * 
-	 * <p>For more information about this data, see {@link
-	 * #programData} to learn more.</p>
-	 * 
-	 * @return The unified byte array of program ROM data.
+	 * @return A cloned array of the {@link #programData} array.
+	 * @since 1.0.0-alpha
+	 * @see #programData
 	 */
 	public final byte[] getProgramData() {
-		return programData;
+		// Return a cloned array of the program data.
+		return programData.clone();
 	}
 	
 	/**
-	 * Gets the {@link #graphicData}, a byte array that has all the byte
-	 * data from the PCB's graphic ROMs.
+	 * Gets a cloned array of the {@link #graphicData}, which is a
+	 * unified byte array containing <b>graphic</b> data.
 	 * 
-	 * <p>This does not return a cloned array of the byte data, meaning it
-	 * can be modified when obtained by other programs. This is useful for
-	 * ROM-hacking <i>Pac-Man</i> as a game.</p>
-	 * 
-	 * <p>For more information about this data, see {@link
-	 * #graphicData} to learn more.</p>
-	 * 
-	 * @return The unified byte array of graphic ROM data.
+	 * @return A cloned array of the {@link #graphicData} array.
+	 * @since 1.0.0-alpha
+	 * @see #graphicData
 	 */
 	public final byte[] getGraphicData() {
-		return graphicData;
+		// Return a cloned array of the graphic data.
+		return graphicData.clone();
 	}
 	
 	/**
-	 * Gets the {@link #colorData}, a byte array that has the byte data
-	 * from the PCB's color ROM.
+	 * Gets a cloned array of the {@link #colorData}, which is a
+	 * unified byte array containing <b>color</b> data.
 	 * 
-	 * <p>This does not return a cloned array of the byte data, meaning it
-	 * can be modified when obtained by other programs. This is useful for
-	 * ROM-hacking <i>Pac-Man</i> as a game.</p>
-	 * 
-	 * <p>For more information about this data, see {@link
-	 * #colorData} to learn more.</p>
-	 * 
-	 * @return The byte array of color ROM data.
+	 * @return A cloned array of the {@link #colorData} array.
+	 * @since 1.0.0-alpha
+	 * @see #colorData
 	 */
 	public final byte[] getColorData() {
-		return colorData;
+		// Return a cloned array of the color data.
+		return colorData.clone();
 	}
 	
 	/**
-	 * Gets the {@link #paletteData}, a byte array that has the byte data
-	 * from the PCB's palette ROM.
+	 * Gets a cloned array of the {@link #paletteData}, which is a
+	 * unified byte array containing <b>palette</b> data.
 	 * 
-	 * <p>This does not return a cloned array of the byte data, meaning it
-	 * can be modified when obtained by other programs. This is useful for
-	 * ROM-hacking <i>Pac-Man</i> as a game.</p>
-	 * 
-	 * <p>For more information about this data, see {@link
-	 * #paletteData} to learn more.</p>
-	 * 
-	 * @return The byte array of palette ROM data.
+	 * @return A cloned array of the {@link #paletteData} array.
+	 * @since 1.0.0-alpha
+	 * @see #paletteData
 	 */
 	public final byte[] getPaletteData() {
-		return paletteData;
+		// Return a cloned array of the palette data.
+		return paletteData.clone();
 	}
 	
 	/**
-	 * Gets the {@link #soundData}, a byte array that has the byte data
-	 * from the PCB's sound ROM.
+	 * Gets a cloned array of the {@link #soundData}, which is a
+	 * unified byte array containing <b>sound</b> data.
 	 * 
-	 * <p>This does not return a cloned array of the byte data, meaning it
-	 * can be modified when obtained by other programs. This is useful for
-	 * ROM-hacking <i>Pac-Man</i> as a game.</p>
-	 * 
-	 * <p>For more information about this data, see {@link
-	 * #soundData} to learn more.</p>
-	 * 
-	 * @return The byte array of sound ROM data.
+	 * @return A cloned array of the {@link #soundData} array.
+	 * @since 1.0.0-alpha
+	 * @see #soundData
 	 */
 	public final byte[] getSoundData() {
-		return soundData;
+		// Return a cloned array of the sound data.
+		return soundData.clone();
 	}
 	
 	/**
-	 * Gets the {@link #mysteryData}, a byte array that has the byte
-	 * data from the PCB's mystery ROM.
+	 * Gets a cloned array of the {@link #mysteryData}, which is a
+	 * unified byte array containing <b>mystery</b> data.
 	 * 
-	 * <p>This does not return a cloned array of the byte data, meaning it
-	 * can be modified when obtained by other programs. This is useful for
-	 * ROM-hacking <i>Pac-Man</i> as a game.</p>
-	 * 
-	 * <p>For more information about this data, see {@link
-	 * #mysteryData} to learn more.</p>
-	 * 
-	 * @return The byte array of mystery ROM data.
+	 * @return A cloned array of the {@link #mysteryData} array.
+	 * @since 1.0.0-alpha
+	 * @see #mysteryData
 	 */
 	public final byte[] getMysteryData() {
-		return mysteryData;
+		// Return a cloned array of the mystery data.
+		return mysteryData.clone();
 	}
 	
 	/**
 	 * Constructs an instance of the unified <i>Pac-Man</i> ROM set.
 	 * 
-	 * @param programData The unified array of bytes in the program ROMs.
-	 * @param graphicData The unified array of bytes in the graphic ROMs.
-	 * @param colorData The array of bytes in the color ROM.
-	 * @param paletteData The array of bytes in the palette ROM.
-	 * @param soundData The array of bytes in the sound ROM.
-	 * @param mysteryData The array of bytes in the mystery ROM.
+	 * @param programData The unified array of bytes in the
+	 * <b>program</b> ROMs.
+	 * @param graphicData The unified array of bytes in the
+	 * <b>graphic</b> ROMs.
+	 * @param colorData The unified array of bytes in the
+	 * <b>color</b> ROM.
+	 * @param paletteData The unified array of bytes in the
+	 * <b>palette</b> ROM.
+	 * @param soundData The unified array of bytes in the
+	 * <b>sound</b> ROM.
+	 * @param mysteryData The unified array of bytes in the
+	 * <b>mystery</b> ROM.
+	 * @since 1.0.0-alpha
+	 * @author GarlicDude
 	 */
 	public PacROMSet(
 			final byte[] programData,
@@ -209,11 +191,11 @@ public final class PacROMSet {
 			final byte[] paletteData,
 			final byte[] soundData,
 			final byte[] mysteryData) {
-		this.programData = programData;
-		this.graphicData = graphicData;
-		this.colorData = colorData;
-		this.paletteData = paletteData;
-		this.soundData = soundData;
-		this.mysteryData = mysteryData;
+		this.programData = Objects.requireNonNull(programData);
+		this.graphicData = Objects.requireNonNull(graphicData);
+		this.colorData = Objects.requireNonNull(colorData);
+		this.paletteData = Objects.requireNonNull(paletteData);
+		this.soundData = Objects.requireNonNull(soundData);
+		this.mysteryData = Objects.requireNonNull(mysteryData);
 	}
 }
